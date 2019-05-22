@@ -20,6 +20,17 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(int codigo, String nombre, String cedula, String direccion, String telefono, String email) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+    }
+    
+    
+
     public int getCodigo() {
         return codigo;
     }

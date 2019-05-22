@@ -9,6 +9,11 @@ package ec.ups.edu.modelo;
  *
  * @author USER
  */
-public class Cliente {
+public class Cliente extends Persona{
+
+    public Cliente(int codigo, String nombre, String cedula, String direccion, String telefono, String email) {
+        super(codigo, nombre, cedula, direccion, telefono, email);
+    }
+
     
 }

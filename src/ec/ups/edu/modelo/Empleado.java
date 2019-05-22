@@ -9,6 +9,13 @@ package ec.ups.edu.modelo;
  *
  * @author USER
  */
-public class Empleado {
+public class Empleado extends Persona{
+    private double sueldo;
+
+    public Empleado(double sueldo, int codigo, String nombre, String cedula, String direccion, String telefono, String email) {
+        super(codigo, nombre, cedula, direccion, telefono, email);
+        this.sueldo = sueldo;
+    }
+    
     
 }

@@ -21,6 +21,16 @@ public class Stock {
     public Stock() {
     }
 
+    public Stock(int codigo, String nombre, double costo, String descripcion, Date fechaExpedicion) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.costo = costo;
+        this.descripcion = descripcion;
+        this.fechaExpedicion = fechaExpedicion;
+    }
+    
+    
+
     public int getCodigo() {
         return codigo;
     }
