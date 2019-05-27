@@ -12,6 +12,7 @@ import java.util.Date;
  * @author USER
  */
 public class Factura {
+ private int Codigo;
  private Cliente cliente;
  private Empleado empleado;
  private Date fecha;
@@ -23,17 +24,22 @@ public class Factura {
         
     }
 
-    public Factura(Cliente cliente, Empleado empleado, Date fecha, double subtotal, double total, double iva) {
+    public Factura(Cliente cliente, Empleado empleado, Date fecha, double subtotal, double total, double iva,int Codigo) {
         this.cliente = cliente;
         this.empleado = empleado;
         this.fecha = fecha;
         this.subtotal = subtotal;
         this.total = total;
         this.iva = iva;
+        this.Codigo = Codigo;
     }
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public int getCodigo() {
+        return Codigo;
     }
 
     public Empleado getEmpleado() {
@@ -60,6 +66,10 @@ public class Factura {
         this.cliente = cliente;
     }
 
+    public void setCodigo(int Codigo) {
+        this.Codigo = Codigo;
+    }
+    
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
@@ -82,7 +92,9 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" + "cliente=" + cliente + ", empleado=" + empleado + ", fecha=" + fecha + ", subtotal=" + subtotal + ", total=" + total + ", iva=" + iva + '}';
+        return "Factura{" + "Codigo=" + Codigo + ", cliente=" + cliente + ", empleado=" + empleado + ", fecha=" + fecha + ", subtotal=" + subtotal + ", total=" + total + ", iva=" + iva + '}';
     }
+
+   
  
 }
