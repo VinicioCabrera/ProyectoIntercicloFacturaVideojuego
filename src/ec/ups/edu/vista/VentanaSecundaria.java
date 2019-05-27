@@ -10,12 +10,29 @@ package ec.ups.edu.vista;
  * @author USER
  */
 public class VentanaSecundaria extends javax.swing.JFrame {
-
+ private VentanaCrearCliente ventanacrearcliente;
+ private VentanaBuscarCliente ventanabuscarcliente;
+ private VentanaActualizarCliente ventanaactualizarcliente;
+ private VentanaListarCliente ventanalistarcliente;
+ private VentanaEliminarCliente ventanaeliminarcliente;
+ 
+  private VentanaCrearProducto ventanacrearempleado;
+ private VentanaBuscarEmpleado ventanabuscarempleado;
+ private VentanaActualizarEmpleado ventanaactualizarempleado;
+ private VentanaListarEmpleado ventanalistarempleado;
+ private VentanaEliminarEmpleado ventanaeliminarempleado;
     /**
      * Creates new form VentanaSecundaria
      */
-    public VentanaSecundaria() {
+    private boolean acceso;
+    public VentanaSecundaria(boolean acceso) {
         initComponents();
+        this.acceso=acceso;
+        restricciones();
+    }
+
+    private VentanaSecundaria() {
+       
     }
 
     /**
@@ -29,131 +46,156 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
+        menuCliente = new javax.swing.JMenu();
+        crearMenuCliente = new javax.swing.JMenuItem();
+        buscarMenuCliente = new javax.swing.JMenuItem();
+        actualizarMenuCliente = new javax.swing.JMenuItem();
+        eliminarMenuCliente = new javax.swing.JMenuItem();
+        listarMenuCliente = new javax.swing.JMenuItem();
+        menuEmpleado = new javax.swing.JMenu();
+        crearMenuEmpleado = new javax.swing.JMenuItem();
+        buscarMenuEmpleado = new javax.swing.JMenuItem();
+        actualizarMenuEmpleado = new javax.swing.JMenuItem();
+        eliminarMenuEmpleado = new javax.swing.JMenuItem();
+        listarMenuEmpleado = new javax.swing.JMenuItem();
+        menuProducto = new javax.swing.JMenu();
+        crearMenuProducto = new javax.swing.JMenuItem();
+        buscarMenuProducto = new javax.swing.JMenuItem();
+        actulizarMenuProducto = new javax.swing.JMenuItem();
+        eliminarMenuProducto = new javax.swing.JMenuItem();
+        listarMenuProducto = new javax.swing.JMenuItem();
+        menuClases = new javax.swing.JMenu();
+        crearMenuClases = new javax.swing.JMenuItem();
+        buscarMenuClases = new javax.swing.JMenuItem();
+        actualizarMenuClases = new javax.swing.JMenuItem();
+        eliminarMenuClases = new javax.swing.JMenuItem();
+        listarMenuClases = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Cliente");
+        menuCliente.setMnemonic('f');
+        menuCliente.setText("Cliente");
 
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Crear");
-        fileMenu.add(openMenuItem);
-
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Buscar");
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Actualizar");
-        fileMenu.add(saveAsMenuItem);
-
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Eliminar");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        crearMenuCliente.setMnemonic('o');
+        crearMenuCliente.setText("Crear");
+        crearMenuCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
+                crearMenuClienteActionPerformed(evt);
             }
         });
-        fileMenu.add(exitMenuItem);
+        menuCliente.add(crearMenuCliente);
 
-        jMenuItem1.setText("Listar");
-        fileMenu.add(jMenuItem1);
-
-        menuBar.add(fileMenu);
-
-        editMenu.setMnemonic('e');
-        editMenu.setText("Empleado");
-
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Crear");
-        editMenu.add(cutMenuItem);
-
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Buscar");
-        editMenu.add(copyMenuItem);
-
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Actuallizar");
-        editMenu.add(pasteMenuItem);
-
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Eliminar");
-        editMenu.add(deleteMenuItem);
-
-        jMenuItem2.setText("Listar");
-        editMenu.add(jMenuItem2);
-
-        menuBar.add(editMenu);
-
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Producto");
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Crear");
-        helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("Buscar");
-        helpMenu.add(aboutMenuItem);
-
-        jMenuItem3.setText("Actualizar");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        buscarMenuCliente.setMnemonic('s');
+        buscarMenuCliente.setText("Buscar");
+        buscarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                buscarMenuClienteActionPerformed(evt);
             }
         });
-        helpMenu.add(jMenuItem3);
+        menuCliente.add(buscarMenuCliente);
 
-        jMenuItem4.setText("Eliminar");
-        helpMenu.add(jMenuItem4);
+        actualizarMenuCliente.setMnemonic('a');
+        actualizarMenuCliente.setText("Actualizar");
+        actualizarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarMenuClienteActionPerformed(evt);
+            }
+        });
+        menuCliente.add(actualizarMenuCliente);
 
-        jMenuItem5.setText("Listar");
-        helpMenu.add(jMenuItem5);
+        eliminarMenuCliente.setMnemonic('x');
+        eliminarMenuCliente.setText("Eliminar");
+        eliminarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarMenuClienteActionPerformed(evt);
+            }
+        });
+        menuCliente.add(eliminarMenuCliente);
 
-        menuBar.add(helpMenu);
+        listarMenuCliente.setText("Listar");
+        listarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarMenuClienteActionPerformed(evt);
+            }
+        });
+        menuCliente.add(listarMenuCliente);
 
-        jMenu1.setText("Clases");
+        menuBar.add(menuCliente);
 
-        jMenuItem6.setText("Crear");
-        jMenu1.add(jMenuItem6);
+        menuEmpleado.setMnemonic('e');
+        menuEmpleado.setText("Empleado");
 
-        jMenuItem7.setText("Buscar");
-        jMenu1.add(jMenuItem7);
+        crearMenuEmpleado.setMnemonic('t');
+        crearMenuEmpleado.setText("Crear");
+        crearMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearMenuEmpleadoActionPerformed(evt);
+            }
+        });
+        menuEmpleado.add(crearMenuEmpleado);
 
-        jMenuItem8.setText("Actualizar");
-        jMenu1.add(jMenuItem8);
+        buscarMenuEmpleado.setMnemonic('y');
+        buscarMenuEmpleado.setText("Buscar");
+        menuEmpleado.add(buscarMenuEmpleado);
 
-        jMenuItem9.setText("Eliminar");
-        jMenu1.add(jMenuItem9);
+        actualizarMenuEmpleado.setMnemonic('p');
+        actualizarMenuEmpleado.setText("Actuallizar");
+        menuEmpleado.add(actualizarMenuEmpleado);
 
-        jMenuItem10.setText("Listar");
-        jMenu1.add(jMenuItem10);
+        eliminarMenuEmpleado.setMnemonic('d');
+        eliminarMenuEmpleado.setText("Eliminar");
+        menuEmpleado.add(eliminarMenuEmpleado);
 
-        menuBar.add(jMenu1);
+        listarMenuEmpleado.setText("Listar");
+        menuEmpleado.add(listarMenuEmpleado);
+
+        menuBar.add(menuEmpleado);
+
+        menuProducto.setMnemonic('h');
+        menuProducto.setText("Producto");
+
+        crearMenuProducto.setMnemonic('c');
+        crearMenuProducto.setText("Crear");
+        menuProducto.add(crearMenuProducto);
+
+        buscarMenuProducto.setMnemonic('a');
+        buscarMenuProducto.setText("Buscar");
+        menuProducto.add(buscarMenuProducto);
+
+        actulizarMenuProducto.setText("Actualizar");
+        actulizarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actulizarMenuProductoActionPerformed(evt);
+            }
+        });
+        menuProducto.add(actulizarMenuProducto);
+
+        eliminarMenuProducto.setText("Eliminar");
+        menuProducto.add(eliminarMenuProducto);
+
+        listarMenuProducto.setText("Listar");
+        menuProducto.add(listarMenuProducto);
+
+        menuBar.add(menuProducto);
+
+        menuClases.setText("Clases");
+
+        crearMenuClases.setText("Crear");
+        menuClases.add(crearMenuClases);
+
+        buscarMenuClases.setText("Buscar");
+        menuClases.add(buscarMenuClases);
+
+        actualizarMenuClases.setText("Actualizar");
+        menuClases.add(actualizarMenuClases);
+
+        eliminarMenuClases.setText("Eliminar");
+        menuClases.add(eliminarMenuClases);
+
+        listarMenuClases.setText("Listar");
+        menuClases.add(listarMenuClases);
+
+        menuBar.add(menuClases);
 
         setJMenuBar(menuBar);
 
@@ -171,13 +213,43 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
+    private void eliminarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClienteActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
+    }//GEN-LAST:event_eliminarMenuClienteActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    private void actulizarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actulizarMenuProductoActionPerformed
+       
+    }//GEN-LAST:event_actulizarMenuProductoActionPerformed
+
+    private void crearMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClienteActionPerformed
+        ventanacrearcliente=new VentanaCrearCliente();
+        ventanacrearcliente.setVisible(true);
+        desktopPane.add(ventanacrearcliente);
+    }//GEN-LAST:event_crearMenuClienteActionPerformed
+
+    private void buscarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClienteActionPerformed
+        ventanabuscarcliente =new VentanaBuscarCliente();
+        ventanabuscarcliente.setVisible(true);
+        desktopPane.add(ventanabuscarcliente);
+    }//GEN-LAST:event_buscarMenuClienteActionPerformed
+
+    private void listarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClienteActionPerformed
+        ventanalistarcliente =new VentanaListarCliente();
+        ventanalistarcliente.setVisible(true);
+        desktopPane.add(ventanalistarcliente);
+    }//GEN-LAST:event_listarMenuClienteActionPerformed
+
+    private void actualizarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClienteActionPerformed
+        ventanaactualizarcliente =new VentanaActualizarCliente();
+        ventanaactualizarcliente.setVisible(true);
+        desktopPane.add(ventanaactualizarcliente);
+    }//GEN-LAST:event_actualizarMenuClienteActionPerformed
+
+    private void crearMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuEmpleadoActionPerformed
+      ventanacrearempleado = new VentanaCrearProducto();
+      ventanacrearempleado.setVisible(true);
+      desktopPane.add(ventanacrearempleado);
+    }//GEN-LAST:event_crearMenuEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,35 +284,47 @@ public class VentanaSecundaria extends javax.swing.JFrame {
                 new VentanaSecundaria().setVisible(true);
             }
         });
+        
+        
     }
-
+        public void restricciones(){
+            if (acceso==false){
+                menuEmpleado.setEnabled(false);
+                crearMenuProducto.setEnabled(false);
+                actulizarMenuProducto.setEnabled(false);
+                eliminarMenuProducto.setEnabled(false);
+                crearMenuClases.setEnabled(false);
+                actualizarMenuClases.setEnabled(false);
+                eliminarMenuClases.setEnabled(false);
+            }
+        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
+    private javax.swing.JMenuItem actualizarMenuClases;
+    private javax.swing.JMenuItem actualizarMenuCliente;
+    private javax.swing.JMenuItem actualizarMenuEmpleado;
+    private javax.swing.JMenuItem actulizarMenuProducto;
+    private javax.swing.JMenuItem buscarMenuClases;
+    private javax.swing.JMenuItem buscarMenuCliente;
+    private javax.swing.JMenuItem buscarMenuEmpleado;
+    private javax.swing.JMenuItem buscarMenuProducto;
+    private javax.swing.JMenuItem crearMenuClases;
+    private javax.swing.JMenuItem crearMenuCliente;
+    private javax.swing.JMenuItem crearMenuEmpleado;
+    private javax.swing.JMenuItem crearMenuProducto;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem eliminarMenuClases;
+    private javax.swing.JMenuItem eliminarMenuCliente;
+    private javax.swing.JMenuItem eliminarMenuEmpleado;
+    private javax.swing.JMenuItem eliminarMenuProducto;
+    private javax.swing.JMenuItem listarMenuClases;
+    private javax.swing.JMenuItem listarMenuCliente;
+    private javax.swing.JMenuItem listarMenuEmpleado;
+    private javax.swing.JMenuItem listarMenuProducto;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenu menuClases;
+    private javax.swing.JMenu menuCliente;
+    private javax.swing.JMenu menuEmpleado;
+    private javax.swing.JMenu menuProducto;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -20,6 +20,7 @@ public class Factura {
  private double iva;
 
     public Factura() {
+        
     }
 
     public Factura(Cliente cliente, Empleado empleado, Date fecha, double subtotal, double total, double iva) {
