@@ -70,6 +70,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         actualizarMenuClases = new javax.swing.JMenuItem();
         eliminarMenuClases = new javax.swing.JMenuItem();
         listarMenuClases = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -197,6 +200,16 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuClases);
 
+        jMenu1.setText("Idiomas   ");
+
+        jMenuItem1.setText("Español");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Inglés");
+        jMenu1.add(jMenuItem2);
+
+        menuBar.add(jMenu1);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -316,6 +329,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem eliminarMenuCliente;
     private javax.swing.JMenuItem eliminarMenuEmpleado;
     private javax.swing.JMenuItem eliminarMenuProducto;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem listarMenuClases;
     private javax.swing.JMenuItem listarMenuCliente;
     private javax.swing.JMenuItem listarMenuEmpleado;
