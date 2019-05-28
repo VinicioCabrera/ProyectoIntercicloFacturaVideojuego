@@ -6,6 +6,11 @@
 
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.modelo.Clase;
+import java.util.Set;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
@@ -13,8 +18,11 @@ package ec.ups.edu.vista;
 public class VentanaListarClase extends javax.swing.JInternalFrame {
 
     /** Creates new form VentanaListarClase */
-    public VentanaListarClase() {
+    ControladorClase controladorClase;
+    public VentanaListarClase(ControladorClase controladorClase) {
         initComponents();
+        this.controladorClase=controladorClase;
+        llenarTabla();
     }
 
     /** This method is called from within the constructor to
@@ -38,11 +46,11 @@ public class VentanaListarClase extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CODIGO", "DESCRIPCION"
+                "CODIGO", "NOMBRE", "DESCRIPCION"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -82,6 +90,18 @@ public class VentanaListarClase extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void llenarTabla(){
+        Set<Clase> lista=controladorClase.getLista();
+        DefaultTableModel modelo=(DefaultTableModel) tblListarClase.getModel();
+        for (Clase clase : lista) {
+            Object[] datos={
+                clase.getCodigo(),
+                clase.getNombre(),
+                clase.getDescripcion()
+            };
+            modelo.addRow(datos);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;

@@ -65,12 +65,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace pref="63" max="32767" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="116" max="-2" attributes="0"/>
+                      <Component id="btnEliminar" min="-2" pref="116" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="116" max="-2" attributes="0"/>
+                      <Component id="btnBuscar" min="-2" pref="116" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -86,7 +86,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel3" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="txtCodigoEliminarCliente" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnBuscar" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -102,7 +102,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtDireccion" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnEliminar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -146,27 +146,27 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtCedula">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDireccion">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtNombre">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTelefono">
       <Properties>
-        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="editable" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoActionPerformed"/>
@@ -206,20 +206,21 @@
         <Property name="text" type="java.lang.String" value="Direccion :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnEliminar">
       <Properties>
         <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnBuscar">
       <Properties>
         <Property name="text" type="java.lang.String" value="BUSCAR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

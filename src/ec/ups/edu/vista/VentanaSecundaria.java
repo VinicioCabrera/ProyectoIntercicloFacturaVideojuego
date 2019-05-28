@@ -62,6 +62,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         restricciones();
         controladorCliente=new ControladorCliente();
         controladorProducto=new ControladorProducto();
+        controladorClase=new ControladorClase();
+        controladorFactura=new ControladorFactura();
+        controladorEmpleado= new ControladorEmpleado();
     }
 
     private VentanaSecundaria() {
@@ -385,7 +388,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarMenuClienteActionPerformed
 
     private void listarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClienteActionPerformed
-        ventanalistarcliente =new VentanaListarCliente();
+        ventanalistarcliente =new VentanaListarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanalistarcliente.setVisible(true);
@@ -484,7 +487,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_listarMenuProductoActionPerformed
 
     private void crearMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClasesActionPerformed
-        crearClase = new VentanaCrearClase();
+        crearClase = new VentanaCrearClase(controladorClase);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         crearClase.setVisible(true);
@@ -493,7 +496,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_crearMenuClasesActionPerformed
 
     private void buscarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClasesActionPerformed
-        buscarClase = new VentanaBuscarClase();
+        buscarClase = new VentanaBuscarClase(controladorClase);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         buscarClase.setVisible(true);
@@ -502,7 +505,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarMenuClasesActionPerformed
 
     private void actualizarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClasesActionPerformed
-        actualizarClase = new VentanaActualizarClase();
+        actualizarClase = new VentanaActualizarClase(controladorClase);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         actualizarClase.setVisible(true);
@@ -511,7 +514,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarMenuClasesActionPerformed
 
     private void eliminarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClasesActionPerformed
-        eliminarClase = new VentanaEliminarClase();
+        eliminarClase = new VentanaEliminarClase(controladorClase);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         eliminarClase.setVisible(true);
@@ -520,7 +523,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarMenuClasesActionPerformed
 
     private void listarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClasesActionPerformed
-        listarClase = new VentanaListarClase();
+        listarClase = new VentanaListarClase(controladorClase);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         listarClase.setVisible(true);

@@ -12,6 +12,7 @@ package ec.ups.edu.modelo;
  */
 public class Clase {
     private int codigo;
+    private String nombre;
     private String descripcion;
 
     public Clase() {
@@ -32,6 +33,15 @@ public class Clase {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 
     @Override
     public String toString() {

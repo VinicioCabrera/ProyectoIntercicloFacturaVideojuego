@@ -25,8 +25,13 @@ public class ControladorCliente {
     
     public int getCodigo() {
         return codigo;
-        
     }
+
+    public Set<Cliente> getLista() {
+        return lista;
+    }
+    
+    
     
      public void create(Cliente cliente){
         cliente.setCodigo(codigo);

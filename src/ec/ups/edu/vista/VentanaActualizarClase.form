@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="closable" type="boolean" value="true"/>
+  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -19,33 +22,42 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCodigoActualizarClase" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="lblDescripcionActualizarClase" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtCodigoActualizarClase" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="txtNombreActualizarClase" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblCodigoActualizarClase" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="txtCodigoActualizarClase" min="-2" pref="220" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                      <Component id="btnBuscarActualizarClase" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                      <Component id="btnActualizarActualizarClase" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="lblDescripcion" min="-2" pref="133" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtDescripcion" min="-2" pref="219" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+              <Component id="lblNombre" min="-2" pref="133" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="txtNombre" min="-2" pref="219" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+              <Component id="btnBuscarActualizarClase" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <Component id="btnActualizarActualizarClase" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel2" min="-2" pref="211" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,15 +73,20 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtNombreActualizarClase" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="lblDescripcionActualizarClase" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="lblNombre" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtDescripcion" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="lblDescripcion" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnBuscarActualizarClase" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnActualizarActualizarClase" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,7 +110,7 @@
         <Property name="text" type="java.lang.String" value="Codigo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblDescripcionActualizarClase">
+    <Component class="javax.swing.JLabel" name="lblDescripcion">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -101,7 +118,7 @@
         <Property name="text" type="java.lang.String" value="Descripcion:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreActualizarClase">
+    <Component class="javax.swing.JTextField" name="txtDescripcion">
     </Component>
     <Component class="javax.swing.JButton" name="btnBuscarActualizarClase">
       <Properties>
@@ -114,7 +131,21 @@
     <Component class="javax.swing.JButton" name="btnActualizarActualizarClase">
       <Properties>
         <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarActualizarClaseActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombre">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="nombre:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombre">
     </Component>
   </SubComponents>
 </Form>

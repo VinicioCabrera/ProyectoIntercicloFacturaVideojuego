@@ -5,6 +5,11 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorCliente;
+import ec.ups.edu.modelo.Cliente;
+import java.util.Set;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
@@ -14,8 +19,11 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaListarCliente
      */
-    public VentanaListarCliente() {
+    ControladorCliente controladorCliente;
+    public VentanaListarCliente(ControladorCliente controladorCliente) {
         initComponents();
+        this.controladorCliente=controladorCliente;
+        llenarTabla();
     }
 
     /**
@@ -29,14 +37,14 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCliente = new javax.swing.JTable();
 
         setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Listar Cliente");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -52,8 +60,8 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jScrollPane1.setViewportView(jTable1);
+        tblCliente.setRowHeight(30);
+        jScrollPane1.setViewportView(tblCliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,10 +89,26 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void llenarTabla(){
+        Set<Cliente> lista=controladorCliente.getLista();
+        DefaultTableModel modelo= (DefaultTableModel) tblCliente.getModel();
+        
+        for (Cliente cliente : lista) {
+            Object[] datos={
+                cliente.getCodigo(),
+                cliente.getNombre(),
+                cliente.getCedula(),
+                cliente.getDireccion(),
+                cliente.getEmail(),
+                cliente.getTelefono()
+            };
+            modelo.addRow(datos);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblCliente;
     // End of variables declaration//GEN-END:variables
 }

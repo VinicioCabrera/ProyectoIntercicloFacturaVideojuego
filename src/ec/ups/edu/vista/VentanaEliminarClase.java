@@ -5,6 +5,10 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.modelo.Clase;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -14,8 +18,10 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaEliminarClase
      */
-    public VentanaEliminarClase() {
+    ControladorClase controladorClase;
+    public VentanaEliminarClase(ControladorClase controladorClase) {
         initComponents();
+        this.controladorClase=controladorClase;
     }
 
     /**
@@ -34,6 +40,10 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
         txtDescripcionEliminarClase = new javax.swing.JTextField();
         btnBuscarEliminarClase = new javax.swing.JButton();
         btnEliminarEliminarClase = new javax.swing.JButton();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+
+        setClosable(true);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Eliminar Clases");
@@ -52,32 +62,52 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
         });
 
         btnEliminarEliminarClase.setText("ELIMINAR");
+        btnEliminarEliminarClase.setEnabled(false);
+        btnEliminarEliminarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarEliminarClaseActionPerformed(evt);
+            }
+        });
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombre.setText("nombre:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(lblCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(txtCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(btnBuscarEliminarClase)
+                                .addGap(67, 67, 67)
+                                .addComponent(btnEliminarEliminarClase)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(btnBuscarEliminarClase)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnEliminarEliminarClase)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135))
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,21 +120,39 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
                     .addComponent(txtCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarEliminarClase)
                     .addComponent(btnEliminarEliminarClase))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarEliminarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEliminarClaseActionPerformed
-        // TODO add your handling code here:
+      int codigo=Integer.parseInt(txtCodigoEliminarClase.getText());
+      Clase clase=controladorClase.read(codigo);
+      txtDescripcionEliminarClase.setText(clase.getDescripcion());
+      txtNombre.setText(clase.getNombre());
+      btnEliminarEliminarClase.setEnabled(true);
     }//GEN-LAST:event_btnBuscarEliminarClaseActionPerformed
+
+    private void btnEliminarEliminarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEliminarClaseActionPerformed
+        int codigo=Integer.parseInt(txtCodigoEliminarClase.getText());
+        controladorClase.remove(codigo);
+        JOptionPane.showMessageDialog(this, "Clase eliminada correctamente");
+        txtCodigoEliminarClase.setText("");
+        txtDescripcionEliminarClase.setText("");
+        txtNombre.setText("");
+        
+    }//GEN-LAST:event_btnEliminarEliminarClaseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -113,7 +161,9 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCodigoEliminarClase;
     private javax.swing.JLabel lblDescripcionEliminarClase;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JTextField txtCodigoEliminarClase;
     private javax.swing.JTextField txtDescripcionEliminarClase;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

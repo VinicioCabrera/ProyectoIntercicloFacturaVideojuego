@@ -102,7 +102,6 @@ public void listarProducto(){
             producto.getCantidad(),
             producto.getFechaExpedicion(),
             producto.getCosto(),
-            
             new JLabel(new ImageIcon(producto.getPath()))
         };
         modelo.addRow(datos);

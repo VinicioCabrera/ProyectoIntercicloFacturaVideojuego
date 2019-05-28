@@ -5,6 +5,9 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.modelo.Clase;
+
 /**
  *
  * @author USER
@@ -14,8 +17,10 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaBuscarClase
      */
-    public VentanaBuscarClase() {
+    ControladorClase controladorClase;
+    public VentanaBuscarClase(ControladorClase controladorClase) {
         initComponents();
+        this.controladorClase=controladorClase;
     }
 
     /**
@@ -34,6 +39,8 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
         txtDescripcionBuscarClase = new javax.swing.JTextField();
         btnBuscarBuscarClase = new javax.swing.JButton();
         btnCancelarBuscarClase = new javax.swing.JButton();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Buscar Clases");
@@ -52,6 +59,14 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
         });
 
         btnCancelarBuscarClase.setText("CANCELAR");
+        btnCancelarBuscarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarBuscarClaseActionPerformed(evt);
+            }
+        });
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombre.setText("nombre:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,20 +75,27 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(btnBuscarBuscarClase)
                         .addGap(67, 67, 67)
-                        .addComponent(btnCancelarBuscarClase)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnCancelarBuscarClase))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addComponent(txtCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -88,23 +110,35 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCodigoBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDescripcionBuscarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarBuscarClase)
                     .addComponent(btnCancelarBuscarClase))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarBuscarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarBuscarClaseActionPerformed
-        // TODO add your handling code here:
+       
+      int codigo=Integer.parseInt(txtCodigoBuscarClase.getText());
+      Clase clase=controladorClase.read(codigo);
+      txtDescripcionBuscarClase.setText(clase.getDescripcion());
+      txtNombre.setText(clase.getNombre());
     }//GEN-LAST:event_btnBuscarBuscarClaseActionPerformed
+
+    private void btnCancelarBuscarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarBuscarClaseActionPerformed
+       this.dispose();
+    }//GEN-LAST:event_btnCancelarBuscarClaseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -113,7 +147,9 @@ public class VentanaBuscarClase extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCodigoBuscarClase;
     private javax.swing.JLabel lblDescripcionBuscarClase;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JTextField txtCodigoBuscarClase;
     private javax.swing.JTextField txtDescripcionBuscarClase;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.modelo.Clase;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -14,8 +18,10 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaActualizarClase
      */
-    public VentanaActualizarClase() {
+    ControladorClase controladorClase;
+    public VentanaActualizarClase(ControladorClase controladorClase) {
         initComponents();
+        this.controladorClase=controladorClase;
     }
 
     /**
@@ -30,10 +36,14 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         txtCodigoActualizarClase = new javax.swing.JTextField();
         lblCodigoActualizarClase = new javax.swing.JLabel();
-        lblDescripcionActualizarClase = new javax.swing.JLabel();
-        txtNombreActualizarClase = new javax.swing.JTextField();
+        lblDescripcion = new javax.swing.JLabel();
+        txtDescripcion = new javax.swing.JTextField();
         btnBuscarActualizarClase = new javax.swing.JButton();
         btnActualizarActualizarClase = new javax.swing.JButton();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+
+        setClosable(true);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Actualizar Clases");
@@ -41,8 +51,8 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
         lblCodigoActualizarClase.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCodigoActualizarClase.setText("Codigo:");
 
-        lblDescripcionActualizarClase.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        lblDescripcionActualizarClase.setText("Descripcion:");
+        lblDescripcion.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblDescripcion.setText("Descripcion:");
 
         btnBuscarActualizarClase.setText("BUSCAR");
         btnBuscarActualizarClase.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +62,15 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
         });
 
         btnActualizarActualizarClase.setText("ACTUALIZAR");
+        btnActualizarActualizarClase.setEnabled(false);
+        btnActualizarActualizarClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActualizarClaseActionPerformed(evt);
+            }
+        });
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombre.setText("nombre:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,23 +80,32 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigoActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDescripcionActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCodigoActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(txtCodigoActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigoActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(btnBuscarActualizarClase)
-                        .addGap(67, 67, 67)
-                        .addComponent(btnActualizarActualizarClase)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(135, 135, 135))
+                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(btnBuscarActualizarClase)
+                .addGap(65, 65, 65)
+                .addComponent(btnActualizarActualizarClase)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(125, 125, 125))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,21 +118,41 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
                     .addComponent(txtCodigoActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombreActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDescripcionActualizarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscarActualizarClase)
                     .addComponent(btnActualizarActualizarClase))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActualizarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActualizarClaseActionPerformed
-        // TODO add your handling code here:
+      int codigo=Integer.parseInt(txtCodigoActualizarClase.getText());
+      Clase clase=controladorClase.read(codigo);
+      txtDescripcion.setText(clase.getDescripcion());
+      txtNombre.setText(clase.getNombre());
+      btnActualizarActualizarClase.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActualizarClaseActionPerformed
+
+    private void btnActualizarActualizarClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActualizarClaseActionPerformed
+        Clase clase=new Clase();
+        clase.setDescripcion(txtDescripcion.getText());
+        clase.setNombre(txtNombre.getText());
+        clase.setCodigo(Integer.parseInt(txtCodigoActualizarClase.getText()));
+        controladorClase.update(clase);
+        JOptionPane.showMessageDialog(this, "clase de juego actualizado correctamente");
+        txtCodigoActualizarClase.setText("");
+        txtDescripcion.setText("");
+        txtNombre.setText("");
+    }//GEN-LAST:event_btnActualizarActualizarClaseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -112,8 +160,10 @@ public class VentanaActualizarClase extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarActualizarClase;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCodigoActualizarClase;
-    private javax.swing.JLabel lblDescripcionActualizarClase;
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JTextField txtCodigoActualizarClase;
-    private javax.swing.JTextField txtNombreActualizarClase;
+    private javax.swing.JTextField txtDescripcion;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

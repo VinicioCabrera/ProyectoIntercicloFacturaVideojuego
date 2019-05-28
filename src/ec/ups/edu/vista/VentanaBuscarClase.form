@@ -22,25 +22,35 @@
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCodigoBuscarClase" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                          <Component id="lblDescripcionBuscarClase" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtCodigoBuscarClase" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Component id="txtDescripcionBuscarClase" alignment="0" min="-2" pref="219" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                       <Component id="btnBuscarBuscarClase" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Component id="btnCancelarBuscarClase" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="lblNombre" min="-2" pref="133" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtNombre" min="-2" pref="219" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="lblDescripcionBuscarClase" min="-2" pref="133" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtDescripcionBuscarClase" min="-2" pref="219" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="lblCodigoBuscarClase" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoBuscarClase" min="-2" pref="220" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -59,17 +69,22 @@
                   <Component id="lblCodigoBuscarClase" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="txtCodigoBuscarClase" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtNombre" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="lblNombre" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="txtDescripcionBuscarClase" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="lblDescripcionBuscarClase" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnBuscarBuscarClase" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCancelarBuscarClase" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,6 +130,19 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CANCELAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarBuscarClaseActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNombre">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="24" style="2"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="nombre:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNombre">
     </Component>
   </SubComponents>
 </Form>

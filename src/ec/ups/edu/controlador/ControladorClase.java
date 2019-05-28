@@ -21,6 +21,15 @@ public class ControladorClase {
         codigo=1;
         lista=new HashSet<Clase>();
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public Set<Clase> getLista() {
+        return lista;
+    }
+    
     
      public void create(Clase clase){
         clase.setCodigo(codigo);

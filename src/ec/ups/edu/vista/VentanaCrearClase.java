@@ -5,6 +5,10 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.modelo.Clase;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -14,8 +18,11 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaCrearClase
      */
-    public VentanaCrearClase() {
+    ControladorClase controladorClase;
+    public VentanaCrearClase(ControladorClase controladorClase) {
         initComponents();
+        this.controladorClase=controladorClase;
+        txtCodigoCrearClase.setText(Integer.toString(controladorClase.getCodigo()));
     }
 
     /**
@@ -34,6 +41,8 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
         txtDescripcionCrearClase = new javax.swing.JTextField();
         btnGuardarCrearClase = new javax.swing.JButton();
         btnCancelarCrearClase = new javax.swing.JButton();
+        lblNombre = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Crear Clases");
@@ -52,6 +61,14 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
         });
 
         btnCancelarCrearClase.setText("CANCELAR");
+        btnCancelarCrearClase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarCrearClaseActionPerformed(evt);
+            }
+        });
+
+        lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombre.setText("nombre:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,19 +80,25 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
                         .addGap(189, 189, 189)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigoCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigoCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(btnGuardarCrearClase)
                         .addGap(67, 67, 67)
-                        .addComponent(btnCancelarCrearClase)))
+                        .addComponent(btnCancelarCrearClase))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCodigoCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCodigoCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,21 +112,39 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
                     .addComponent(txtCodigoCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDescripcionCrearClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarCrearClase)
                     .addComponent(btnCancelarCrearClase))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarCrearClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCrearClaseActionPerformed
-        // TODO add your handling code here:
+       
+        Clase clase=new Clase();
+        clase.setDescripcion(txtDescripcionCrearClase.getText());
+        clase.setNombre(txtNombre.getText());
+        clase.setCodigo(Integer.parseInt(txtCodigoCrearClase.getText()));
+        controladorClase.create(clase);
+        JOptionPane.showMessageDialog(this, "clase de juego creado exitosamente");
+        txtCodigoCrearClase.setText(Integer.toString(controladorClase.getCodigo()));
+        txtDescripcionCrearClase.setText("");
+        txtNombre.setText("");
+        
     }//GEN-LAST:event_btnGuardarCrearClaseActionPerformed
+
+    private void btnCancelarCrearClaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarCrearClaseActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarCrearClaseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -112,7 +153,9 @@ public class VentanaCrearClase extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCodigoCrearClase;
     private javax.swing.JLabel lblDescripcionCrearClase;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JTextField txtCodigoCrearClase;
     private javax.swing.JTextField txtDescripcionCrearClase;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
