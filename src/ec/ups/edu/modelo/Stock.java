@@ -15,17 +15,17 @@ public class Stock {
    private int codigo;
    private String nombre;
    private double costo;
-   private String descripcion;
+   private int cantidad;
    private Date fechaExpedicion;
 
     public Stock() {
     }
 
-    public Stock(int codigo, String nombre, double costo, String descripcion, Date fechaExpedicion) {
+    public Stock(int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.costo = costo;
-        this.descripcion = descripcion;
+        this.cantidad = cantidad;
         this.fechaExpedicion = fechaExpedicion;
     }
     
@@ -55,12 +55,12 @@ public class Stock {
         this.costo = costo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public Date getFechaExpedicion() {
@@ -73,7 +73,7 @@ public class Stock {
 
     @Override
     public String toString() {
-        return "Stock{" + "codigo=" + codigo + ", nombre=" + nombre + ", costo=" + costo + ", descripcion=" + descripcion + ", fechaExpedicion=" + fechaExpedicion + '}';
+        return "Stock{" + "codigo=" + codigo + ", nombre=" + nombre + ", costo=" + costo + ", cantidad=" + cantidad + ", fechaExpedicion=" + fechaExpedicion + '}';
     }
 
     @Override

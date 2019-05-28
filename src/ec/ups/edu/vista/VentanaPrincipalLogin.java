@@ -37,7 +37,7 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,26 +95,27 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
-        
         if(evt.getKeyCode()==10){
-            
+
             if(txtUsuario.getText().equals("admi")&&txtContraseña.getText().equals("123")){
                 JOptionPane.showMessageDialog(this, "bienvenido Administrador");
                 v2=new VentanaSecundaria(acceso);
                 v2.setVisible(true);
-                
+                this.dispose();
+
             }else if(txtUsuario.getText().equals("empleado")&&txtContraseña.getText().equals("123")){
-                 JOptionPane.showMessageDialog(this, "bienvenido Empleado");
-                 acceso=false;
-                 v2=new VentanaSecundaria(acceso);
-                 v2.setVisible(true);
-                 
+                JOptionPane.showMessageDialog(this, "bienvenido Empleado");
+                acceso=false;
+                v2=new VentanaSecundaria(acceso);
+                v2.setVisible(true);
+                this.dispose();
             }else{
                 JOptionPane.showMessageDialog(this, "usuario y contraseña incorrecto");
                 txtContraseña.setText("");
                 txtUsuario.setText("");
             }
         }
+        
     }//GEN-LAST:event_txtContraseñaKeyPressed
 
     /**
@@ -158,7 +159,7 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

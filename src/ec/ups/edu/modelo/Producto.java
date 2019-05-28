@@ -11,10 +11,12 @@ import java.util.Date;
  *
  * @author USER
  */
+
 public class Producto extends Stock{
 private Clase clase;
-    public Producto(int codigo, String nombre, double costo, String descripcion, Date fechaExpedicion) {
-        super(codigo, nombre, costo, descripcion, fechaExpedicion);
+private String path;
+    public Producto(int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
+        super(codigo, nombre, costo, cantidad, fechaExpedicion);
     }
 
     public Producto() {
@@ -28,6 +30,14 @@ private Clase clase;
 
     public void setClase(Clase clase) {
         this.clase = clase;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
     
     

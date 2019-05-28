@@ -28,12 +28,12 @@ public class VentanaListarClase extends javax.swing.JInternalFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblListarClase = new javax.swing.JTable();
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Listar Clases");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblListarClase.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -49,8 +49,8 @@ public class VentanaListarClase extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jScrollPane1.setViewportView(jTable1);
+        tblListarClase.setRowHeight(30);
+        jScrollPane1.setViewportView(tblListarClase);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,7 +86,7 @@ public class VentanaListarClase extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblListarClase;
     // End of variables declaration//GEN-END:variables
 
 }

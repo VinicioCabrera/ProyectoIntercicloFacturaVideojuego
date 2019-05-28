@@ -15,8 +15,8 @@ public class VideoJuego extends Stock{
     
     private int codigoJ;
 
-    public VideoJuego(int codigoJ, int codigo, String nombre, double costo, String descripcion, Date fechaExpedicion) {
-        super(codigo, nombre, costo, descripcion, fechaExpedicion);
+    public VideoJuego(int codigoJ, int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
+        super(codigo, nombre, costo, cantidad, fechaExpedicion);
         this.codigoJ = codigoJ;
     }
 

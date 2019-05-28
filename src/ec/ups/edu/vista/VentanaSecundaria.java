@@ -14,7 +14,9 @@ import ec.ups.edu.controlador.ControladorProducto;
 /**
  *
  * @author USER
+ 
  */
+
 public class VentanaSecundaria extends javax.swing.JFrame {
  private VentanaCrearCliente ventanacrearcliente;
  private VentanaBuscarCliente ventanabuscarcliente;
@@ -22,7 +24,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private VentanaListarCliente ventanalistarcliente;
  private VentanaEliminarCliente ventanaeliminarcliente;
  
- private VentanaCrearProducto ventanacrearempleado;
+ private VentanaCrearEmpleado ventanacrearempleado;
  private VentanaBuscarEmpleado ventanabuscarempleado;
  private VentanaActualizarEmpleado ventanaactualizarempleado;
  private VentanaListarEmpleado ventanalistarempleado;
@@ -58,11 +60,14 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         initComponents();
         this.acceso=acceso;
         restricciones();
+        controladorCliente=new ControladorCliente();
+        controladorProducto=new ControladorProducto();
     }
 
     private VentanaSecundaria() {
-       
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -344,7 +349,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void eliminarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClienteActionPerformed
-       ventanaeliminarcliente = new VentanaEliminarCliente();
+       ventanaeliminarcliente = new VentanaEliminarCliente(controladorCliente);
        this.desktopPane.removeAll();
         this.desktopPane.repaint();
        ventanaeliminarcliente.setVisible(true);
@@ -360,15 +365,16 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_actulizarMenuProductoActionPerformed
 
     private void crearMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClienteActionPerformed
-        ventanacrearcliente=new VentanaCrearCliente();
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+       
+        ventanacrearcliente=new VentanaCrearCliente(controladorCliente);
         ventanacrearcliente.setVisible(true);
         desktopPane.add(ventanacrearcliente);
     }//GEN-LAST:event_crearMenuClienteActionPerformed
 
     private void buscarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClienteActionPerformed
-        ventanabuscarcliente =new VentanaBuscarCliente();
+        ventanabuscarcliente =new VentanaBuscarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanabuscarcliente.setVisible(true);
@@ -384,7 +390,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_listarMenuClienteActionPerformed
 
     private void actualizarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClienteActionPerformed
-        ventanaactualizarcliente =new VentanaActualizarCliente();
+        ventanaactualizarcliente =new VentanaActualizarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanaactualizarcliente.setVisible(true);
@@ -392,7 +398,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarMenuClienteActionPerformed
 
     private void crearMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuEmpleadoActionPerformed
-      ventanacrearempleado = new VentanaCrearProducto();
+      ventanacrearempleado = new VentanaCrearEmpleado();
       this.desktopPane.removeAll();
         this.desktopPane.repaint();
       ventanacrearempleado.setVisible(true);
@@ -432,7 +438,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_listarMenuEmpleadoActionPerformed
 
     private void crearMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuProductoActionPerformed
-        crearProducto = new VentanaCrearProducto();
+        crearProducto = new VentanaCrearProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         crearProducto.setVisible(true);
@@ -440,7 +446,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_crearMenuProductoActionPerformed
 
     private void buscarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuProductoActionPerformed
-        buscarProducto = new VentanaBuscarProducto();
+        buscarProducto = new VentanaBuscarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         buscarProducto.setVisible(true);
@@ -517,6 +523,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
+        
     }//GEN-LAST:event_itemCrearActionPerformed
 
     /**

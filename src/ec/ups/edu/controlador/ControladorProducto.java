@@ -21,6 +21,10 @@ public class ControladorProducto {
         lista=new HashSet<Producto>();
     }
     
+    public int getCodigo(){
+        return codigo;
+    }
+    
      public void create(Producto producto){
         producto.setCodigo(codigo);
         codigo++;

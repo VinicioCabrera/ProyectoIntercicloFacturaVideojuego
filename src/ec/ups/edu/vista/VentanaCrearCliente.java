@@ -5,6 +5,10 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorCliente;
+import ec.ups.edu.modelo.Cliente;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -14,8 +18,11 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaCrearCliente
      */
-    public VentanaCrearCliente() {
+    private ControladorCliente controladorCliente;
+    public VentanaCrearCliente(ControladorCliente controladorCliente) {
         initComponents();
+        this.controladorCliente=controladorCliente;
+        txtCodigoCliente.setText(String.valueOf(this.controladorCliente.getCodigo()));
     }
 
     /**
@@ -58,6 +65,8 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         jLabel3.setText("Codigo:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(60, 110, 110, 40);
+
+        txtCodigoCliente.setEditable(false);
         jPanel1.add(txtCodigoCliente);
         txtCodigoCliente.setBounds(190, 102, 220, 40);
         jPanel1.add(txtNombreCliente);
@@ -97,10 +106,20 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         jLabel8.setBounds(60, 420, 110, 40);
 
         btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
+        btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarClienteActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnGuardarCliente);
         btnGuardarCliente.setBounds(140, 460, 90, 93);
 
         jButton3.setText("CANCELAR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(279, 475, 100, 50);
 
@@ -124,6 +143,30 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
+        Cliente cliente=new Cliente();
+   
+        cliente.setCedula(txtCedulaCliente.getText());
+        cliente.setDireccion(txtDireccionCliente.getText());
+        cliente.setEmail(txtEmailCliente.getText());
+        cliente.setNombre(txtNombreCliente.getText());
+        cliente.setTelefono(txtTelefonoCliente.getText());
+        controladorCliente.create(cliente);
+        JOptionPane.showMessageDialog(this, "cliente creado exitosamente");
+        txtCodigoCliente.setText(Integer.toString(this.controladorCliente.getCodigo()));
+        txtCedulaCliente.setText("");
+        txtDireccionCliente.setText("");
+        txtEmailCliente.setText("");
+        txtNombreCliente.setText("");
+        txtTelefonoCliente.setText("");
+        
+        
+    }//GEN-LAST:event_btnGuardarClienteActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -14,22 +14,22 @@ import java.util.Date;
 public class DetalleFactura extends Stock {
   private int CodigoFD;
   private VideoJuego videojuego;
-  private int Cantidad; 
+  private int CantidadFD; 
 
     public DetalleFactura() {
     }
 
-    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int Cantidad) {
+    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int CantidadFD) {
         this.CodigoFD = CodigoFD;
         this.videojuego = videojuego;
-        this.Cantidad = Cantidad;
+        this.CantidadFD = CantidadFD;
     }
 
-    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int Cantidad, int codigo, String nombre, double costo, String descripcion, Date fechaExpedicion) {
-        super(codigo, nombre, costo, descripcion, fechaExpedicion);
+    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int CantidadFD, int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
+        super(codigo, nombre, costo, cantidad, fechaExpedicion);
         this.CodigoFD = CodigoFD;
         this.videojuego = videojuego;
-        this.Cantidad = Cantidad;
+        this.CantidadFD = CantidadFD;
     }
 
     public int getCodigoFD() {
@@ -40,8 +40,8 @@ public class DetalleFactura extends Stock {
         return videojuego;
     }
 
-    public int getCantidad() {
-        return Cantidad;
+    public int getCantidadFD() {
+        return CantidadFD;
     }
 
     public void setCodigoFD(int CodigoFD) {
@@ -52,13 +52,13 @@ public class DetalleFactura extends Stock {
         this.videojuego = videojuego;
     }
 
-    public void setCantidad(int Cantidad) {
-        this.Cantidad = Cantidad;
+    public void setCantidad(int CantidadFD) {
+        this.CantidadFD = CantidadFD;
     }
 
     @Override
     public String toString() {
-        return "DetalleFactura{" + "CodigoFD=" + CodigoFD + ", videojuego=" + videojuego + ", Cantidad=" + Cantidad + '}';
+        return "DetalleFactura{" + "CodigoFD=" + CodigoFD + ", videojuego=" + videojuego + ", CantidadFD=" + CantidadFD + '}';
     }
 
     @Override

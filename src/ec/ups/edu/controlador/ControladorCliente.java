@@ -23,10 +23,15 @@ public class ControladorCliente {
         lista=new HashSet<Cliente>();
     }
     
+    public int getCodigo() {
+        return codigo;
+        
+    }
+    
      public void create(Cliente cliente){
         cliente.setCodigo(codigo);
-        codigo++;
         lista.add(cliente);
+        codigo++;
     }
     
     public Cliente read(int codigo){

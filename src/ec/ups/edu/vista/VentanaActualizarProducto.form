@@ -23,7 +23,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
-                      <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnActualizarActualizarProducto" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
@@ -34,7 +34,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnBuscarActualizarProducto" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -43,31 +43,31 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jLabel4" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jLabel2" alignment="1" pref="110" max="32767" attributes="0"/>
+                              <Component id="lblNombreActulizarProducto" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lblCantidadActualizarProducto" alignment="1" pref="110" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtCantidadEmpleado" alignment="0" pref="220" max="32767" attributes="0"/>
-                              <Component id="txtNombreEmpleado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtCantidadActualizarProducto" alignment="0" pref="220" max="32767" attributes="0"/>
+                              <Component id="txtNombreActualizarProducto" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel3" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="lblCodigoActualizarProducto" min="-2" pref="110" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="txtCodigoEmpleado" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Component id="txtCodigoActualizarProducto" min="-2" pref="220" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel5" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                              <Component id="jLabel7" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="lblMarcaActualizarProducto" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="lblFechaActualizarProducto" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="lblCostoActualizarProducto" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtMarcaEmpleado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFechaEmpleado" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtCostoEmpleado" alignment="0" pref="220" max="32767" attributes="0"/>
+                              <Component id="txtMarcaActualizarProducto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtFechaActualizarProducto" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtCostoActualizarEmpleado" alignment="0" pref="220" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -82,42 +82,42 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="51" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnBuscarActualizarProducto" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="240" max="32767" attributes="0"/>
-              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnActualizarActualizarProducto" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="txtCodigoEmpleado" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="lblCodigoActualizarProducto" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtCodigoActualizarProducto" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtNombreEmpleado" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtNombreActualizarProducto" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="lblNombreActulizarProducto" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtCantidadEmpleado" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel2" alignment="0" pref="38" max="32767" attributes="0"/>
+                      <Component id="txtCantidadActualizarProducto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblCantidadActualizarProducto" alignment="0" pref="38" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtMarcaEmpleado" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" pref="34" max="32767" attributes="0"/>
+                      <Component id="txtMarcaActualizarProducto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblMarcaActualizarProducto" alignment="0" pref="34" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtFechaEmpleado" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" pref="31" max="32767" attributes="0"/>
+                      <Component id="txtFechaActualizarProducto" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblFechaActualizarProducto" alignment="0" pref="31" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel7" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="txtCostoEmpleado" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="lblCostoActualizarProducto" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="txtCostoActualizarEmpleado" alignment="1" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="93" max="32767" attributes="0"/>
               </Group>
@@ -134,19 +134,19 @@
         <Property name="text" type="java.lang.String" value="Actualizar Producto"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+    <Component class="javax.swing.JToggleButton" name="btnActualizarActualizarProducto">
       <Properties>
         <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnBuscarActualizarProducto">
       <Properties>
         <Property name="text" type="java.lang.String" value="BUSCAR"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCantidadEmpleado">
+    <Component class="javax.swing.JTextField" name="txtCantidadActualizarProducto">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lblCantidadActualizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -154,7 +154,7 @@
         <Property name="text" type="java.lang.String" value="Cantidad :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="lblMarcaActualizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -162,7 +162,7 @@
         <Property name="text" type="java.lang.String" value="Marca :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="lblFechaActualizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -170,9 +170,9 @@
         <Property name="text" type="java.lang.String" value="Fecha :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCodigoEmpleado">
+    <Component class="javax.swing.JTextField" name="txtCodigoActualizarProducto">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="lblCostoActualizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -180,7 +180,7 @@
         <Property name="text" type="java.lang.String" value="Costo :"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lblCodigoActualizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -188,13 +188,13 @@
         <Property name="text" type="java.lang.String" value="Codigo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtMarcaEmpleado">
+    <Component class="javax.swing.JTextField" name="txtMarcaActualizarProducto">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtFechaEmpleado">
+    <Component class="javax.swing.JTextField" name="txtFechaActualizarProducto">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCostoEmpleado">
+    <Component class="javax.swing.JTextField" name="txtCostoActualizarEmpleado">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lblNombreActulizarProducto">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="2"/>
@@ -202,7 +202,7 @@
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombreEmpleado">
+    <Component class="javax.swing.JTextField" name="txtNombreActualizarProducto">
     </Component>
   </SubComponents>
 </Form>

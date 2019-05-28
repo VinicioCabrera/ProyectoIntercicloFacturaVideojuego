@@ -28,45 +28,45 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
-        txtCantidadEmpleado = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtCodigoEmpleado = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtMarcaEmpleado = new javax.swing.JTextField();
-        txtFechaEmpleado = new javax.swing.JTextField();
-        txtCostoEmpleado = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtNombreEmpleado = new javax.swing.JTextField();
+        btnActualizarActualizarProducto = new javax.swing.JToggleButton();
+        btnBuscarActualizarProducto = new javax.swing.JButton();
+        txtCantidadActualizarProducto = new javax.swing.JTextField();
+        lblCantidadActualizarProducto = new javax.swing.JLabel();
+        lblMarcaActualizarProducto = new javax.swing.JLabel();
+        lblFechaActualizarProducto = new javax.swing.JLabel();
+        txtCodigoActualizarProducto = new javax.swing.JTextField();
+        lblCostoActualizarProducto = new javax.swing.JLabel();
+        lblCodigoActualizarProducto = new javax.swing.JLabel();
+        txtMarcaActualizarProducto = new javax.swing.JTextField();
+        txtFechaActualizarProducto = new javax.swing.JTextField();
+        txtCostoActualizarEmpleado = new javax.swing.JTextField();
+        lblNombreActulizarProducto = new javax.swing.JLabel();
+        txtNombreActualizarProducto = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Actualizar Producto");
 
-        jToggleButton1.setText("ACTUALIZAR");
+        btnActualizarActualizarProducto.setText("ACTUALIZAR");
 
-        jButton1.setText("BUSCAR");
+        btnBuscarActualizarProducto.setText("BUSCAR");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel2.setText("Cantidad :");
+        lblCantidadActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblCantidadActualizarProducto.setText("Cantidad :");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel5.setText("Marca :");
+        lblMarcaActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblMarcaActualizarProducto.setText("Marca :");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel6.setText("Fecha :");
+        lblFechaActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblFechaActualizarProducto.setText("Fecha :");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel7.setText("Costo :");
+        lblCostoActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblCostoActualizarProducto.setText("Costo :");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel3.setText("Codigo:");
+        lblCodigoActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblCodigoActualizarProducto.setText("Codigo:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel4.setText("Nombre:");
+        lblNombreActulizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombreActulizarProducto.setText("Nombre:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -76,14 +76,14 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(244, 244, 244)
-                        .addComponent(jToggleButton1))
+                        .addComponent(btnActualizarActualizarProducto))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(201, 201, 201)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(234, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnBuscarActualizarProducto)
                 .addGap(59, 59, 59))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -91,26 +91,26 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                                .addComponent(lblNombreActulizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtCantidadEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                                .addComponent(txtNombreEmpleado)))
+                                .addComponent(txtCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                .addComponent(txtNombreActualizarProducto)))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblMarcaActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblFechaActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblCostoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtMarcaEmpleado)
-                                .addComponent(txtFechaEmpleado)
-                                .addComponent(txtCostoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
+                                .addComponent(txtMarcaActualizarProducto)
+                                .addComponent(txtFechaActualizarProducto)
+                                .addComponent(txtCostoActualizarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
                     .addContainerGap(152, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -119,36 +119,36 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(btnBuscarActualizarProducto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addComponent(btnActualizarActualizarProducto)
                 .addGap(52, 52, 52))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(93, 93, 93)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNombreActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblNombreActulizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtCantidadEmpleado)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(txtCantidadActualizarProducto)
+                        .addComponent(lblCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtMarcaEmpleado)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                        .addComponent(txtMarcaActualizarProducto)
+                        .addComponent(lblMarcaActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtFechaEmpleado)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                        .addComponent(txtFechaActualizarProducto)
+                        .addComponent(lblFechaActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCostoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblCostoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCostoActualizarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(93, Short.MAX_VALUE)))
         );
 
@@ -157,20 +157,20 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JToggleButton btnActualizarActualizarProducto;
+    private javax.swing.JButton btnBuscarActualizarProducto;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JTextField txtCantidadEmpleado;
-    private javax.swing.JTextField txtCodigoEmpleado;
-    private javax.swing.JTextField txtCostoEmpleado;
-    private javax.swing.JTextField txtFechaEmpleado;
-    private javax.swing.JTextField txtMarcaEmpleado;
-    private javax.swing.JTextField txtNombreEmpleado;
+    private javax.swing.JLabel lblCantidadActualizarProducto;
+    private javax.swing.JLabel lblCodigoActualizarProducto;
+    private javax.swing.JLabel lblCostoActualizarProducto;
+    private javax.swing.JLabel lblFechaActualizarProducto;
+    private javax.swing.JLabel lblMarcaActualizarProducto;
+    private javax.swing.JLabel lblNombreActulizarProducto;
+    private javax.swing.JTextField txtCantidadActualizarProducto;
+    private javax.swing.JTextField txtCodigoActualizarProducto;
+    private javax.swing.JTextField txtCostoActualizarEmpleado;
+    private javax.swing.JTextField txtFechaActualizarProducto;
+    private javax.swing.JTextField txtMarcaActualizarProducto;
+    private javax.swing.JTextField txtNombreActualizarProducto;
     // End of variables declaration//GEN-END:variables
 }
