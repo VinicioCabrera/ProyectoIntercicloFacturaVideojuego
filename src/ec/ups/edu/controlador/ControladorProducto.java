@@ -24,6 +24,11 @@ public class ControladorProducto {
     public int getCodigo(){
         return codigo;
     }
+
+    public Set<Producto> getLista() {
+        return lista;
+    }
+    
     
      public void create(Producto producto){
         producto.setCodigo(codigo);

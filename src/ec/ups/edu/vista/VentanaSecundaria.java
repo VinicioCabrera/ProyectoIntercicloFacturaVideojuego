@@ -475,7 +475,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarMenuProductoActionPerformed
 
     private void listarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuProductoActionPerformed
-        listarProducto = new VentanaListarProducto();
+        listarProducto = new VentanaListarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         listarProducto.setVisible(true);

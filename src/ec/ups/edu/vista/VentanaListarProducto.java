@@ -5,6 +5,14 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorProducto;
+import ec.ups.edu.modelo.ImagenTabla;
+import ec.ups.edu.modelo.Producto;
+import java.util.Set;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
@@ -14,8 +22,11 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
     /**
      * Creates new form VentanaListarProducto
      */
-    public VentanaListarProducto() {
+    ControladorProducto controladorProducto;
+    public VentanaListarProducto(ControladorProducto controladorProducto) {
         initComponents();
+        this.controladorProducto=controladorProducto;
+        listarProducto();
     }
 
     /**
@@ -39,7 +50,7 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CODIGO", "NOMBRE", "CANTIDAD", "MARCA", "FECHA", "COSTO"
+                "CODIGO", "NOMBRE", "CANTIDAD", "FECHA", "COSTO", "IMAGEN"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -50,7 +61,7 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblListarProducto.setRowHeight(30);
+        tblListarProducto.setRowHeight(100);
         jScrollPane1.setViewportView(tblListarProducto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -79,7 +90,25 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+public void listarProducto(){
+  
+    tblListarProducto.setDefaultRenderer(Object.class, new ImagenTabla());
+    DefaultTableModel modelo= (DefaultTableModel) tblListarProducto.getModel();
+    Set<Producto> lista=controladorProducto.getLista();
+    for (Producto producto : lista) {
+        Object[] datos={
+            producto.getCodigo(),
+            producto.getNombre(),
+            producto.getCantidad(),
+            producto.getFechaExpedicion(),
+            producto.getCosto(),
+            
+            new JLabel(new ImageIcon(producto.getPath()))
+        };
+        modelo.addRow(datos);
+    }
+    
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
