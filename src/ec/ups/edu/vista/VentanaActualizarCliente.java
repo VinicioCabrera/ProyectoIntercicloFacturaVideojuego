@@ -48,7 +48,7 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
         txtDireccion = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtTelefono = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -87,10 +87,10 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         jLabel7.setText("Telefono :");
 
-        jButton2.setText("BUSCAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -128,7 +128,7 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnActualizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
         );
         layout.setVerticalGroup(
@@ -148,7 +148,7 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
@@ -176,10 +176,10 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         int codigo=Integer.parseInt(txtCodigoActualizarCliente.getText());
         Cliente cliente=controladorCliente.read(codigo);
-        txtCodigoActualizarCliente.setText(cliente.getCedula());
+       
         txtDireccion.setText(cliente.getDireccion());
         txtEmail.setText(cliente.getEmail());
         txtNombre.setText(cliente.getNombre());
@@ -187,7 +187,7 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
         txtCedula.setText(cliente.getCedula());
         btnActualizar.setEnabled(true);
         txtCodigoActualizarCliente.setEditable(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -215,7 +215,7 @@ public class VentanaActualizarCliente extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

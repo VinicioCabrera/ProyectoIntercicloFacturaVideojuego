@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
 import ec.ups.edu.modelo.Producto;
+import java.awt.Image;
 import java.text.SimpleDateFormat;
 import javax.swing.ImageIcon;
 
@@ -160,7 +161,9 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         String fecha=formato.format(producto.getFechaExpedicion());
         txtFechaBuscarProducto.setText(fecha);
         txtNombreBuscarProducto.setText(producto.getNombre());
-        lblImagen.setIcon(new ImageIcon(producto.getPath()));
+        ImageIcon im=new ImageIcon(producto.getPath());
+        ImageIcon imagen=new ImageIcon(im.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
+        lblImagen.setIcon(imagen);
         
     }//GEN-LAST:event_btnBuscarBuscarProductoActionPerformed
 

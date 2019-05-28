@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
 import ec.ups.edu.modelo.Producto;
+import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -205,6 +206,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         txtCostoCrearProducto.setText("");
         txtFechaCrearProducto.setText("");
         txtNombreCrearProducto.setText("");
+        lblImagen.setIcon(null);
         
         
     }//GEN-LAST:event_btnGuardarCrearProductoActionPerformed
@@ -218,10 +220,15 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         int option=Explorador.showOpenDialog(this);
         if(option==Explorador.APPROVE_OPTION){
             ruta = Explorador.getSelectedFile().getPath();
-            lblImagen.setIcon(new ImageIcon(ruta));
+            //lblImagen.setIcon(new ImageIcon(ruta));
+        ImageIcon im=new ImageIcon(ruta);
+        ImageIcon imagen=new ImageIcon(im.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
+        lblImagen.setIcon(imagen);
+
         }      
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCrearProducto;

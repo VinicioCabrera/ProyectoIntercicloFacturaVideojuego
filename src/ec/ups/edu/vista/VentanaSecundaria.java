@@ -354,23 +354,25 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
        ventanaeliminarcliente.setVisible(true);
        desktopPane.add(ventanaeliminarcliente);
+        setSize(ventanaeliminarcliente.getWidth()+15,ventanaeliminarcliente.getHeight()+60);
     }//GEN-LAST:event_eliminarMenuClienteActionPerformed
 
     private void actulizarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actulizarMenuProductoActionPerformed
-       actualizarProducto = new VentanaActualizarProducto();
+       actualizarProducto = new VentanaActualizarProducto(controladorProducto);
        this.desktopPane.removeAll();
         this.desktopPane.repaint();
        actualizarProducto.setVisible(true);
        desktopPane.add(actualizarProducto);
+       setSize(actualizarProducto.getWidth()+15,actualizarProducto.getHeight()+60);
     }//GEN-LAST:event_actulizarMenuProductoActionPerformed
 
     private void crearMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClienteActionPerformed
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
-       
         ventanacrearcliente=new VentanaCrearCliente(controladorCliente);
         ventanacrearcliente.setVisible(true);
         desktopPane.add(ventanacrearcliente);
+        setSize(ventanacrearcliente.getWidth()+15,ventanacrearcliente.getHeight()+60);
     }//GEN-LAST:event_crearMenuClienteActionPerformed
 
     private void buscarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClienteActionPerformed
@@ -379,6 +381,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanabuscarcliente.setVisible(true);
         desktopPane.add(ventanabuscarcliente);
+        setSize(ventanabuscarcliente.getWidth()+15,ventanabuscarcliente.getHeight()+60);
     }//GEN-LAST:event_buscarMenuClienteActionPerformed
 
     private void listarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClienteActionPerformed
@@ -387,6 +390,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanalistarcliente.setVisible(true);
         desktopPane.add(ventanalistarcliente);
+        setSize(ventanalistarcliente.getWidth()+15,ventanalistarcliente.getHeight()+60);
     }//GEN-LAST:event_listarMenuClienteActionPerformed
 
     private void actualizarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClienteActionPerformed
@@ -395,6 +399,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanaactualizarcliente.setVisible(true);
         desktopPane.add(ventanaactualizarcliente);
+        setSize(ventanaactualizarcliente.getWidth()+15,ventanaactualizarcliente.getHeight()+60);
     }//GEN-LAST:event_actualizarMenuClienteActionPerformed
 
     private void crearMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuEmpleadoActionPerformed
@@ -403,6 +408,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
       ventanacrearempleado.setVisible(true);
       desktopPane.add(ventanacrearempleado);
+      setSize(ventanacrearempleado.getWidth()+15,ventanacrearempleado.getHeight()+60);
     }//GEN-LAST:event_crearMenuEmpleadoActionPerformed
 
     private void buscarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuEmpleadoActionPerformed
@@ -411,6 +417,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanabuscarempleado.setVisible(true);
         desktopPane.add(ventanabuscarempleado);
+        setSize(ventanabuscarempleado.getWidth()+15,ventanabuscarempleado.getHeight()+60);
     }//GEN-LAST:event_buscarMenuEmpleadoActionPerformed
 
     private void actualizarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuEmpleadoActionPerformed
@@ -419,6 +426,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanaactualizarempleado.setVisible(true);
         desktopPane.add(ventanaactualizarempleado);
+        setSize(ventanaactualizarempleado.getWidth()+15,ventanaactualizarempleado.getHeight()+60);
     }//GEN-LAST:event_actualizarMenuEmpleadoActionPerformed
 
     private void eliminarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuEmpleadoActionPerformed
@@ -427,6 +435,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanaeliminarempleado.setVisible(true);
         desktopPane.add(ventanaeliminarempleado);
+        setSize(ventanaeliminarempleado.getWidth()+15,ventanaeliminarempleado.getHeight()+60);
     }//GEN-LAST:event_eliminarMenuEmpleadoActionPerformed
 
     private void listarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuEmpleadoActionPerformed
@@ -435,6 +444,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         ventanalistarempleado.setVisible(true);
         desktopPane.add(ventanalistarempleado);
+        setSize(ventanalistarempleado.getWidth()+15,ventanalistarempleado.getHeight()+60);
     }//GEN-LAST:event_listarMenuEmpleadoActionPerformed
 
     private void crearMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuProductoActionPerformed
@@ -443,6 +453,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         crearProducto.setVisible(true);
         desktopPane.add(crearProducto);
+        setSize(crearProducto.getWidth()+15,crearProducto.getHeight()+60);
     }//GEN-LAST:event_crearMenuProductoActionPerformed
 
     private void buscarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuProductoActionPerformed
@@ -451,14 +462,16 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         buscarProducto.setVisible(true);
         desktopPane.add(buscarProducto);
+        setSize(buscarProducto.getWidth()+15,buscarProducto.getHeight()+60);
     }//GEN-LAST:event_buscarMenuProductoActionPerformed
 
     private void eliminarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuProductoActionPerformed
-        eliminarProducto =new VentanaEliminarProducto();
+        eliminarProducto =new VentanaEliminarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         eliminarProducto.setVisible(true);
         desktopPane.add(eliminarProducto);
+        setSize(eliminarProducto.getWidth()+15,eliminarProducto.getHeight()+60);
     }//GEN-LAST:event_eliminarMenuProductoActionPerformed
 
     private void listarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuProductoActionPerformed
@@ -467,6 +480,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         listarProducto.setVisible(true);
         desktopPane.add(listarProducto);
+        setSize(listarProducto.getWidth()+15,listarProducto.getHeight()+60);
     }//GEN-LAST:event_listarMenuProductoActionPerformed
 
     private void crearMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClasesActionPerformed
@@ -475,6 +489,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         crearClase.setVisible(true);
         desktopPane.add(crearClase);
+        setSize(crearClase.getWidth()+15,crearClase.getHeight()+60);
     }//GEN-LAST:event_crearMenuClasesActionPerformed
 
     private void buscarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClasesActionPerformed
@@ -483,6 +498,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         buscarClase.setVisible(true);
         desktopPane.add(buscarClase);
+        setSize(buscarClase.getWidth()+15,buscarClase.getHeight()+60);
     }//GEN-LAST:event_buscarMenuClasesActionPerformed
 
     private void actualizarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClasesActionPerformed
@@ -491,6 +507,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         actualizarClase.setVisible(true);
         desktopPane.add(actualizarClase);
+        setSize(actualizarClase.getWidth()+15,actualizarClase.getHeight()+60);
     }//GEN-LAST:event_actualizarMenuClasesActionPerformed
 
     private void eliminarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClasesActionPerformed
@@ -499,6 +516,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         eliminarClase.setVisible(true);
         desktopPane.add(eliminarClase);
+        setSize(eliminarClase.getWidth()+15,eliminarClase.getHeight()+60);
     }//GEN-LAST:event_eliminarMenuClasesActionPerformed
 
     private void listarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClasesActionPerformed
@@ -507,6 +525,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         listarClase.setVisible(true);
         desktopPane.add(listarClase);
+        setSize(listarClase.getWidth()+15,listarClase.getHeight()+60);
     }//GEN-LAST:event_listarMenuClasesActionPerformed
 
     private void itemBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarEliminarActionPerformed
@@ -515,6 +534,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         buscarFactura.setVisible(true);
         desktopPane.add(buscarFactura);
+        setSize(buscarFactura.getWidth()+15,buscarFactura.getHeight()+60);
     }//GEN-LAST:event_itemBuscarEliminarActionPerformed
 
     private void itemCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCrearActionPerformed
@@ -523,6 +543,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.repaint();
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
+        setSize(crearFactura.getWidth()+15,crearFactura.getHeight()+60);
         
     }//GEN-LAST:event_itemCrearActionPerformed
 
