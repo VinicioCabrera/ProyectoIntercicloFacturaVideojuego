@@ -5,17 +5,33 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorFactura;
+import ec.ups.edu.modelo.DetalleFactura;
+import ec.ups.edu.modelo.Factura;
+import java.text.SimpleDateFormat;
+import java.util.Set;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author one
  */
 public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
 
+    private ControladorFactura controladorFactura;
+    private DetalleFactura detalleFactura;
+    private DefaultTableModel model;
+    int c;
+    private int codigoe;
+    private SimpleDateFormat formato;
     /**
      * Creates new form CrearFactura
      */
-    public VentanaBuscarFactura() {
+    public VentanaBuscarFactura(ControladorFactura controladorFactura) {
         initComponents();
+        this.controladorFactura= controladorFactura;
+        formato= new SimpleDateFormat("dd/MM/yyyy");
     }
 
     /**
@@ -175,7 +191,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 80, 710, 138);
+        jPanel1.setBounds(0, 80, 710, 131);
 
         lblFactura.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblFactura.setText("FACTURA");
@@ -235,21 +251,21 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtSubTotal);
-        txtSubTotal.setBounds(600, 560, 83, 22);
+        txtSubTotal.setBounds(600, 560, 83, 20);
 
         jLabel8.setText("SubTotal");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(540, 560, 51, 16);
+        jLabel8.setBounds(540, 560, 42, 14);
         getContentPane().add(txtIva);
-        txtIva.setBounds(600, 590, 83, 22);
+        txtIva.setBounds(600, 590, 83, 20);
 
         jLabel13.setText("Iva");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(576, 590, 20, 16);
+        jLabel13.setBounds(576, 590, 20, 14);
 
         jLabel15.setText("Total");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(565, 620, 30, 16);
+        jLabel15.setBounds(565, 620, 30, 14);
 
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -257,17 +273,32 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtTotal);
-        txtTotal.setBounds(600, 620, 83, 22);
+        txtTotal.setBounds(600, 620, 83, 20);
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(350, 560, 100, 90);
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGuardar);
         btnGuardar.setBounds(40, 560, 90, 90);
 
         btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
+        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelar1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCancelar1);
         btnCancelar1.setBounds(190, 560, 80, 90);
 
@@ -305,6 +336,51 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
+
+    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
+        controladorFactura.remove(Integer.parseInt(lblCodigo.getText()));
+        JOptionPane.showMessageDialog(this, "Factura Eliminada", "Eliminar Factura", JOptionPane.OK_OPTION);
+        lblCodigo.setText("");
+        txtCedula.setText("");
+        txtDireccion.setText("");
+        txtIva.setText("");
+        txtNonbre.setText("");
+        txtSubTotal.setText("");
+        txtTotal.setText("");
+        txtTelefono.setText("");
+        model.setColumnCount(6);
+        model.setRowCount(0);
+    }//GEN-LAST:event_btnCancelar1ActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        Factura factura = new Factura();
+        factura = controladorFactura.read(Integer.parseInt(lblCodigo.getText()));
+        if (factura != null) {
+            model = (DefaultTableModel) tblFactura.getModel();
+            model.setColumnCount(5);
+            model.setRowCount(0);
+            txtCedula.setText(factura.getCliente().getCedula());
+            txtNonbre.setText(factura.getCliente().getCedula());
+            txtDireccion.setText(factura.getCliente().getDireccion());
+            txtTelefono.setText(factura.getCliente().getTelefono());
+            txtSubTotal.setText(String.valueOf(factura.getSubtotal()));
+            txtIva.setText(String.valueOf(factura.getIva()));
+            txtTotal.setText(String.valueOf(factura.getTotal()));
+            lblFecha.setText(formato.format(factura.getFecha()));
+            Set<DetalleFactura> lista = factura.getDetalleFactura();
+            for (DetalleFactura facturaDetalle : lista) {
+                Object[] datos = {facturaDetalle.getCodigo(), facturaDetalle.getSubTotal(), facturaDetalle.getProducto().getNombre(), facturaDetalle.getPrecio(), facturaDetalle.getSubTotal()};
+                model.addRow(datos);
+            }
+            btnCancelar.setEnabled(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "No exite la Factura", "Buscar Facrura", JOptionPane.OK_OPTION);
+        }
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
