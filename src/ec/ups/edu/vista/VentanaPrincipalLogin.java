@@ -38,27 +38,33 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtContraseña = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Arial", 3, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 51));
         jLabel1.setText("LOGIN");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(340, 40, 170, 50);
+        jLabel1.setBounds(620, 30, 170, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/logoPrincipal.png"))); // NOI18N
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(50, 120, 290, 300);
+        jLabel2.setBounds(10, -30, 480, 860);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Usuario:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(380, 230, 90, 30);
+        jLabel3.setBounds(560, 250, 90, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
         jLabel4.setText("Contraseña:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(370, 310, 130, 30);
+        jLabel4.setBounds(530, 330, 130, 30);
 
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +72,7 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(520, 220, 280, 40);
+        txtUsuario.setBounds(680, 250, 180, 40);
 
         txtContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -74,17 +80,25 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtContraseña);
-        txtContraseña.setBounds(520, 300, 280, 40);
+        txtContraseña.setBounds(680, 330, 180, 40);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/fondo.jpg"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(490, 0, 430, 540);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 864, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -158,6 +172,7 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;

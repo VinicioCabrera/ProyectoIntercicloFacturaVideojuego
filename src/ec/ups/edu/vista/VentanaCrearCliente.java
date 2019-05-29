@@ -112,16 +112,16 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(btnGuardarCliente);
-        btnGuardarCliente.setBounds(140, 460, 90, 93);
+        btnGuardarCliente.setBounds(140, 460, 90, 99);
 
-        jButton3.setText("CANCELAR");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/cancelar.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(279, 475, 100, 50);
+        jButton3.setBounds(310, 460, 100, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

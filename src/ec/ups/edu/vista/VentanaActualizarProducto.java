@@ -55,138 +55,78 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         lblImagen = new javax.swing.JLabel();
         btnExaminar = new javax.swing.JButton();
 
+        getContentPane().setLayout(null);
+
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Actualizar Producto");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(358, 0, 217, 51);
 
-        btnActualizarActualizarProducto.setText("ACTUALIZAR");
+        btnActualizarActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizar.png"))); // NOI18N
         btnActualizarActualizarProducto.setEnabled(false);
         btnActualizarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActualizarProductoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnActualizarActualizarProducto);
+        btnActualizarActualizarProducto.setBounds(810, 190, 110, 100);
 
-        btnBuscarActualizarProducto.setText("BUSCAR");
+        btnBuscarActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
         btnBuscarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActualizarProductoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBuscarActualizarProducto);
+        btnBuscarActualizarProducto.setBounds(810, 60, 100, 100);
+        getContentPane().add(txtCantidadActualizarProducto);
+        txtCantidadActualizarProducto.setBounds(529, 181, 220, 38);
 
         lblCantidadActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCantidadActualizarProducto.setText("Cantidad :");
+        getContentPane().add(lblCantidadActualizarProducto);
+        lblCantidadActualizarProducto.setBounds(401, 181, 110, 38);
 
         lblFechaActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblFechaActualizarProducto.setText("Fecha :");
+        getContentPane().add(lblFechaActualizarProducto);
+        lblFechaActualizarProducto.setBounds(410, 230, 102, 31);
+        getContentPane().add(txtCodigoActualizarProducto);
+        txtCodigoActualizarProducto.setBounds(529, 87, 220, 40);
 
         lblCostoActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCostoActualizarProducto.setText("Costo :");
+        getContentPane().add(lblCostoActualizarProducto);
+        lblCostoActualizarProducto.setBounds(410, 280, 102, 30);
 
         lblCodigoActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCodigoActualizarProducto.setText("Codigo:");
+        getContentPane().add(lblCodigoActualizarProducto);
+        lblCodigoActualizarProducto.setBounds(401, 82, 110, 40);
+        getContentPane().add(txtFechaActualizarProducto);
+        txtFechaActualizarProducto.setBounds(530, 230, 220, 37);
+        getContentPane().add(txtCostoActualizarEmpleado);
+        txtCostoActualizarEmpleado.setBounds(530, 280, 220, 38);
 
         lblNombreActulizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblNombreActulizarProducto.setText("Nombre:");
+        getContentPane().add(lblNombreActulizarProducto);
+        lblNombreActulizarProducto.setBounds(401, 134, 110, 40);
+        getContentPane().add(txtNombreActualizarProducto);
+        txtNombreActualizarProducto.setBounds(529, 134, 220, 40);
+        getContentPane().add(lblImagen);
+        lblImagen.setBounds(30, 70, 350, 430);
 
-        btnExaminar.setText("examinar");
+        btnExaminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/LUPA.png"))); // NOI18N
         btnExaminar.setEnabled(false);
         btnExaminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExaminarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnActualizarActualizarProducto)
-                    .addComponent(btnBuscarActualizarProducto))
-                .addGap(37, 37, 37))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblFechaActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCostoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtFechaActualizarProducto)
-                                    .addComponent(txtCostoActualizarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(btnExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(152, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(152, 152, 152)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblNombreActulizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                                .addComponent(txtNombreActualizarProducto)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(txtCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(151, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(btnBuscarActualizarProducto)
-                        .addGap(37, 37, 37)
-                        .addComponent(btnActualizarActualizarProducto)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtFechaActualizarProducto)
-                            .addComponent(lblFechaActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblCostoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCostoActualizarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81))))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(93, 93, 93)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtCodigoActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtNombreActualizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblNombreActulizarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtCantidadActualizarProducto)
-                        .addComponent(lblCantidadActualizarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                    .addContainerGap(255, Short.MAX_VALUE)))
-        );
+        getContentPane().add(btnExaminar);
+        btnExaminar.setBounds(410, 370, 110, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

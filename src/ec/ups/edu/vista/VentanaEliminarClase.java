@@ -44,94 +44,52 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
         txtNombre = new javax.swing.JTextField();
 
         setClosable(true);
+        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel2.setText("Eliminar Clases");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(124, 13, 188, 50);
+        getContentPane().add(txtCodigoEliminarClase);
+        txtCodigoEliminarClase.setBounds(215, 111, 220, 40);
 
         lblCodigoEliminarClase.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCodigoEliminarClase.setText("Codigo:");
+        getContentPane().add(lblCodigoEliminarClase);
+        lblCodigoEliminarClase.setBounds(78, 106, 110, 40);
 
         lblDescripcionEliminarClase.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblDescripcionEliminarClase.setText("Descripcion:");
+        getContentPane().add(lblDescripcionEliminarClase);
+        lblDescripcionEliminarClase.setBounds(78, 205, 133, 40);
+        getContentPane().add(txtDescripcionEliminarClase);
+        txtDescripcionEliminarClase.setBounds(216, 205, 219, 40);
 
-        btnBuscarEliminarClase.setText("BUSCAR");
+        btnBuscarEliminarClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
         btnBuscarEliminarClase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarEliminarClaseActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBuscarEliminarClase);
+        btnBuscarEliminarClase.setBounds(128, 263, 100, 100);
 
-        btnEliminarEliminarClase.setText("ELIMINAR");
+        btnEliminarEliminarClase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
         btnEliminarEliminarClase.setEnabled(false);
         btnEliminarEliminarClase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarEliminarClaseActionPerformed(evt);
             }
         });
+        getContentPane().add(btnEliminarEliminarClase);
+        btnEliminarEliminarClase.setBounds(274, 263, 100, 90);
 
         lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblNombre.setText("nombre:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(135, 135, 135))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(lblCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(txtCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addComponent(btnBuscarEliminarClase)
-                                .addGap(67, 67, 67)
-                                .addComponent(btnEliminarEliminarClase)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCodigoEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDescripcionEliminarClase, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscarEliminarClase)
-                    .addComponent(btnEliminarEliminarClase))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
+        getContentPane().add(lblNombre);
+        lblNombre.setBounds(78, 158, 133, 40);
+        getContentPane().add(txtNombre);
+        txtNombre.setBounds(216, 158, 219, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

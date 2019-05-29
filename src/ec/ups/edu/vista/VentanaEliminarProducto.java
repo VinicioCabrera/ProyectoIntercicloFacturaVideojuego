@@ -97,7 +97,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(txtNombreEliminarProducto);
         txtNombreEliminarProducto.setBounds(202, 108, 220, 40);
 
-        btnEliminarEliminarProducto.setText("ELIMINAR");
+        btnEliminarEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
         btnEliminarEliminarProducto.setEnabled(false);
         btnEliminarEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,16 +105,16 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnEliminarEliminarProducto);
-        btnEliminarEliminarProducto.setBounds(478, 251, 116, 34);
+        btnEliminarEliminarProducto.setBounds(490, 220, 100, 90);
 
-        btnBuscarEliminarProducto.setText("BUSCAR");
+        btnBuscarEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
         btnBuscarEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarEliminarProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnBuscarEliminarProducto);
-        btnBuscarEliminarProducto.setBounds(478, 133, 116, 34);
+        btnBuscarEliminarProducto.setBounds(490, 70, 100, 100);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Eliminar Producto");

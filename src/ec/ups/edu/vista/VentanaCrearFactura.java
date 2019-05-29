@@ -174,7 +174,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 80, 543, 131);
+        jPanel1.setBounds(0, 80, 770, 138);
 
         lblFactura.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblFactura.setText("FACTURA");
@@ -184,16 +184,19 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         lblFechas.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lblFechas.setText("Fecha");
         getContentPane().add(lblFechas);
-        lblFechas.setBounds(311, 63, 44, 17);
+        lblFechas.setBounds(550, 60, 44, 17);
         getContentPane().add(lblFecha);
-        lblFecha.setBounds(361, 57, 147, 23);
+        lblFecha.setBounds(600, 60, 147, 23);
 
         lblCodigos.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         lblCodigos.setText("Codigo");
         getContentPane().add(lblCodigos);
-        lblCodigos.setBounds(401, 11, 51, 17);
+        lblCodigos.setBounds(660, 10, 51, 17);
+
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(204, 0, 0));
         getContentPane().add(lblCodigo);
-        lblCodigo.setBounds(458, 11, 50, 24);
+        lblCodigo.setBounds(710, 10, 50, 24);
 
         tblFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -223,7 +226,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tblFactura);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 210, 531, 340);
+        jScrollPane1.setBounds(0, 210, 770, 340);
 
         txtSubTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,21 +234,21 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtSubTotal);
-        txtSubTotal.setBounds(438, 556, 83, 20);
+        txtSubTotal.setBounds(650, 560, 83, 22);
 
         jLabel8.setText("SubTotal");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(386, 562, 42, 14);
+        jLabel8.setBounds(600, 570, 51, 16);
         getContentPane().add(txtIva);
-        txtIva.setBounds(438, 582, 83, 20);
+        txtIva.setBounds(650, 590, 83, 22);
 
-        jLabel13.setText("iva");
+        jLabel13.setText("Iva");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(414, 585, 14, 14);
+        jLabel13.setBounds(620, 590, 20, 16);
 
-        jLabel15.setText("total");
+        jLabel15.setText("Total");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(406, 620, 22, 14);
+        jLabel15.setBounds(610, 620, 29, 16);
 
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,15 +256,15 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtTotal);
-        txtTotal.setBounds(438, 619, 83, 20);
+        txtTotal.setBounds(650, 620, 83, 22);
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(200, 560, 80, 80);
+        btnCancelar.setBounds(300, 560, 100, 90);
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
         getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(100, 560, 80, 80);
+        btnGuardar.setBounds(140, 560, 80, 80);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
