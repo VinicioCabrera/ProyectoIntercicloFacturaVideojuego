@@ -25,6 +25,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
     public VentanaEliminarProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
+        this.setSize(900,500);
     }
 
     /**

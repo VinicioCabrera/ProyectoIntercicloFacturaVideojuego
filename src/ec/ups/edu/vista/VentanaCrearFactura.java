@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ec.ups.edu.vista;
+import com.sun.glass.events.KeyEvent;
 import ec.ups.edu.controlador.ControladorClase;
 import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorEmpleado;
@@ -61,6 +62,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         formato = new SimpleDateFormat("dd/MM/yyyy");
         lblFecha.setText(formato.format(fecha));
         this.setSize(1000, 800);
+        
     }
 
     /**
@@ -250,7 +252,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
         tblFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, "0", null, null}
             },
             new String [] {
                 "Codigo", "Imagen", "Producto", "Cantidad", "Precio U.", "Precio T."
@@ -366,11 +368,11 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         factura.setTotal(totalv);
         factura.setSubtotal(subtotalv);
         factura.setFecha(fecha);
-        for(int i =0;i<tblFactura.getRowCount()-1;i++){
+        for(int i =0;i<tblFactura.getRowCount()-3;i++){
             System.out.println(i);
             detalleFactura= new DetalleFactura();
             detalleFactura.setCodigo(Integer.parseInt(tblFactura.getValueAt(i, 0).toString()));
-            double cant = Double.parseDouble(tblFactura.getValueAt(i, 1).toString());
+            double cant = Double.parseDouble(tblFactura.getValueAt(i, 3).toString());
             int c=(int) cant;
             detalleFactura.setCosto(c);
             detalleFactura.setProducto(controladorProducto.read(Integer.parseInt(tblFactura.getValueAt(i, 0).toString())));
@@ -418,24 +420,25 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
     private void tblFacturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblFacturaKeyReleased
         int key = evt.getKeyCode();
-        if(key == 10){
+        if(key == KeyEvent.VK_ENTER){
             int fila= tblFactura.getSelectedRow();
             int columna =tblFactura.getSelectedColumn();
             int codigo=0;
             Object[] datos2 ={"", "", "","0","",""};
+            
             if(columna==0){
                 codigo=Integer.parseInt(tblFactura.getValueAt(fila,columna).toString());
                 producto = controladorProducto.read(codigo);
                 double precio =producto.getCosto();
-                double cant = Double.parseDouble(tblFactura.getValueAt(fila, 1).toString());
+                double cant = Double.parseDouble(tblFactura.getValueAt(fila, 3).toString());
                 model=(DefaultTableModel) tblFactura.getModel();
                 model.removeRow(fila);
                 total1v= precio* cant;
                 Object[] datos ={ codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
                 model.addRow(datos);
                 model.addRow(datos2);   
-            }else if(columna==1){
-                codigo= Integer.parseInt(tblFactura.getValueAt(fila, columna-1).toString());
+            }else if(columna==3){
+                codigo= Integer.parseInt(tblFactura.getValueAt(fila, columna-3).toString());
                 double cant= Double.parseDouble(tblFactura.getValueAt(fila, columna).toString());
                 model.removeRow(fila);
                 model.removeRow(tblFactura.getRowCount()-1);
