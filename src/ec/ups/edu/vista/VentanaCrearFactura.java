@@ -4,16 +4,46 @@
  * and open the template in the editor.
  */
 package ec.ups.edu.vista;
+import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.controlador.ControladorCliente;
+import ec.ups.edu.controlador.ControladorEmpleado;
+import ec.ups.edu.controlador.ControladorFactura;	
+import ec.ups.edu.controlador.ControladorProducto;
+import ec.ups.edu.modelo.Cliente;
+import ec.ups.edu.modelo.DetalleFactura;
+import ec.ups.edu.modelo.Empleado;
+import ec.ups.edu.modelo.Factura;
+import ec.ups.edu.modelo.Producto;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Set;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author one
- */
 public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form CrearFactura
      */
+
+    private ControladorCliente controladorCliente;
+    private ControladorEmpleado controladorEmpleado;
+    private ControladorFactura controladorFactura;
+    private ControladorClase controladorClase;
+    private ControladorProducto controladorProducto;
+    private Factura factura;
+    private DetalleFactura detalleFactura;
+    private Producto producto;
+    private double subtotalv, ivav, totalv,total1v;
+    private int c;
+    private DefaultTableModel model;
+    private Cliente cliente1;
+    private Date fecha;
+    private SimpleDateFormat formato;
+    private Empleado empleado;
+
     public VentanaCrearFactura() {
         initComponents();
     }
