@@ -64,4 +64,14 @@ public class ControladorFactura {
             System.out.println(factura);
         }
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public Set<Factura> getLista() {
+        return lista;
+    }
+
+   
 }

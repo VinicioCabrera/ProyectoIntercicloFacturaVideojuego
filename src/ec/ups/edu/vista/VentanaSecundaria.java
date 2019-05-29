@@ -541,9 +541,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_itemBuscarEliminarActionPerformed
 
     private void itemCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCrearActionPerformed
-        crearFactura = new VentanaCrearFactura();
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        crearFactura=new VentanaCrearFactura(controladorCliente, controladorEmpleado, controladorFactura, controladorClase, controladorProducto);
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
         setSize(crearFactura.getWidth()+15,crearFactura.getHeight()+60);

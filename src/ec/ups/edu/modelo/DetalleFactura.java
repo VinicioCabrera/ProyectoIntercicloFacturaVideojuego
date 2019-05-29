@@ -13,22 +13,19 @@ import java.util.Date;
  */
 public class DetalleFactura extends Stock {
   private int CodigoFD;
-  private VideoJuego videojuego;
+  private double precio;
+  private double subTotal;
+  private Producto producto;
   private int CantidadFD; 
 
     public DetalleFactura() {
     }
 
-    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int CantidadFD) {
+    public DetalleFactura(int CodigoFD, double precio, double subTotal, Producto producto, int CantidadFD, int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
         this.CodigoFD = CodigoFD;
-        this.videojuego = videojuego;
-        this.CantidadFD = CantidadFD;
-    }
-
-    public DetalleFactura(int CodigoFD, VideoJuego videojuego, int CantidadFD, int codigo, String nombre, double costo, int cantidad, Date fechaExpedicion) {
-        super(codigo, nombre, costo, cantidad, fechaExpedicion);
-        this.CodigoFD = CodigoFD;
-        this.videojuego = videojuego;
+        this.precio = precio;
+        this.subTotal = subTotal;
+        this.producto = producto;
         this.CantidadFD = CantidadFD;
     }
 
@@ -36,9 +33,14 @@ public class DetalleFactura extends Stock {
         return CodigoFD;
     }
 
-    public VideoJuego getVideojuego() {
-        return videojuego;
+    public Producto getProducto() {
+        return producto;
     }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+    
 
     public int getCantidadFD() {
         return CantidadFD;
@@ -48,19 +50,32 @@ public class DetalleFactura extends Stock {
         this.CodigoFD = CodigoFD;
     }
 
-    public void setVideojuego(VideoJuego videojuego) {
-        this.videojuego = videojuego;
-    }
 
     public void setCantidad(int CantidadFD) {
         this.CantidadFD = CantidadFD;
     }
 
-    @Override
-    public String toString() {
-        return "DetalleFactura{" + "CodigoFD=" + CodigoFD + ", videojuego=" + videojuego + ", CantidadFD=" + CantidadFD + '}';
+    public double getPrecio() {
+        return precio;
     }
 
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public double getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(double subTotal) {
+        this.subTotal = subTotal;
+    }
+
+    @Override
+    public String toString() {
+        return "DetalleFactura{" + "CodigoFD=" + CodigoFD + ", precio=" + precio + ", subTotal=" + subTotal + ", producto=" + producto + ", CantidadFD=" + CantidadFD + '}';
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
