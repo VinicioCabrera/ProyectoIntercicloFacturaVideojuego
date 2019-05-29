@@ -22,6 +22,15 @@ public class ControladorEmpleado {
         codigo=1;
         lista=new HashSet<Empleado>();
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public Set<Empleado> getLista() {
+        return lista;
+    }
+    
     
      public void create(Empleado empleado){
         empleado.setCodigo(codigo);

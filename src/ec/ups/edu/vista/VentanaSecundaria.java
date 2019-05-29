@@ -406,7 +406,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarMenuClienteActionPerformed
 
     private void crearMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuEmpleadoActionPerformed
-      ventanacrearempleado = new VentanaCrearEmpleado();
+      ventanacrearempleado = new VentanaCrearEmpleado(controladorEmpleado);
       this.desktopPane.removeAll();
         this.desktopPane.repaint();
       ventanacrearempleado.setVisible(true);
@@ -415,7 +415,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_crearMenuEmpleadoActionPerformed
 
     private void buscarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuEmpleadoActionPerformed
-        ventanabuscarempleado = new VentanaBuscarEmpleado();
+        ventanabuscarempleado = new VentanaBuscarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanabuscarempleado.setVisible(true);
@@ -424,7 +424,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_buscarMenuEmpleadoActionPerformed
 
     private void actualizarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuEmpleadoActionPerformed
-        ventanaactualizarempleado = new VentanaActualizarEmpleado();
+        ventanaactualizarempleado = new VentanaActualizarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanaactualizarempleado.setVisible(true);
@@ -433,7 +433,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_actualizarMenuEmpleadoActionPerformed
 
     private void eliminarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuEmpleadoActionPerformed
-        ventanaeliminarempleado = new VentanaEliminarEmpleado();
+        ventanaeliminarempleado = new VentanaEliminarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanaeliminarempleado.setVisible(true);
@@ -442,7 +442,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarMenuEmpleadoActionPerformed
 
     private void listarMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuEmpleadoActionPerformed
-        ventanalistarempleado = new VentanaListarEmpleado();
+        ventanalistarempleado = new VentanaListarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanalistarempleado.setVisible(true);

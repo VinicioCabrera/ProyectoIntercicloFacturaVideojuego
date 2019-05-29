@@ -17,6 +17,10 @@ public class Empleado extends Persona{
         this.sueldo = sueldo;
     }
 
+    public Empleado() {
+    }
+    
+
     public double getSueldo() {
         return sueldo;
     }
