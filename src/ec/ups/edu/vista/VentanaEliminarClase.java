@@ -22,6 +22,8 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
     public VentanaEliminarClase(ControladorClase controladorClase) {
         initComponents();
         this.controladorClase=controladorClase;
+        this.setSize(500, 800);
+        
     }
 
     /**
@@ -44,6 +46,9 @@ public class VentanaEliminarClase extends javax.swing.JInternalFrame {
         txtNombre = new javax.swing.JTextField();
 
         setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N

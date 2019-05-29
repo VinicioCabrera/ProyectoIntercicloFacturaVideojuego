@@ -21,6 +21,14 @@ public class ControladorFactura {
         codigo=1;
         lista=new HashSet<Factura>();
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public Set<Factura> getLista() {
+        return lista;
+    }
     
      public void create(Factura factura){
         factura.setCodigo(codigo);

@@ -28,6 +28,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorProducto=controladorProducto;
         txtCodigoCrearProducto.setText(String.valueOf(this.controladorProducto.getCodigo()));
+        this.setSize(1000,600);
     }
 
     
@@ -184,7 +185,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtFechaCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaCrearProductoActionPerformed
-        // TODO add your handling code here:
+//SimpleDateFormat fecha = new SimpleDateFormat();
     }//GEN-LAST:event_txtFechaCrearProductoActionPerformed
 
     

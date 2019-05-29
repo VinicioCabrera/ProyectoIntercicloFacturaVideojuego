@@ -44,8 +44,23 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private SimpleDateFormat formato;
     private Empleado empleado;
 
-    public VentanaCrearFactura() {
+    public VentanaCrearFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente, ControladorEmpleado controladorEmpleado, ControladorClase controladorClase,ControladorProducto controladorProducto) {
         initComponents();
+        this.controladorCliente = controladorCliente;
+        this.controladorEmpleado = controladorEmpleado;
+        this.controladorFactura = controladorFactura;
+        this.controladorClase = controladorClase;
+        this.controladorProducto = controladorProducto;
+        lblCodigo.setText(Integer.toString(controladorFactura.getCodigo()));
+        model = null;
+        producto= null;
+        totalv = 0;
+        subtotalv = 0;
+        ivav = 0;
+        fecha = new Date();
+        formato = new SimpleDateFormat("dd/MM/yyyy");
+        lblFecha.setText(formato.format(fecha));
+        this.setSize(1000, 800);
     }
 
     /**
@@ -115,6 +130,11 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         txtCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaActionPerformed(evt);
+            }
+        });
+        txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCedulaKeyPressed(evt);
             }
         });
 
@@ -230,15 +250,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
         tblFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Imagen", "Producto", "Cantidad", "Precio U.", "Precio T."
@@ -253,6 +265,11 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
             }
         });
         tblFactura.setRowHeight(35);
+        tblFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tblFacturaKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblFactura);
 
         getContentPane().add(jScrollPane1);
@@ -289,10 +306,20 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         txtTotal.setBounds(650, 620, 83, 22);
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(300, 560, 100, 90);
 
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGuardar);
         btnGuardar.setBounds(140, 560, 80, 80);
 
@@ -330,6 +357,102 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+        factura = new Factura();
+        factura.setCliente(cliente1);
+        factura.setIva(ivav);
+        factura.setTotal(totalv);
+        factura.setSubtotal(subtotalv);
+        factura.setFecha(fecha);
+        for(int i =0;i<tblFactura.getRowCount()-1;i++){
+            System.out.println(i);
+            detalleFactura= new DetalleFactura();
+            detalleFactura.setCodigo(Integer.parseInt(tblFactura.getValueAt(i, 0).toString()));
+            double cant = Double.parseDouble(tblFactura.getValueAt(i, 1).toString());
+            int c=(int) cant;
+            detalleFactura.setCosto(c);
+            detalleFactura.setProducto(controladorProducto.read(Integer.parseInt(tblFactura.getValueAt(i, 0).toString())));
+            detalleFactura.setPrecio(Double.parseDouble(tblFactura.getValueAt(i, 3).toString()));
+            detalleFactura.setSubTotal(Double.parseDouble(tblFactura.getValueAt(i, 4).toString()));
+            factura.addDetalleFactura(detalleFactura);
+        }
+        controladorFactura.create(factura);
+        JOptionPane.showMessageDialog(this, "factura creada");
+        lblCodigo.setText(Integer.toString(controladorFactura.getCodigo()));
+        txtCedula.setText("");
+        txtDireccion.setText("");
+        txtIva.setText("");
+        txtNonbre.setText("");
+        txtSubTotal.setText("");
+        txtTotal.setText("");
+        txtTelefono.setText("");
+        model.setColumnCount(6);
+        model.setRowCount(0);
+        Object[] datos2= {"", "", "","0","",""};
+        model.addRow(datos2);
+        subtotalv=0;
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void txtCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyPressed
+        
+        String id=txtCedula.getText();
+        Set<Cliente> lista = controladorCliente.getLista();
+        for(Cliente cliente : lista){
+            if(cliente.getCedula().equals(id)){
+                cliente1 = cliente;
+                txtNonbre.setText(cliente.getNombre());
+                txtDireccion.setText(cliente.getDireccion());
+                txtEmail.setText(cliente.getEmail());
+                txtTelefono.setText(cliente.getTelefono());
+            }
+        }
+
+    }//GEN-LAST:event_txtCedulaKeyPressed
+
+    private void tblFacturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblFacturaKeyReleased
+        int key = evt.getKeyCode();
+        if(key == 10){
+            int fila= tblFactura.getSelectedRow();
+            int columna =tblFactura.getSelectedColumn();
+            int codigo=0;
+            Object[] datos2 ={"", "", "","0","",""};
+            if(columna==0){
+                codigo=Integer.parseInt(tblFactura.getValueAt(fila,columna).toString());
+                producto = controladorProducto.read(codigo);
+                double precio =producto.getCosto();
+                double cant = Double.parseDouble(tblFactura.getValueAt(fila, 1).toString());
+                model=(DefaultTableModel) tblFactura.getModel();
+                model.removeRow(fila);
+                total1v= precio* cant;
+                Object[] datos ={ codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
+                model.addRow(datos);
+                model.addRow(datos2);   
+            }else if(columna==1){
+                codigo= Integer.parseInt(tblFactura.getValueAt(fila, columna-1).toString());
+                double cant= Double.parseDouble(tblFactura.getValueAt(fila, columna).toString());
+                model.removeRow(fila);
+                model.removeRow(tblFactura.getRowCount()-1);
+                total1v= producto.getCosto()*cant;
+                Object[] datos ={codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
+                model.addRow(datos);
+                model.addRow(datos2);
+            }
+            subtotalv = total1v+subtotalv;
+            ivav= subtotalv*0.12;
+            totalv = subtotalv+ivav;
+            txtSubTotal.setText(String.valueOf(subtotalv));
+            txtIva.setText(String.valueOf(ivav));
+            txtTotal.setText(String.valueOf(totalv));
+        }
+
+    }//GEN-LAST:event_tblFacturaKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

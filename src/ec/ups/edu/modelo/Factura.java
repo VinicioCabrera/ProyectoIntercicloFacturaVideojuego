@@ -6,6 +6,8 @@
 package ec.ups.edu.modelo;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -19,6 +21,7 @@ public class Factura {
  private double subtotal;
  private double total;
  private double iva;
+ private Set<DetalleFactura> detalleFactura;
 
     public Factura() {
         
@@ -32,6 +35,7 @@ public class Factura {
         this.total = total;
         this.iva = iva;
         this.Codigo = Codigo;
+        detalleFactura=new HashSet<>();
     }
 
     public Cliente getCliente() {
@@ -89,6 +93,15 @@ public class Factura {
     public void setIva(double iva) {
         this.iva = iva;
     }
+
+    public Set<DetalleFactura> getDetalleFactura() {
+        return detalleFactura;
+    }
+
+    public void addDetalleFactura(DetalleFactura detalleFactura) {
+        this.detalleFactura.add(detalleFactura);
+    }
+    
 
     @Override
     public String toString() {

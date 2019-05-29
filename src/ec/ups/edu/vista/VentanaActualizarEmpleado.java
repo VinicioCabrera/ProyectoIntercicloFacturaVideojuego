@@ -203,7 +203,6 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
        btnActualizar.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
