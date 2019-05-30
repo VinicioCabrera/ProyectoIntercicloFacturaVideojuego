@@ -9,6 +9,7 @@ import ec.ups.edu.controlador.ControladorProducto;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -26,6 +27,16 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorProducto=controladorProducto;
         this.setSize(900,500);
+    }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblEliminarProducto.setText(mensajes.getString("EliminarProducto"));
+        lblCantidadEliminarProducto.setText(mensajes.getString("CantidadCrearProducto"));
+        lblCodigoEliminarProducto.setText(mensajes.getString("IngresarCodigo"));
+        lblNombreEliminarProducto.setText(mensajes.getString("NombreCrearCliente"));
+        lblFechaEliminarProducto.setText(mensajes.getString("FechaCrearProducto"));
+        lblDescripcionEliminarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
+        lblCostoEliminarProducto.setText(mensajes.getString("CostoCrearProducto"));
+        lblTipoEliminarProducto.setText(mensajes.getString("lblTipo"));
     }
 
     /**
@@ -51,7 +62,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         txtNombreEliminarProducto = new javax.swing.JTextField();
         btnEliminarEliminarProducto = new javax.swing.JButton();
         btnBuscarEliminarProducto = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblEliminarProducto = new javax.swing.JLabel();
         lblImagen = new javax.swing.JLabel();
         txtTipoEliminarProducto = new javax.swing.JTextField();
         lblTipoEliminarProducto = new javax.swing.JLabel();
@@ -121,10 +132,10 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(btnBuscarEliminarProducto);
         btnBuscarEliminarProducto.setBounds(490, 70, 100, 100);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Eliminar Producto");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(228, 11, 222, 39);
+        lblEliminarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEliminarProducto.setText("Eliminar Producto");
+        getContentPane().add(lblEliminarProducto);
+        lblEliminarProducto.setBounds(228, 11, 222, 39);
         getContentPane().add(lblImagen);
         lblImagen.setBounds(170, 460, 290, 140);
         getContentPane().add(txtTipoEliminarProducto);
@@ -180,11 +191,11 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarEliminarProducto;
     private javax.swing.JButton btnEliminarEliminarProducto;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCantidadEliminarProducto;
     private javax.swing.JLabel lblCodigoEliminarProducto;
     private javax.swing.JLabel lblCostoEliminarProducto;
     private javax.swing.JLabel lblDescripcionEliminarProducto1;
+    private javax.swing.JLabel lblEliminarProducto;
     private javax.swing.JLabel lblFechaEliminarProducto;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblMarcaEliminarProducto;

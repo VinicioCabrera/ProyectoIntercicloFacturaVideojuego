@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.modelo.Cliente;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,6 +25,15 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         this.controladorCliente=controladorCliente;
         txtCodigoCliente.setText(String.valueOf(this.controladorCliente.getCodigo()));
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblCrearCliente.setText(mensajes.getString("CrearCliente"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigo.setText(mensajes.getString("IngresarCodigo"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,19 +45,19 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblCrearCliente = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
         txtCodigoCliente = new javax.swing.JTextField();
         txtNombreCliente = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         txtCedulaCliente = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblCedula = new javax.swing.JLabel();
         txtDireccionCliente = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
         txtEmailCliente = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         txtTelefonoCliente = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
         btnGuardarCliente = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -56,15 +66,15 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel2.setText("Crear Cliente");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(170, 20, 160, 50);
+        lblCrearCliente.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        lblCrearCliente.setText("Crear Cliente");
+        jPanel1.add(lblCrearCliente);
+        lblCrearCliente.setBounds(170, 20, 160, 50);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel3.setText("Codigo:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(60, 110, 110, 40);
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblCodigo.setText("Codigo:");
+        jPanel1.add(lblCodigo);
+        lblCodigo.setBounds(60, 110, 110, 40);
 
         txtCodigoCliente.setEditable(false);
         jPanel1.add(txtCodigoCliente);
@@ -72,38 +82,38 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         jPanel1.add(txtNombreCliente);
         txtNombreCliente.setBounds(190, 170, 220, 40);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel4.setText("Nombre:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(60, 170, 110, 40);
+        lblNombre.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblNombre.setText("Nombre:");
+        jPanel1.add(lblNombre);
+        lblNombre.setBounds(60, 170, 110, 40);
         jPanel1.add(txtCedulaCliente);
         txtCedulaCliente.setBounds(190, 240, 220, 40);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel5.setText("Cedula:");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(60, 240, 110, 40);
+        lblCedula.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblCedula.setText("Cedula:");
+        jPanel1.add(lblCedula);
+        lblCedula.setBounds(60, 240, 110, 40);
         jPanel1.add(txtDireccionCliente);
         txtDireccionCliente.setBounds(190, 300, 220, 40);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel6.setText("Direccion:");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(60, 310, 110, 40);
+        lblDireccion.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblDireccion.setText("Direccion:");
+        jPanel1.add(lblDireccion);
+        lblDireccion.setBounds(60, 310, 110, 40);
         jPanel1.add(txtEmailCliente);
         txtEmailCliente.setBounds(190, 360, 220, 40);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel7.setText("Email:");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(60, 360, 110, 40);
+        lblEmail.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblEmail.setText("Email:");
+        jPanel1.add(lblEmail);
+        lblEmail.setBounds(60, 360, 110, 40);
         jPanel1.add(txtTelefonoCliente);
         txtTelefonoCliente.setBounds(190, 410, 220, 40);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel8.setText("Telefono:");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(60, 420, 110, 40);
+        lblTelefono.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblTelefono.setText("Telefono:");
+        jPanel1.add(lblTelefono);
+        lblTelefono.setBounds(60, 420, 110, 40);
 
         btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -173,14 +183,14 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardarCliente;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCrearCliente;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JTextField txtCedulaCliente;
     private javax.swing.JTextField txtCodigoCliente;
     private javax.swing.JTextField txtDireccionCliente;

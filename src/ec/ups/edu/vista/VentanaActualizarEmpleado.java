@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.modelo.Empleado;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,6 +24,16 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblActualizarEmpleado.setText(mensajes.getString("ActualizarEmpleado"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigo.setText(mensajes.getString("IngresarCodigo"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente")); 
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        lblSueldo.setText(mensajes.getString("LblSueldo"));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +46,7 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
 
         btnBuscar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblActualizarEmpleado = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         lblSueldo = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
@@ -66,8 +77,8 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Actualizar Empleado");
+        lblActualizarEmpleado.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblActualizarEmpleado.setText("Actualizar Empleado");
 
         lblSueldo.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblSueldo.setText("sueldo:");
@@ -98,7 +109,7 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(121, 121, 121)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblActualizarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -131,7 +142,7 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblActualizarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCodigo)
@@ -205,7 +216,7 @@ public class VentanaActualizarEmpleado extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblActualizarEmpleado;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDireccion;

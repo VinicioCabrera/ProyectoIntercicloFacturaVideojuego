@@ -9,9 +9,13 @@ import ec.ups.edu.controlador.ControladorFactura;
 import ec.ups.edu.modelo.DetalleFactura;
 import ec.ups.edu.modelo.Factura;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -33,6 +37,36 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         this.controladorFactura= controladorFactura;
         this.setSize(1000,1000);
         formato= new SimpleDateFormat("dd/MM/yyyy");
+    }
+    public void cambiaridioma(ResourceBundle mensajes) {
+        lblFactura.setText(mensajes.getString("MenuFactura"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigos.setText(mensajes.getString("IngresarCodigo"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        lblFechas.setText(mensajes.getString("FechaCrearProducto"));
+        lblEmpleado.setText(mensajes.getString("MenuEmpleado"));
+        
+        JTableHeader th = tblFactura.getTableHeader();
+        TableColumnModel tm = th.getColumnModel();
+        TableColumn tc;
+        tc = tm.getColumn(0);
+        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc = tm.getColumn(1);
+        tc.setHeaderValue(mensajes.getString("tblImagen"));
+        tc = tm.getColumn(2);
+        tc.setHeaderValue(mensajes.getString("MenuProducto"));
+        tc = tm.getColumn(3);
+        tc.setHeaderValue(mensajes.getString("CantidadCrearProducto"));
+        tc = tm.getColumn(4);
+        tc.setHeaderValue(mensajes.getString("tblPreciaoU"));
+        tc = tm.getColumn(5);
+        tc.setHeaderValue(mensajes.getString("tblPrecioT"));
+        th.repaint();
+        
+
     }
 
     /**

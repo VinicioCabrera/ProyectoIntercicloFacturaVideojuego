@@ -7,8 +7,12 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.modelo.Empleado;
+import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -24,6 +28,30 @@ public class VentanaListarEmpleado extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
         llenarTabla();
+    }
+    public void cambiaridioma(ResourceBundle mensajes) {
+        lblListar.setText(mensajes.getString("ListarMenuCliente"));
+        
+        JTableHeader th = tblListarEmpledo.getTableHeader();
+        TableColumnModel tm = th.getColumnModel();
+        TableColumn tc;
+        tc = tm.getColumn(0);
+        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc = tm.getColumn(1);
+        tc.setHeaderValue(mensajes.getString("NombreCrearCliente"));
+        tc = tm.getColumn(2);
+        tc.setHeaderValue(mensajes.getString("CedulaCrearCliente"));
+        tc = tm.getColumn(3);
+        tc.setHeaderValue(mensajes.getString("DireccionCrearCliente"));
+        tc = tm.getColumn(4);
+        tc.setHeaderValue(mensajes.getString("TelefonoCrearCliente"));
+        tc = tm.getColumn(5);
+        tc.setHeaderValue(mensajes.getString("EmailCrearCliente"));
+        tc = tm.getColumn(6);
+        tc.setHeaderValue(mensajes.getString("LblSueldo"));
+        th.repaint();
+        
+
     }
 
     /**

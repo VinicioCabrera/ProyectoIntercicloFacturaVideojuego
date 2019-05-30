@@ -8,10 +8,14 @@ package ec.ups.edu.vista;
 import ec.ups.edu.controlador.ControladorProducto;
 import ec.ups.edu.modelo.ImagenTabla;
 import ec.ups.edu.modelo.Producto;
+import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -28,6 +32,32 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
         this.controladorProducto=controladorProducto;
         listarProducto();
     }
+    public void cambiaridioma(ResourceBundle mensajes) {
+        lblListar.setText(mensajes.getString("ListarProducto"));
+        
+        JTableHeader th = tblListarProducto.getTableHeader();
+        TableColumnModel tm = th.getColumnModel();
+        TableColumn tc;
+        tc = tm.getColumn(0);
+        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc = tm.getColumn(1);
+        tc.setHeaderValue(mensajes.getString("NombreCrearCliente"));
+        tc = tm.getColumn(2);
+        tc.setHeaderValue(mensajes.getString("CantidadCrearProducto"));
+        tc = tm.getColumn(3);
+        tc.setHeaderValue(mensajes.getString("FechaCrearProducto"));
+        tc = tm.getColumn(4);
+        tc.setHeaderValue(mensajes.getString("CostoCrearProducto"));
+        tc = tm.getColumn(5);
+        tc.setHeaderValue(mensajes.getString("tblImagen"));
+        tc = tm.getColumn(6);
+        tc.setHeaderValue(mensajes.getString("lblTipo"));
+        tc = tm.getColumn(7);
+        tc.setHeaderValue(mensajes.getString("DescripcionCrearClase"));
+        th.repaint();
+        
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,12 +68,12 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblListar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListarProducto = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Listar Producto");
+        lblListar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblListar.setText("Listar Producto");
 
         tblListarProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,7 +100,7 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(324, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblListar, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(268, 268, 268))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 814, Short.MAX_VALUE))
@@ -78,7 +108,7 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblListar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 395, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -109,8 +139,8 @@ public void listarProducto(){
     
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblListar;
     private javax.swing.JTable tblListarProducto;
     // End of variables declaration//GEN-END:variables
 }

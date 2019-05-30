@@ -11,6 +11,7 @@ import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ResourceBundle;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -31,6 +32,16 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         txtCodigoCrearProducto.setText(String.valueOf(this.controladorProducto.getCodigo()));
         this.setSize(1000,600);
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblCrearProducto.setText(mensajes.getString("CrearProducto"));
+        lblCantidadCrearProducto.setText(mensajes.getString("CantidadCrearProducto"));
+        lblCodigoCrearProducto.setText(mensajes.getString("IngresarCodigo"));
+        lblNombreCrearProducto.setText(mensajes.getString("NombreCrearCliente"));
+        lblFechaCrearProducto.setText(mensajes.getString("FechaCrearProducto"));
+        lblDescripcionCrearProducto.setText(mensajes.getString("DescripcionCrearClase"));
+        lblCostoCrearProducto.setText(mensajes.getString("CostoCrearProducto"));
+        lblTipoCrearProducto.setText(mensajes.getString("lblTipo"));
+    }
 
     
 
@@ -45,7 +56,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
 
         txtCodigoCrearProducto = new javax.swing.JTextField();
         lblCodigoCrearProducto = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblCrearProducto = new javax.swing.JLabel();
         btnGuardarCrearProducto = new javax.swing.JButton();
         lblNombreCrearProducto = new javax.swing.JLabel();
         txtNombreCrearProducto = new javax.swing.JTextField();
@@ -75,10 +86,10 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblCodigoCrearProducto);
         lblCodigoCrearProducto.setBounds(340, 84, 110, 40);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel2.setText("Crear Producto");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(468, 0, 196, 50);
+        lblCrearProducto.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        lblCrearProducto.setText("Crear Producto");
+        getContentPane().add(lblCrearProducto);
+        lblCrearProducto.setBounds(468, 0, 196, 50);
 
         btnGuardarCrearProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
         btnGuardarCrearProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -218,10 +229,10 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelarCrearProducto;
     private javax.swing.JButton btnGuardarCrearProducto;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCantidadCrearProducto;
     private javax.swing.JLabel lblCodigoCrearProducto;
     private javax.swing.JLabel lblCostoCrearProducto;
+    private javax.swing.JLabel lblCrearProducto;
     private javax.swing.JLabel lblDescripcionCrearProducto;
     private javax.swing.JLabel lblFechaCrearProducto;
     private javax.swing.JLabel lblImagen;

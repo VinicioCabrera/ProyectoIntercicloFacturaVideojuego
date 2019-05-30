@@ -9,6 +9,7 @@ import ec.ups.edu.controlador.ControladorProducto;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
 import javax.swing.ImageIcon;
 
 /**
@@ -25,6 +26,16 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorProducto=controladorProducto;
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblBuscarProducto.setText(mensajes.getString("BuscarProducto"));
+        lblCantidadBuscarProducto.setText(mensajes.getString("CantidadCrearProducto"));
+        lblCodigoBuscarProducto.setText(mensajes.getString("IngresarCodigo"));
+        lblNombreBuscarProducto.setText(mensajes.getString("NombreCrearCliente"));
+        lblFechaBuscarProducto.setText(mensajes.getString("FechaCrearProducto"));
+        jlbTipoBuscarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
+        lblCostoBuscarProducto.setText(mensajes.getString("CostoCrearProducto"));
+        jlbTipoBuscarProducto.setText(mensajes.getString("lblTipo"));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +47,7 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jFileChooser1 = new javax.swing.JFileChooser();
-        jLabel1 = new javax.swing.JLabel();
+        lblBuscarProducto = new javax.swing.JLabel();
         txtCodigoBuscarProducto = new javax.swing.JTextField();
         lblCodigoBuscarProducto = new javax.swing.JLabel();
         lblCantidadBuscarProducto = new javax.swing.JLabel();
@@ -56,8 +67,8 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Buscar Producto");
+        lblBuscarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblBuscarProducto.setText("Buscar Producto");
 
         lblCodigoBuscarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCodigoBuscarProducto.setText("Codigo :");
@@ -98,7 +109,7 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                         .addComponent(lblCodigoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(lblBuscarProducto)
                             .addComponent(txtCodigoBuscarProducto)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(118, 118, 118)
@@ -140,7 +151,7 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                         .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(95, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCodigoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,9 +208,9 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarBuscarProducto;
     private javax.swing.JFileChooser jFileChooser1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jlbTipoBuscarProducto;
     private javax.swing.JLabel jlbTipoBuscarProducto1;
+    private javax.swing.JLabel lblBuscarProducto;
     private javax.swing.JLabel lblCantidadBuscarProducto;
     private javax.swing.JLabel lblCodigoBuscarProducto;
     private javax.swing.JLabel lblCostoBuscarProducto;

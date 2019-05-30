@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.modelo.Empleado;
+import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +23,16 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
     public VentanaEliminarEmpleado(ControladorEmpleado controladorEmpleado) {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
+    }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblEliminarEmpleado.setText(mensajes.getString("EliminarMenuCliente"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigo.setText(mensajes.getString("IngresarCodigo"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente")); 
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        lblSueldo.setText(mensajes.getString("LblSueldo"));
     }
 
     /**
@@ -49,7 +60,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         lblCedula = new javax.swing.JLabel();
         tbnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblEliminarEmpleado = new javax.swing.JLabel();
 
         lblSueldo.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblSueldo.setText("sueldo:");
@@ -87,8 +98,8 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Eliminar Empleado");
+        lblEliminarEmpleado.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblEliminarEmpleado.setText("Eliminar Empleado");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +112,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
                         .addComponent(tbnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(109, 109, 109)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEliminarEmpleado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(102, 102, 102))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -130,7 +141,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEliminarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tbnBuscar)
@@ -200,10 +211,10 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblEliminarEmpleado;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSueldo;

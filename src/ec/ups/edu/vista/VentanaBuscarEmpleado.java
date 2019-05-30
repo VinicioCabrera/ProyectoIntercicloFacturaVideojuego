@@ -7,6 +7,7 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.modelo.Empleado;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -22,6 +23,16 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblBuscarEmpleado.setText(mensajes.getString("BuscarEmpleado"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigo.setText(mensajes.getString("IngresarCodigo"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente")); 
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        lblSueldo.setText(mensajes.getString("LblSueldo"));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +43,7 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblBuscarEmpleado = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtEmail = new javax.swing.JTextField();
         lblSueldo = new javax.swing.JLabel();
@@ -50,8 +61,8 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
         lblCedula = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Buscar Empleado ");
+        lblBuscarEmpleado.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblBuscarEmpleado.setText("Buscar Empleado ");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscarClienteEmpleado.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +119,7 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(jLabel1))
+                        .addComponent(lblBuscarEmpleado))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -142,7 +153,7 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblBuscarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtCodigo)
@@ -201,7 +212,7 @@ public class VentanaBuscarEmpleado extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBuscarEmpleado;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblDireccion;

@@ -10,6 +10,8 @@ import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.controlador.ControladorFactura;
 import ec.ups.edu.controlador.ControladorProducto;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  *
@@ -49,6 +51,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private ControladorFactura controladorFactura;
  
  private VentanaPrincipalLogin principalLogin;
+ private Locale localizacion;
+ private ResourceBundle mensajes;
+
  
     /**
      * Creates new form VentanaSecundaria
@@ -63,8 +68,97 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         controladorClase=new ControladorCliente();
         controladorFactura=new ControladorFactura();
         controladorEmpleado= new ControladorEmpleado();
+        
+        localizacion = new Locale("es", "EC");
+        Locale.setDefault(localizacion);
+        mensajes = ResourceBundle.getBundle("ec.ups.edu.Idiomas.mensajes", Locale.getDefault());
+        System.out.println("Mensajes");
         this.setExtendedState(6);
        
+    }
+    public void cambiarIdioma() {
+        mensajes = ResourceBundle.getBundle("ec.ups.edu.Idiomas.mensajes", Locale.getDefault());
+        menuCliente.setText(mensajes.getString("MenuCliente"));
+        eliminarMenuCliente.setText(mensajes.getString("EliminarEliminarCliente"));
+        actualizarMenuCliente.setText(mensajes.getString("ActualizarMenuCliente"));
+        buscarMenuCliente.setText(mensajes.getString("BuscarMenuCliente"));
+        listarMenuCliente.setText(mensajes.getString("AreaCreaEmpleado"));
+        crearMenuCliente.setText(mensajes.getString("CrearMenuCliente"));
+        
+        menuEmpleado.setText(mensajes.getString("MenuEmpleado"));
+        eliminarMenuEmpleado.setText(mensajes.getString("EliminarEliminarCliente"));
+        actualizarMenuEmpleado.setText(mensajes.getString("ActualizarMenuCliente"));
+        buscarMenuEmpleado.setText(mensajes.getString("BuscarMenuCliente"));
+        listarMenuEmpleado.setText(mensajes.getString("AreaCreaEmpleado"));
+        crearMenuEmpleado.setText(mensajes.getString("CrearMenuCliente"));
+        
+        menuProducto.setText(mensajes.getString("MenuProducto"));
+        eliminarMenuProducto.setText(mensajes.getString("EliminarEliminarCliente"));
+        actulizarMenuProducto.setText(mensajes.getString("ActualizarMenuCliente"));
+        buscarMenuProducto.setText(mensajes.getString("BuscarMenuCliente"));
+        listarMenuProducto.setText(mensajes.getString("AreaCreaEmpleado"));
+        crearMenuProducto.setText(mensajes.getString("CrearMenuCliente"));
+        
+        menuFactura.setText(mensajes.getString("MenuFactura"));
+        itemBuscarEliminar.setText(mensajes.getString("BucarEliminarMenuFactura"));
+        itemCrear.setText(mensajes.getString("CrearMenuCliente"));
+        
+        menuIdioma.setText(mensajes.getString("MenuIdioma"));
+        itemEspañol.setText(mensajes.getString("EspañolMenuIdiomas"));
+        itemIngles.setText(mensajes.getString("InglesMenuIdiomas"));
+
+        if (ventanaactualizarcliente != null) {
+            ventanaactualizarcliente.cambiaridioma(mensajes);
+        }
+        if (ventanacrearcliente != null) {
+            ventanacrearcliente.cambiaridioma(mensajes);
+        }
+        if (ventanabuscarcliente != null) {
+            ventanabuscarcliente.cambiaridioma(mensajes);
+        }
+        if (ventanalistarcliente != null) {
+            ventanalistarcliente.cambiaridioma(mensajes);
+        }
+        if (ventanaeliminarcliente != null) {
+            ventanaeliminarcliente.cambiaridioma(mensajes);
+        }
+        if (ventanaactualizarempleado != null) {
+            ventanaactualizarempleado.cambiaridioma(mensajes);
+        }
+        if (ventanabuscarempleado != null) {
+            ventanabuscarempleado.cambiaridioma(mensajes);
+        }
+        if (ventanaeliminarempleado != null) {
+            ventanaeliminarempleado.cambiaridioma(mensajes);
+        }
+        if (ventanacrearempleado != null) {
+            ventanacrearempleado.cambiaridioma(mensajes);
+        }
+        if (ventanalistarempleado != null) {
+            ventanalistarempleado.cambiaridioma(mensajes);
+        }
+        if (actualizarProducto != null) {
+            actualizarProducto.cambiaridioma(mensajes);
+        }
+        if (eliminarProducto != null) {
+            eliminarProducto.cambiaridioma(mensajes);
+        }
+        if (buscarProducto != null) {
+            buscarProducto.cambiaridioma(mensajes);
+        }
+        if (crearProducto != null) {
+            crearProducto.cambiaridioma(mensajes);
+        }
+        if (listarProducto != null) {
+            listarProducto.cambiaridioma(mensajes);
+        }
+        if (crearFactura != null) {
+            crearFactura.cambiaridioma(mensajes);
+        }
+        if (buscarFactura != null) {
+            buscarFactura.cambiaridioma(mensajes);
+        }
+        
     }
 
     private VentanaSecundaria() {
@@ -104,12 +198,12 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         actulizarMenuProducto = new javax.swing.JMenuItem();
         eliminarMenuProducto = new javax.swing.JMenuItem();
         listarMenuProducto = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuFactura = new javax.swing.JMenu();
         itemCrear = new javax.swing.JMenuItem();
         itemBuscarEliminar = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        menuIdioma = new javax.swing.JMenu();
+        itemEspañol = new javax.swing.JMenuItem();
+        itemIngles = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -264,7 +358,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuProducto);
 
-        jMenu2.setText("Factura");
+        menuFactura.setText("Factura");
 
         itemCrear.setText("Crear");
         itemCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +366,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
                 itemCrearActionPerformed(evt);
             }
         });
-        jMenu2.add(itemCrear);
+        menuFactura.add(itemCrear);
 
         itemBuscarEliminar.setText("Buscar/Eliminar");
         itemBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -280,19 +374,29 @@ public class VentanaSecundaria extends javax.swing.JFrame {
                 itemBuscarEliminarActionPerformed(evt);
             }
         });
-        jMenu2.add(itemBuscarEliminar);
+        menuFactura.add(itemBuscarEliminar);
 
-        menuBar.add(jMenu2);
+        menuBar.add(menuFactura);
 
-        jMenu1.setText("Idiomas   ");
+        menuIdioma.setText("Idiomas   ");
 
-        jMenuItem1.setText("Español");
-        jMenu1.add(jMenuItem1);
+        itemEspañol.setText("Español");
+        itemEspañol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEspañolActionPerformed(evt);
+            }
+        });
+        menuIdioma.add(itemEspañol);
 
-        jMenuItem2.setText("Inglés");
-        jMenu1.add(jMenuItem2);
+        itemIngles.setText("Inglés");
+        itemIngles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemInglesActionPerformed(evt);
+            }
+        });
+        menuIdioma.add(itemIngles);
 
-        menuBar.add(jMenu1);
+        menuBar.add(menuIdioma);
 
         setJMenuBar(menuBar);
 
@@ -313,7 +417,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private void eliminarMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClienteActionPerformed
        ventanaeliminarcliente = new VentanaEliminarCliente(controladorCliente);
        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
+       this.desktopPane.repaint();
+       ventanaeliminarcliente.cambiaridioma(mensajes);
        ventanaeliminarcliente.setVisible(true);
        desktopPane.add(ventanaeliminarcliente);
       //  setSize(ventanaeliminarcliente.getWidth()+15,ventanaeliminarcliente.getHeight()+60);
@@ -322,7 +427,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private void actulizarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actulizarMenuProductoActionPerformed
        actualizarProducto = new VentanaActualizarProducto(controladorProducto);
        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
+       this.desktopPane.repaint();
+       actualizarProducto.cambiaridioma(mensajes);
        actualizarProducto.setVisible(true);
        desktopPane.add(actualizarProducto);
        //setSize(actualizarProducto.getWidth()+15,actualizarProducto.getHeight()+60);
@@ -332,6 +438,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         ventanacrearcliente=new VentanaCrearCliente(controladorCliente);
+        ventanacrearcliente.cambiaridioma(mensajes);
         ventanacrearcliente.setVisible(true);
         desktopPane.add(ventanacrearcliente);
         //setSize(ventanacrearcliente.getWidth()+15,ventanacrearcliente.getHeight()+60);
@@ -341,6 +448,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanabuscarcliente =new VentanaBuscarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanabuscarcliente.cambiaridioma(mensajes);
         ventanabuscarcliente.setVisible(true);
         desktopPane.add(ventanabuscarcliente);
        // setSize(ventanabuscarcliente.getWidth()+15,ventanabuscarcliente.getHeight()+60);
@@ -350,6 +458,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanalistarcliente =new VentanaListarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanalistarcliente.cambiaridioma(mensajes);
         ventanalistarcliente.setVisible(true);
         desktopPane.add(ventanalistarcliente);
         //setSize(ventanalistarcliente.getWidth()+15,ventanalistarcliente.getHeight()+60);
@@ -359,6 +468,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanaactualizarcliente =new VentanaActualizarCliente(controladorCliente);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanaactualizarcliente.cambiaridioma(mensajes);
         ventanaactualizarcliente.setVisible(true);
         desktopPane.add(ventanaactualizarcliente);
         //setSize(ventanaactualizarcliente.getWidth()+15,ventanaactualizarcliente.getHeight()+60);
@@ -367,7 +477,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private void crearMenuEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuEmpleadoActionPerformed
       ventanacrearempleado = new VentanaCrearEmpleado(controladorEmpleado);
       this.desktopPane.removeAll();
-        this.desktopPane.repaint();
+      this.desktopPane.repaint();
+      ventanacrearempleado.cambiaridioma(mensajes);
       ventanacrearempleado.setVisible(true);
       desktopPane.add(ventanacrearempleado);
       //setSize(ventanacrearempleado.getWidth()+15,ventanacrearempleado.getHeight()+60);
@@ -377,6 +488,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanabuscarempleado = new VentanaBuscarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanabuscarempleado.cambiaridioma(mensajes);
         ventanabuscarempleado.setVisible(true);
         desktopPane.add(ventanabuscarempleado);
        // setSize(ventanabuscarempleado.getWidth()+15,ventanabuscarempleado.getHeight()+60);
@@ -386,6 +498,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanaactualizarempleado = new VentanaActualizarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanaactualizarempleado.cambiaridioma(mensajes);
         ventanaactualizarempleado.setVisible(true);
         desktopPane.add(ventanaactualizarempleado);
         //setSize(ventanaactualizarempleado.getWidth()+15,ventanaactualizarempleado.getHeight()+60);
@@ -395,6 +508,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanaeliminarempleado = new VentanaEliminarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanaeliminarempleado.cambiaridioma(mensajes);
         ventanaeliminarempleado.setVisible(true);
         desktopPane.add(ventanaeliminarempleado);
         //setSize(ventanaeliminarempleado.getWidth()+15,ventanaeliminarempleado.getHeight()+60);
@@ -404,6 +518,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         ventanalistarempleado = new VentanaListarEmpleado(controladorEmpleado);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        ventanalistarempleado.cambiaridioma(mensajes);
         ventanalistarempleado.setVisible(true);
         desktopPane.add(ventanalistarempleado);
         //setSize(ventanalistarempleado.getWidth()+15,ventanalistarempleado.getHeight()+60);
@@ -413,6 +528,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         crearProducto = new VentanaCrearProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        crearProducto.cambiaridioma(mensajes);
         crearProducto.setVisible(true);
         desktopPane.add(crearProducto);
         //setSize(crearProducto.getWidth()+15,crearProducto.getHeight()+60);
@@ -422,6 +538,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         buscarProducto = new VentanaBuscarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        buscarProducto.cambiaridioma(mensajes);
         buscarProducto.setVisible(true);
         desktopPane.add(buscarProducto);
         //setSize(buscarProducto.getWidth()+15,buscarProducto.getHeight()+60);
@@ -431,6 +548,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         eliminarProducto =new VentanaEliminarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        eliminarProducto.cambiaridioma(mensajes);
         eliminarProducto.setVisible(true);
         desktopPane.add(eliminarProducto);
         setSize(eliminarProducto.getWidth()+15,eliminarProducto.getHeight()+60);
@@ -440,6 +558,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         listarProducto = new VentanaListarProducto(controladorProducto);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        listarProducto.cambiaridioma(mensajes);
         listarProducto.setVisible(true);
         desktopPane.add(listarProducto);
        // setSize(listarProducto.getWidth()+15,listarProducto.getHeight()+60);
@@ -449,6 +568,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         buscarFactura = new VentanaBuscarFactura(controladorFactura);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
+        buscarFactura.cambiaridioma(mensajes);
         buscarFactura.setVisible(true);
         desktopPane.add(buscarFactura);
        // setSize(buscarFactura.getWidth()+15,buscarFactura.getHeight()+60);
@@ -458,12 +578,24 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         crearFactura = new VentanaCrearFactura(controladorFactura,controladorCliente, controladorEmpleado, controladorClase, controladorProducto);
-        
+        crearFactura.cambiaridioma(mensajes);
         crearFactura.setVisible(true);
         desktopPane.add(crearFactura);
        // setSize(crearFactura.getWidth()+15,crearFactura.getHeight()+60);
         
     }//GEN-LAST:event_itemCrearActionPerformed
+
+    private void itemEspañolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEspañolActionPerformed
+        localizacion = new Locale("es", "EC");
+        Locale.setDefault(localizacion);
+        cambiarIdioma();
+    }//GEN-LAST:event_itemEspañolActionPerformed
+
+    private void itemInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemInglesActionPerformed
+        localizacion = new Locale("en", "US");
+        Locale.setDefault(localizacion);
+        cambiarIdioma();
+    }//GEN-LAST:event_itemInglesActionPerformed
 
         public void restricciones(){
             if (acceso==false){
@@ -490,11 +622,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem eliminarMenuProducto;
     private javax.swing.JMenuItem itemBuscarEliminar;
     private javax.swing.JMenuItem itemCrear;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem itemEspañol;
+    private javax.swing.JMenuItem itemIngles;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem listarMenuCliente;
@@ -503,6 +633,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuCliente;
     private javax.swing.JMenu menuEmpleado;
+    private javax.swing.JMenu menuFactura;
+    private javax.swing.JMenu menuIdioma;
     private javax.swing.JMenu menuProducto;
     // End of variables declaration//GEN-END:variables
 

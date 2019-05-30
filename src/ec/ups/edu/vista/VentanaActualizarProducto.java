@@ -11,6 +11,7 @@ import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ResourceBundle;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -31,6 +32,16 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         this.controladorProducto=controladorProducto;
         this.setSize(1000, 500);
     }
+    public void cambiaridioma(ResourceBundle mensajes){
+        lblActualizarProducto.setText(mensajes.getString("ActualizarProducto"));
+        lblCantidadActualizarProducto.setText(mensajes.getString("CantidadCrearProducto"));
+        lblCodigoActualizarProducto.setText(mensajes.getString("IngresarCodigo"));
+        lblNombreActulizarProducto.setText(mensajes.getString("NombreCrearCliente"));
+        lblFechaActualizarProducto.setText(mensajes.getString("FechaCrearProducto"));
+        jlbTipoActualizarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
+        lblCostoActualizarProducto.setText(mensajes.getString("CostoCrearProducto"));
+        jlbTipoActualizarProducto.setText(mensajes.getString("lblTipo"));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +52,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblActualizarProducto = new javax.swing.JLabel();
         btnActualizarActualizarProducto = new javax.swing.JToggleButton();
         btnBuscarActualizarProducto = new javax.swing.JButton();
         txtCantidadActualizarProducto = new javax.swing.JTextField();
@@ -63,10 +74,10 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
 
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Actualizar Producto");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(358, 0, 217, 51);
+        lblActualizarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblActualizarProducto.setText("Actualizar Producto");
+        getContentPane().add(lblActualizarProducto);
+        lblActualizarProducto.setBounds(358, 0, 217, 51);
 
         btnActualizarActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizar.png"))); // NOI18N
         btnActualizarActualizarProducto.setEnabled(false);
@@ -215,9 +226,9 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JToggleButton btnActualizarActualizarProducto;
     private javax.swing.JButton btnBuscarActualizarProducto;
     private javax.swing.JButton btnExaminar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jlbTipoActualizarProducto;
     private javax.swing.JLabel jlbTipoActualizarProducto1;
+    private javax.swing.JLabel lblActualizarProducto;
     private javax.swing.JLabel lblCantidadActualizarProducto;
     private javax.swing.JLabel lblCodigoActualizarProducto;
     private javax.swing.JLabel lblCostoActualizarProducto;

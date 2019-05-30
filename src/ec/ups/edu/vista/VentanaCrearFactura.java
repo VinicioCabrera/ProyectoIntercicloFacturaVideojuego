@@ -18,12 +18,16 @@ import ec.ups.edu.modelo.Producto;
 import java.beans.PropertyVetoException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
@@ -70,6 +74,36 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         this.setSize(1000, 800);
         
             
+    }
+    public void cambiaridioma(ResourceBundle mensajes) {
+        lblFactura.setText(mensajes.getString("MenuFactura"));
+        lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
+        lblCodigos.setText(mensajes.getString("IngresarCodigo"));
+        lblNombre.setText(mensajes.getString("NombreCrearCliente"));
+        lblEmail.setText(mensajes.getString("EmailCrearCliente"));
+        lblDireccion.setText(mensajes.getString("DireccionCrearCliente"));
+        lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        lblFechas.setText(mensajes.getString("FechaCrearProducto"));
+        lblEmpleado.setText(mensajes.getString("MenuEmpleado"));
+        
+        JTableHeader th = tblFactura.getTableHeader();
+        TableColumnModel tm = th.getColumnModel();
+        TableColumn tc;
+        tc = tm.getColumn(0);
+        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc = tm.getColumn(1);
+        tc.setHeaderValue(mensajes.getString("tblImagen"));
+        tc = tm.getColumn(2);
+        tc.setHeaderValue(mensajes.getString("MenuProducto"));
+        tc = tm.getColumn(3);
+        tc.setHeaderValue(mensajes.getString("CantidadCrearProducto"));
+        tc = tm.getColumn(4);
+        tc.setHeaderValue(mensajes.getString("tblPreciaoU"));
+        tc = tm.getColumn(5);
+        tc.setHeaderValue(mensajes.getString("tblPrecioT"));
+        th.repaint();
+        
+
     }
 
     /**

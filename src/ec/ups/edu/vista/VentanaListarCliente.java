@@ -7,8 +7,12 @@ package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.modelo.Cliente;
+import java.util.ResourceBundle;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -25,6 +29,28 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
         this.controladorCliente=controladorCliente;
         llenarTabla();
     }
+    public void cambiaridioma(ResourceBundle mensajes) {
+        lblListarCliente.setText(mensajes.getString("ListarCliente"));
+        
+        JTableHeader th = tblCliente.getTableHeader();
+        TableColumnModel tm = th.getColumnModel();
+        TableColumn tc;
+        tc = tm.getColumn(0);
+        tc.setHeaderValue(mensajes.getString("IngresarCodigo"));
+        tc=tm.getColumn(1);
+        tc.setHeaderValue(mensajes.getString("NombreCrearCliente"));
+        tc = tm.getColumn(2);
+        tc.setHeaderValue(mensajes.getString("CedulaCrearCliente"));
+        tc = tm.getColumn(3);
+        tc.setHeaderValue(mensajes.getString("DireccionCrearCliente"));
+        tc = tm.getColumn(4);
+        tc.setHeaderValue(mensajes.getString("EmailCrearCliente"));
+        tc = tm.getColumn(5);
+        tc.setHeaderValue(mensajes.getString("TelefonoCrearCliente"));
+        th.repaint();
+        
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,14 +61,14 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblListarCliente = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCliente = new javax.swing.JTable();
 
         setClosable(true);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel1.setText("Listar Cliente");
+        lblListarCliente.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblListarCliente.setText("Listar Cliente");
 
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,14 +99,14 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(323, 323, 323)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblListarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(327, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblListarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
                 .addContainerGap())
@@ -107,8 +133,8 @@ public class VentanaListarCliente extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblListarCliente;
     private javax.swing.JTable tblCliente;
     // End of variables declaration//GEN-END:variables
 }
