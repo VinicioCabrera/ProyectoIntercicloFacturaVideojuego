@@ -67,8 +67,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         lblFecha.setText(formato.format(fecha));
         this.setSize(1000, 800);
         
-        
-        
+            
     }
 
     /**

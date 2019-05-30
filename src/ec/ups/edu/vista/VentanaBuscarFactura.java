@@ -31,7 +31,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     public VentanaBuscarFactura(ControladorFactura controladorFactura) {
         initComponents();
         this.controladorFactura= controladorFactura;
-        this.setSize(1000,500);
+        this.setSize(1000,1000);
         formato= new SimpleDateFormat("dd/MM/yyyy");
     }
 
@@ -62,7 +62,6 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         lblFechas = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         lblCodigos = new javax.swing.JLabel();
-        lblCodigo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFactura = new javax.swing.JTable();
         txtSubTotal = new javax.swing.JTextField();
@@ -73,7 +72,8 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         txtTotal = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        btnCancelar1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        txtCodigo = new javax.swing.JTextField();
 
         jLabel14.setText("jLabel14");
 
@@ -192,7 +192,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 80, 710, 131);
+        jPanel1.setBounds(0, 80, 710, 138);
 
         lblFactura.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblFactura.setText("FACTURA");
@@ -211,22 +211,9 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         getContentPane().add(lblCodigos);
         lblCodigos.setBounds(580, 10, 51, 17);
 
-        lblCodigo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblCodigo.setForeground(new java.awt.Color(204, 0, 51));
-        getContentPane().add(lblCodigo);
-        lblCodigo.setBounds(650, 4, 50, 30);
-
         tblFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Codigo", "Imagen", "Producto", "Cantidad", "Precio U.", "Precio T."
@@ -244,7 +231,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(tblFactura);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 210, 710, 340);
+        jScrollPane1.setBounds(0, 220, 710, 340);
 
         txtSubTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -252,21 +239,21 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtSubTotal);
-        txtSubTotal.setBounds(600, 560, 83, 20);
+        txtSubTotal.setBounds(600, 560, 83, 22);
 
         jLabel8.setText("SubTotal");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(540, 560, 42, 14);
+        jLabel8.setBounds(540, 560, 51, 16);
         getContentPane().add(txtIva);
-        txtIva.setBounds(600, 590, 83, 20);
+        txtIva.setBounds(600, 590, 83, 22);
 
         jLabel13.setText("Iva");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(576, 590, 20, 14);
+        jLabel13.setBounds(576, 590, 20, 16);
 
         jLabel15.setText("Total");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(565, 620, 30, 14);
+        jLabel15.setBounds(565, 620, 30, 16);
 
         txtTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -274,7 +261,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtTotal);
-        txtTotal.setBounds(600, 620, 83, 20);
+        txtTotal.setBounds(600, 620, 83, 22);
 
         btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -294,14 +281,19 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         getContentPane().add(btnGuardar);
         btnGuardar.setBounds(40, 560, 90, 90);
 
-        btnCancelar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
-        btnCancelar1.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelar1ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancelar1);
-        btnCancelar1.setBounds(190, 560, 80, 90);
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(190, 560, 80, 90);
+
+        txtCodigo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(204, 0, 51));
+        getContentPane().add(txtCodigo);
+        txtCodigo.setBounds(640, 0, 60, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -338,10 +330,10 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void btnCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelar1ActionPerformed
-        controladorFactura.remove(Integer.parseInt(lblCodigo.getText()));
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        controladorFactura.remove(Integer.parseInt(txtCodigo.getText()));
         JOptionPane.showMessageDialog(this, "Factura Eliminada", "Eliminar Factura", JOptionPane.OK_OPTION);
-        lblCodigo.setText("");
+        txtCodigo.setText("");
         txtCedula.setText("");
         txtDireccion.setText("");
         txtIva.setText("");
@@ -351,7 +343,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         txtTelefono.setText("");
         model.setColumnCount(6);
         model.setRowCount(0);
-    }//GEN-LAST:event_btnCancelar1ActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
@@ -359,7 +351,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         Factura factura = new Factura();
-        factura = controladorFactura.read(Integer.parseInt(lblCodigo.getText()));
+        factura = controladorFactura.read(Integer.parseInt(txtCodigo.getText()));
         if (factura != null) {
             model = (DefaultTableModel) tblFactura.getModel();
             model.setColumnCount(5);
@@ -386,7 +378,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCancelar1;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -395,7 +387,6 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCedula;
-    private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblCodigos;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblEmail;
@@ -407,6 +398,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JTable tblFactura;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmpleado;

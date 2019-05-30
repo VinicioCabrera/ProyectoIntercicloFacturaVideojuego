@@ -5,6 +5,7 @@
  */
 package ec.ups.edu.vista;
 
+import ec.ups.edu.controlador.ControladorEmpleado;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +17,7 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipalLogin
      */
+    private ControladorEmpleado controladorEmpleado;
     private VentanaSecundaria v2;
     private boolean acceso=true;
     public VentanaPrincipalLogin() {
