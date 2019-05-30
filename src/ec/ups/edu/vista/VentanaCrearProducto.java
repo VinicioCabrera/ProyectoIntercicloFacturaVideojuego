@@ -6,6 +6,7 @@
 package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
+import ec.ups.edu.modelo.Clase;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -57,6 +58,10 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         txtCostoCrearProducto = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        txtTipoCrearProducto = new javax.swing.JTextField();
+        lblTipoCrearProducto = new javax.swing.JLabel();
+        txtDescripcionCrearProducto = new javax.swing.JTextField();
+        lblDescripcionCrearProducto = new javax.swing.JLabel();
 
         setClosable(true);
         getContentPane().setLayout(null);
@@ -98,7 +103,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnCancelarCrearProducto);
-        btnCancelarCrearProducto.setBounds(640, 350, 110, 90);
+        btnCancelarCrearProducto.setBounds(650, 440, 110, 90);
         getContentPane().add(txtCantidadCrearProducto);
         txtCantidadCrearProducto.setBounds(468, 183, 220, 38);
 
@@ -127,7 +132,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(txtCostoCrearProducto);
         txtCostoCrearProducto.setBounds(470, 270, 220, 38);
         getContentPane().add(lblImagen);
-        lblImagen.setBounds(10, 60, 310, 365);
+        lblImagen.setBounds(10, 80, 310, 365);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/LUPA.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -136,13 +141,28 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(370, 350, 108, 100);
+        jButton1.setBounds(380, 440, 108, 100);
+        getContentPane().add(txtTipoCrearProducto);
+        txtTipoCrearProducto.setBounds(470, 320, 220, 40);
+
+        lblTipoCrearProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblTipoCrearProducto.setText("Tipo :");
+        getContentPane().add(lblTipoCrearProducto);
+        lblTipoCrearProducto.setBounds(350, 320, 102, 30);
+        getContentPane().add(txtDescripcionCrearProducto);
+        txtDescripcionCrearProducto.setBounds(470, 370, 220, 40);
+
+        lblDescripcionCrearProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblDescripcionCrearProducto.setText("Descripcion :");
+        getContentPane().add(lblDescripcionCrearProducto);
+        lblDescripcionCrearProducto.setBounds(330, 380, 140, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCrearProductoActionPerformed
        Producto producto= new Producto();
+       Clase clase=new Clase();
         try {
         Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(txtFechaCrearProducto.getText());
         producto.setFechaExpedicion(fecha);
@@ -154,6 +174,8 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         producto.setCosto(Double.parseDouble(txtCostoCrearProducto.getText()));
         producto.setCantidad(Integer.parseInt(txtCantidadCrearProducto.getText()));
         producto.setNombre(txtNombreCrearProducto.getText());
+        clase.setTipo(txtTipoCrearProducto.getText());
+        clase.setDescripcion(txtDescripcionCrearProducto.getText());
         producto.setPath(ruta);
         controladorProducto.create(producto);
         JOptionPane.showMessageDialog(this, "Producto creado Exitosamente");
@@ -162,6 +184,8 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         txtCostoCrearProducto.setText("");
         txtFechaCrearProducto.setText("");
         txtNombreCrearProducto.setText("");
+        txtTipoCrearProducto.setText("");
+        txtDescripcionCrearProducto.setText("");
         lblImagen.setIcon(null);
         
         
@@ -198,13 +222,17 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCantidadCrearProducto;
     private javax.swing.JLabel lblCodigoCrearProducto;
     private javax.swing.JLabel lblCostoCrearProducto;
+    private javax.swing.JLabel lblDescripcionCrearProducto;
     private javax.swing.JLabel lblFechaCrearProducto;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblNombreCrearProducto;
+    private javax.swing.JLabel lblTipoCrearProducto;
     private javax.swing.JTextField txtCantidadCrearProducto;
     private javax.swing.JTextField txtCodigoCrearProducto;
     private javax.swing.JTextField txtCostoCrearProducto;
+    private javax.swing.JTextField txtDescripcionCrearProducto;
     private javax.swing.JTextField txtFechaCrearProducto;
     private javax.swing.JTextField txtNombreCrearProducto;
+    private javax.swing.JTextField txtTipoCrearProducto;
     // End of variables declaration//GEN-END:variables
 }

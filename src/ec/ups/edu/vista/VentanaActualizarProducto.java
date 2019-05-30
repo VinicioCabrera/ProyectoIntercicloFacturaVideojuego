@@ -6,6 +6,7 @@
 package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
+import ec.ups.edu.modelo.Clase;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -28,6 +29,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     public VentanaActualizarProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
+        this.setSize(1000, 500);
     }
 
     /**
@@ -54,6 +56,10 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         txtNombreActualizarProducto = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
         btnExaminar = new javax.swing.JButton();
+        txtTipoActualizarProducto = new javax.swing.JTextField();
+        jlbTipoActualizarProducto = new javax.swing.JLabel();
+        txtDescripcionActualizarProducto = new javax.swing.JTextField();
+        jlbTipoActualizarProducto1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(null);
 
@@ -126,7 +132,21 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnExaminar);
-        btnExaminar.setBounds(410, 370, 110, 100);
+        btnExaminar.setBounds(440, 460, 110, 100);
+        getContentPane().add(txtTipoActualizarProducto);
+        txtTipoActualizarProducto.setBounds(530, 330, 220, 40);
+
+        jlbTipoActualizarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jlbTipoActualizarProducto.setText("Tipo :");
+        getContentPane().add(jlbTipoActualizarProducto);
+        jlbTipoActualizarProducto.setBounds(410, 330, 90, 30);
+        getContentPane().add(txtDescripcionActualizarProducto);
+        txtDescripcionActualizarProducto.setBounds(530, 380, 220, 40);
+
+        jlbTipoActualizarProducto1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jlbTipoActualizarProducto1.setText("Descripcion:");
+        getContentPane().add(jlbTipoActualizarProducto1);
+        jlbTipoActualizarProducto1.setBounds(390, 380, 130, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,8 +154,11 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private void btnBuscarActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActualizarProductoActionPerformed
         int codigo=Integer.parseInt(txtCodigoActualizarProducto.getText());
         Producto producto=controladorProducto.read(codigo);
+        
         txtCantidadActualizarProducto.setText(String.valueOf(producto.getCantidad()));
         txtCostoActualizarEmpleado.setText(String.valueOf(producto.getCosto()));
+        txtTipoActualizarProducto.setText(producto.getClase().getTipo());
+        txtDescripcionActualizarProducto.setText(producto.getClase().getDescripcion());
         SimpleDateFormat formato=new SimpleDateFormat();
         String fecha=formato.format(producto.getFechaExpedicion());
         txtFechaActualizarProducto.setText(fecha);
@@ -161,6 +184,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
 
     private void btnActualizarActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActualizarProductoActionPerformed
         Producto producto= new Producto();
+        Clase clase=new Clase();
         try {
         Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(txtFechaActualizarProducto.getText());
         producto.setFechaExpedicion(fecha);
@@ -172,6 +196,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         producto.setCosto(Double.parseDouble(txtCostoActualizarEmpleado.getText()));
         producto.setCantidad(Integer.parseInt(txtCantidadActualizarProducto.getText()));
         producto.setNombre(txtNombreActualizarProducto.getText());
+        clase.setTipo(txtTipoActualizarProducto.getText());
+        clase.setDescripcion(txtDescripcionActualizarProducto.getText());
         producto.setPath(ruta);
         controladorProducto.update(producto);
         JOptionPane.showMessageDialog(this, "Producto actualizado correctamente");
@@ -179,6 +205,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         txtCostoActualizarEmpleado.setText("");
         txtFechaActualizarProducto.setText("");
         txtNombreActualizarProducto.setText("");
+        txtTipoActualizarProducto.setText("");
+        txtDescripcionActualizarProducto.setText("");
         lblImagen.setIcon(null);
     }//GEN-LAST:event_btnActualizarActualizarProductoActionPerformed
 
@@ -188,6 +216,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarActualizarProducto;
     private javax.swing.JButton btnExaminar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jlbTipoActualizarProducto;
+    private javax.swing.JLabel jlbTipoActualizarProducto1;
     private javax.swing.JLabel lblCantidadActualizarProducto;
     private javax.swing.JLabel lblCodigoActualizarProducto;
     private javax.swing.JLabel lblCostoActualizarProducto;
@@ -197,7 +227,9 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCantidadActualizarProducto;
     private javax.swing.JTextField txtCodigoActualizarProducto;
     private javax.swing.JTextField txtCostoActualizarEmpleado;
+    private javax.swing.JTextField txtDescripcionActualizarProducto;
     private javax.swing.JTextField txtFechaActualizarProducto;
     private javax.swing.JTextField txtNombreActualizarProducto;
+    private javax.swing.JTextField txtTipoActualizarProducto;
     // End of variables declaration//GEN-END:variables
 }

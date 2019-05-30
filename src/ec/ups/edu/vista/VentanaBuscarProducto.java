@@ -49,6 +49,10 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         txtCantidadBuscarProducto = new javax.swing.JTextField();
         btnBuscarBuscarProducto = new javax.swing.JButton();
         lblImagen = new javax.swing.JLabel();
+        txtTipoBuscarProducto = new javax.swing.JTextField();
+        jlbTipoBuscarProducto = new javax.swing.JLabel();
+        jlbTipoBuscarProducto1 = new javax.swing.JLabel();
+        txtDescripcionBuscarProducto = new javax.swing.JTextField();
 
         setClosable(true);
 
@@ -77,6 +81,12 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
             }
         });
 
+        jlbTipoBuscarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jlbTipoBuscarProducto.setText("Tipo :");
+
+        jlbTipoBuscarProducto1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jlbTipoBuscarProducto1.setText("Descripcion:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,16 +112,21 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                                     .addComponent(txtCantidadBuscarProducto)
                                     .addComponent(txtNombreBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblFechaBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCostoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblFechaBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblCostoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jlbTipoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jlbTipoBuscarProducto1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnBuscarBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtFechaBuscarProducto)
-                                        .addComponent(txtCostoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                                    .addComponent(txtFechaBuscarProducto)
+                                    .addComponent(txtCostoBuscarProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                    .addComponent(txtTipoBuscarProducto)
+                                    .addComponent(txtDescripcionBuscarProducto))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
@@ -121,8 +136,9 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 60, Short.MAX_VALUE)
+                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(95, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
@@ -145,9 +161,17 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCostoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCostoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addComponent(btnBuscarBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(69, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbTipoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTipoBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDescripcionBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbTipoBuscarProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBuscarBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
 
         pack();
@@ -165,7 +189,8 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         ImageIcon im=new ImageIcon(producto.getPath());
         ImageIcon imagen=new ImageIcon(im.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
         lblImagen.setIcon(imagen);
-        
+        txtTipoBuscarProducto.setText(producto.getClase().getTipo());
+        txtDescripcionBuscarProducto.setText(producto.getClase().getDescripcion());
     }//GEN-LAST:event_btnBuscarBuscarProductoActionPerformed
 
 
@@ -173,6 +198,8 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscarBuscarProducto;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jlbTipoBuscarProducto;
+    private javax.swing.JLabel jlbTipoBuscarProducto1;
     private javax.swing.JLabel lblCantidadBuscarProducto;
     private javax.swing.JLabel lblCodigoBuscarProducto;
     private javax.swing.JLabel lblCostoBuscarProducto;
@@ -182,7 +209,9 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCantidadBuscarProducto;
     private javax.swing.JTextField txtCodigoBuscarProducto;
     private javax.swing.JTextField txtCostoBuscarProducto;
+    private javax.swing.JTextField txtDescripcionBuscarProducto;
     private javax.swing.JTextField txtFechaBuscarProducto;
     private javax.swing.JTextField txtNombreBuscarProducto;
+    private javax.swing.JTextField txtTipoBuscarProducto;
     // End of variables declaration//GEN-END:variables
 }

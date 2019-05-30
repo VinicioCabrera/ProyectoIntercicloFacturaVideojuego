@@ -5,7 +5,7 @@
  */
 package ec.ups.edu.vista;
 
-import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.controlador.ControladorFactura;
@@ -40,16 +40,12 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private VentanaBuscarFactura buscarFactura;
  private VentanaStock stock;
  
- private VentanaActualizarClase actualizarClase;
- private VentanaCrearClase crearClase;
- private VentanaBuscarClase buscarClase;
- private VentanaEliminarClase eliminarClase;
- private VentanaListarClase listarClase;
+
  
  private ControladorCliente controladorCliente;
  private ControladorProducto controladorProducto;
  private ControladorEmpleado controladorEmpleado;
- private ControladorClase controladorClase;
+ private ControladorCliente controladorClase;
  private ControladorFactura controladorFactura;
  
     /**
@@ -62,7 +58,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         restricciones();
         controladorCliente=new ControladorCliente();
         controladorProducto=new ControladorProducto();
-        controladorClase=new ControladorClase();
+        controladorClase=new ControladorCliente();
         controladorFactura=new ControladorFactura();
         controladorEmpleado= new ControladorEmpleado();
         this.setExtendedState(6);
@@ -103,12 +99,6 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         actulizarMenuProducto = new javax.swing.JMenuItem();
         eliminarMenuProducto = new javax.swing.JMenuItem();
         listarMenuProducto = new javax.swing.JMenuItem();
-        menuClases = new javax.swing.JMenu();
-        crearMenuClases = new javax.swing.JMenuItem();
-        buscarMenuClases = new javax.swing.JMenuItem();
-        actualizarMenuClases = new javax.swing.JMenuItem();
-        eliminarMenuClases = new javax.swing.JMenuItem();
-        listarMenuClases = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         itemCrear = new javax.swing.JMenuItem();
         itemBuscarEliminar = new javax.swing.JMenuItem();
@@ -262,50 +252,6 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         menuProducto.add(listarMenuProducto);
 
         menuBar.add(menuProducto);
-
-        menuClases.setText("Clases");
-
-        crearMenuClases.setText("Crear");
-        crearMenuClases.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearMenuClasesActionPerformed(evt);
-            }
-        });
-        menuClases.add(crearMenuClases);
-
-        buscarMenuClases.setText("Buscar");
-        buscarMenuClases.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarMenuClasesActionPerformed(evt);
-            }
-        });
-        menuClases.add(buscarMenuClases);
-
-        actualizarMenuClases.setText("Actualizar");
-        actualizarMenuClases.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarMenuClasesActionPerformed(evt);
-            }
-        });
-        menuClases.add(actualizarMenuClases);
-
-        eliminarMenuClases.setText("Eliminar");
-        eliminarMenuClases.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarMenuClasesActionPerformed(evt);
-            }
-        });
-        menuClases.add(eliminarMenuClases);
-
-        listarMenuClases.setText("Listar");
-        listarMenuClases.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listarMenuClasesActionPerformed(evt);
-            }
-        });
-        menuClases.add(listarMenuClases);
-
-        menuBar.add(menuClases);
 
         jMenu2.setText("Factura");
 
@@ -488,53 +434,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
        // setSize(listarProducto.getWidth()+15,listarProducto.getHeight()+60);
     }//GEN-LAST:event_listarMenuProductoActionPerformed
 
-    private void crearMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearMenuClasesActionPerformed
-        crearClase = new VentanaCrearClase(controladorClase);
-        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
-        crearClase.setVisible(true);
-        desktopPane.add(crearClase);
-       // setSize(crearClase.getWidth()+15,crearClase.getHeight()+60);
-    }//GEN-LAST:event_crearMenuClasesActionPerformed
-
-    private void buscarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMenuClasesActionPerformed
-        buscarClase = new VentanaBuscarClase(controladorClase);
-        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
-        buscarClase.setVisible(true);
-        desktopPane.add(buscarClase);
-       // setSize(buscarClase.getWidth()+15,buscarClase.getHeight()+60);
-    }//GEN-LAST:event_buscarMenuClasesActionPerformed
-
-    private void actualizarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarMenuClasesActionPerformed
-        actualizarClase = new VentanaActualizarClase(controladorClase);
-        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
-        actualizarClase.setVisible(true);
-        desktopPane.add(actualizarClase);
-        //setSize(actualizarClase.getWidth()+15,actualizarClase.getHeight()+60);
-    }//GEN-LAST:event_actualizarMenuClasesActionPerformed
-
-    private void eliminarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMenuClasesActionPerformed
-        eliminarClase = new VentanaEliminarClase(controladorClase);
-        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
-        eliminarClase.setVisible(true);
-        desktopPane.add(eliminarClase);
-       // setSize(eliminarClase.getWidth()+15,eliminarClase.getHeight()+60);
-    }//GEN-LAST:event_eliminarMenuClasesActionPerformed
-
-    private void listarMenuClasesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuClasesActionPerformed
-        listarClase = new VentanaListarClase(controladorClase);
-        this.desktopPane.removeAll();
-        this.desktopPane.repaint();
-        listarClase.setVisible(true);
-        desktopPane.add(listarClase);
-       // setSize(listarClase.getWidth()+15,listarClase.getHeight()+60);
-    }//GEN-LAST:event_listarMenuClasesActionPerformed
-
     private void itemBuscarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarEliminarActionPerformed
-        buscarFactura = new VentanaBuscarFactura();
+        buscarFactura = new VentanaBuscarFactura(controladorFactura);
         this.desktopPane.removeAll();
         this.desktopPane.repaint();
         buscarFactura.setVisible(true);
@@ -559,26 +460,20 @@ public class VentanaSecundaria extends javax.swing.JFrame {
                 crearMenuProducto.setEnabled(false);
                 actulizarMenuProducto.setEnabled(false);
                 eliminarMenuProducto.setEnabled(false);
-                crearMenuClases.setEnabled(false);
-                actualizarMenuClases.setEnabled(false);
-                eliminarMenuClases.setEnabled(false);
+                
             }
         }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem actualizarMenuClases;
     private javax.swing.JMenuItem actualizarMenuCliente;
     private javax.swing.JMenuItem actualizarMenuEmpleado;
     private javax.swing.JMenuItem actulizarMenuProducto;
-    private javax.swing.JMenuItem buscarMenuClases;
     private javax.swing.JMenuItem buscarMenuCliente;
     private javax.swing.JMenuItem buscarMenuEmpleado;
     private javax.swing.JMenuItem buscarMenuProducto;
-    private javax.swing.JMenuItem crearMenuClases;
     private javax.swing.JMenuItem crearMenuCliente;
     private javax.swing.JMenuItem crearMenuEmpleado;
     private javax.swing.JMenuItem crearMenuProducto;
     private javax.swing.JDesktopPane desktopPane;
-    private javax.swing.JMenuItem eliminarMenuClases;
     private javax.swing.JMenuItem eliminarMenuCliente;
     private javax.swing.JMenuItem eliminarMenuEmpleado;
     private javax.swing.JMenuItem eliminarMenuProducto;
@@ -588,12 +483,10 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem listarMenuClases;
     private javax.swing.JMenuItem listarMenuCliente;
     private javax.swing.JMenuItem listarMenuEmpleado;
     private javax.swing.JMenuItem listarMenuProducto;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu menuClases;
     private javax.swing.JMenu menuCliente;
     private javax.swing.JMenu menuEmpleado;
     private javax.swing.JMenu menuProducto;

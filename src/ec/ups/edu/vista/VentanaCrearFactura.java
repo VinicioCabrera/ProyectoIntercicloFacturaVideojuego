@@ -5,7 +5,7 @@
  */
 package ec.ups.edu.vista;
 import com.sun.glass.events.KeyEvent;
-import ec.ups.edu.controlador.ControladorClase;
+import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorCliente;
 import ec.ups.edu.controlador.ControladorEmpleado;
 import ec.ups.edu.controlador.ControladorFactura;	
@@ -15,9 +15,11 @@ import ec.ups.edu.modelo.DetalleFactura;
 import ec.ups.edu.modelo.Empleado;
 import ec.ups.edu.modelo.Factura;
 import ec.ups.edu.modelo.Producto;
+import java.beans.PropertyVetoException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -32,7 +34,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private ControladorCliente controladorCliente;
     private ControladorEmpleado controladorEmpleado;
     private ControladorFactura controladorFactura;
-    private ControladorClase controladorClase;
+    private ControladorCliente controladorClase;
     private ControladorProducto controladorProducto;
     private Factura factura;
     private DetalleFactura detalleFactura;
@@ -44,8 +46,10 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private Date fecha;
     private SimpleDateFormat formato;
     private Empleado empleado;
+   
+   
 
-    public VentanaCrearFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente, ControladorEmpleado controladorEmpleado, ControladorClase controladorClase,ControladorProducto controladorProducto) {
+    public VentanaCrearFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente, ControladorEmpleado controladorEmpleado, ControladorCliente controladorClase,ControladorProducto controladorProducto) {
         initComponents();
         this.controladorCliente = controladorCliente;
         this.controladorEmpleado = controladorEmpleado;
@@ -62,6 +66,8 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         formato = new SimpleDateFormat("dd/MM/yyyy");
         lblFecha.setText(formato.format(fecha));
         this.setSize(1000, 800);
+        
+        
         
     }
 

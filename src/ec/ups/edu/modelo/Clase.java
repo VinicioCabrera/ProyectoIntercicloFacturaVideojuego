@@ -11,20 +11,14 @@ package ec.ups.edu.modelo;
  * @author USER
  */
 public class Clase {
-    private int codigo;
-    private String nombre;
+    
+    private String tipo;
     private String descripcion;
 
     public Clase() {
     }
 
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+   
 
     public String getDescripcion() {
         return descripcion;
@@ -34,44 +28,11 @@ public class Clase {
         this.descripcion = descripcion;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-
-    @Override
-    public String toString() {
-        return "Clase{" + "codigo=" + codigo + ", descripcion=" + descripcion + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + this.codigo;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Clase other = (Clase) obj;
-        if (this.codigo != other.codigo) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    } 
 }

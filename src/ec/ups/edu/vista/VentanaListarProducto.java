@@ -50,11 +50,11 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CODIGO", "NOMBRE", "CANTIDAD", "FECHA", "COSTO", "IMAGEN"
+                "CODIGO", "NOMBRE", "CANTIDAD", "FECHA", "COSTO", "IMAGEN", "Tipo", "Descripcion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

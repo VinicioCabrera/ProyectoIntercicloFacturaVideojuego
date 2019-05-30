@@ -31,6 +31,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     public VentanaBuscarFactura(ControladorFactura controladorFactura) {
         initComponents();
         this.controladorFactura= controladorFactura;
+        this.setSize(1000,500);
         formato= new SimpleDateFormat("dd/MM/yyyy");
     }
 

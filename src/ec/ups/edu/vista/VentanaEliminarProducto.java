@@ -53,6 +53,10 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         btnBuscarEliminarProducto = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblImagen = new javax.swing.JLabel();
+        txtTipoEliminarProducto = new javax.swing.JTextField();
+        lblTipoEliminarProducto = new javax.swing.JLabel();
+        txtDescripcionEliminarProducto = new javax.swing.JTextField();
+        lblDescripcionEliminarProducto1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(null);
         getContentPane().add(txtCantidadEliminarProducto);
@@ -78,7 +82,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         lblCostoEliminarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCostoEliminarProducto.setText("Costo :");
         getContentPane().add(lblCostoEliminarProducto);
-        lblCostoEliminarProducto.setBounds(74, 283, 102, 30);
+        lblCostoEliminarProducto.setBounds(70, 280, 102, 30);
 
         lblCodigoEliminarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCodigoEliminarProducto.setText("Codigo:");
@@ -122,7 +126,21 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(228, 11, 222, 39);
         getContentPane().add(lblImagen);
-        lblImagen.setBounds(130, 330, 290, 140);
+        lblImagen.setBounds(170, 460, 290, 140);
+        getContentPane().add(txtTipoEliminarProducto);
+        txtTipoEliminarProducto.setBounds(200, 320, 220, 40);
+
+        lblTipoEliminarProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblTipoEliminarProducto.setText("Tipo :");
+        getContentPane().add(lblTipoEliminarProducto);
+        lblTipoEliminarProducto.setBounds(80, 330, 102, 30);
+        getContentPane().add(txtDescripcionEliminarProducto);
+        txtDescripcionEliminarProducto.setBounds(200, 380, 220, 40);
+
+        lblDescripcionEliminarProducto1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        lblDescripcionEliminarProducto1.setText("Descripcion:");
+        getContentPane().add(lblDescripcionEliminarProducto1);
+        lblDescripcionEliminarProducto1.setBounds(32, 390, 140, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -135,6 +153,8 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         txtCostoEliminarProducto.setText("");
         txtFechaEliminarProducto.setText("");
         txtNombreEliminarProducto.setText("");
+        txtTipoEliminarProducto.setText("");
+        txtDescripcionEliminarProducto.setText("");
         lblImagen.setIcon(null);
     }//GEN-LAST:event_btnEliminarEliminarProductoActionPerformed
 
@@ -143,6 +163,8 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         Producto producto=controladorProducto.read(codigo);
         txtCantidadEliminarProducto.setText(String.valueOf(producto.getCantidad()));
         txtCostoEliminarProducto.setText(String.valueOf(producto.getCosto()));
+        txtTipoEliminarProducto.setText(producto.getClase().getTipo());
+        txtDescripcionEliminarProducto.setText(producto.getClase().getDescripcion());
         SimpleDateFormat formato=new SimpleDateFormat();
         String fecha=formato.format(producto.getFechaExpedicion());
         txtFechaEliminarProducto.setText(fecha);
@@ -162,15 +184,19 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCantidadEliminarProducto;
     private javax.swing.JLabel lblCodigoEliminarProducto;
     private javax.swing.JLabel lblCostoEliminarProducto;
+    private javax.swing.JLabel lblDescripcionEliminarProducto1;
     private javax.swing.JLabel lblFechaEliminarProducto;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblMarcaEliminarProducto;
     private javax.swing.JLabel lblNombreEliminarProducto;
+    private javax.swing.JLabel lblTipoEliminarProducto;
     private javax.swing.JTextField txtCantidadEliminarProducto;
     private javax.swing.JTextField txtCodigoEliminarProducto;
     private javax.swing.JTextField txtCostoEliminarProducto;
+    private javax.swing.JTextField txtDescripcionEliminarProducto;
     private javax.swing.JTextField txtFechaEliminarProducto;
     private javax.swing.JTextField txtMarcaEliminarProducto;
     private javax.swing.JTextField txtNombreEliminarProducto;
+    private javax.swing.JTextField txtTipoEliminarProducto;
     // End of variables declaration//GEN-END:variables
 }
