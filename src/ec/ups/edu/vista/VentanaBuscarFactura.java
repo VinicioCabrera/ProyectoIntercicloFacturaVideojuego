@@ -38,6 +38,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         this.setSize(1000,1000);
         formato= new SimpleDateFormat("dd/MM/yyyy");
     }
+    
     public void cambiaridioma(ResourceBundle mensajes) {
         lblFactura.setText(mensajes.getString("MenuFactura"));
         lblCedula.setText(mensajes.getString("CedulaCrearCliente"));
@@ -53,7 +54,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         TableColumnModel tm = th.getColumnModel();
         TableColumn tc;
         tc = tm.getColumn(0);
-        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc.setHeaderValue(mensajes.getString("IngresarCodigo"));
         tc = tm.getColumn(1);
         tc.setHeaderValue(mensajes.getString("tblImagen"));
         tc = tm.getColumn(2);

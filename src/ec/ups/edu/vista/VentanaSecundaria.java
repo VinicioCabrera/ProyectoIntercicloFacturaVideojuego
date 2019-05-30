@@ -40,6 +40,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  
  private VentanaCrearFactura crearFactura;
  private VentanaBuscarFactura buscarFactura;
+ private VentanaListarfactura listarFactura;
  private VentanaStock stock;
  
 
@@ -201,6 +202,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         menuFactura = new javax.swing.JMenu();
         itemCrear = new javax.swing.JMenuItem();
         itemBuscarEliminar = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menuIdioma = new javax.swing.JMenu();
         itemEspañol = new javax.swing.JMenuItem();
         itemIngles = new javax.swing.JMenuItem();
@@ -375,6 +377,14 @@ public class VentanaSecundaria extends javax.swing.JFrame {
             }
         });
         menuFactura.add(itemBuscarEliminar);
+
+        jMenuItem1.setText("listar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuFactura.add(jMenuItem1);
 
         menuBar.add(menuFactura);
 
@@ -597,6 +607,15 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         cambiarIdioma();
     }//GEN-LAST:event_itemInglesActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+         listarFactura = new VentanaListarfactura(controladorFactura);
+        this.desktopPane.removeAll();
+        this.desktopPane.repaint();
+        //listarProducto.cambiaridioma(mensajes);
+        listarFactura.setVisible(true);
+        desktopPane.add(listarFactura);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
         public void restricciones(){
             if (acceso==false){
                 menuEmpleado.setEnabled(false);
@@ -625,6 +644,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemEspañol;
     private javax.swing.JMenuItem itemIngles;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem listarMenuCliente;

@@ -90,7 +90,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         TableColumnModel tm = th.getColumnModel();
         TableColumn tc;
         tc = tm.getColumn(0);
-        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc.setHeaderValue(mensajes.getString("IngresarCodigo"));
         tc = tm.getColumn(1);
         tc.setHeaderValue(mensajes.getString("tblImagen"));
         tc = tm.getColumn(2);
@@ -102,8 +102,6 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         tc = tm.getColumn(5);
         tc.setHeaderValue(mensajes.getString("tblPrecioT"));
         th.repaint();
-        
-
     }
 
     /**

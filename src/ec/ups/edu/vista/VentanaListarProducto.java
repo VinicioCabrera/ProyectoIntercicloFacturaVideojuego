@@ -39,7 +39,7 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
         TableColumnModel tm = th.getColumnModel();
         TableColumn tc;
         tc = tm.getColumn(0);
-        tc.setHeaderValue(mensajes.getString("cliente.codigo"));
+        tc.setHeaderValue(mensajes.getString("IngresarCodigo"));
         tc = tm.getColumn(1);
         tc.setHeaderValue(mensajes.getString("NombreCrearCliente"));
         tc = tm.getColumn(2);
