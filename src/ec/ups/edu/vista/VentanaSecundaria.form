@@ -169,7 +169,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="listarMenuProducto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Listar"/>
+                <Property name="text" type="java.lang.String" value="Stock"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarMenuProductoActionPerformed"/>

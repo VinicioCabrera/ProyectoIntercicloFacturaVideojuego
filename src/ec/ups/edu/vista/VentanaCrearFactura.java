@@ -408,7 +408,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         factura.setSubtotal(subtotalv);
         factura.setFecha(fecha);
         
-        for(int i =0;i<tblFactura.getRowCount()-3;i++){
+        for(int i=0;i<tblFactura.getRowCount()-1;i++){
             System.out.println(i);
             detalleFactura= new DetalleFactura();
             detalleFactura.setCodigo(Integer.parseInt(tblFactura.getValueAt(i, 0).toString()));

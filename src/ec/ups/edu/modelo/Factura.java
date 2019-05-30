@@ -24,7 +24,7 @@ public class Factura {
  private Set<DetalleFactura> detalleFactura;
 
     public Factura() {
-        
+        detalleFactura=new HashSet<>();
     }
 
     public Factura(Cliente cliente, Empleado empleado, Date fecha, double subtotal, double total, double iva,int Codigo) {

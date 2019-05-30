@@ -10,6 +10,7 @@ import ec.ups.edu.modelo.Factura;
 import ec.ups.edu.modelo.ImagenTabla;
 import java.util.Set;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 
 
@@ -19,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class VentanaListarfactura extends javax.swing.JInternalFrame {
 private ControladorFactura controladorfactura;
+private VentanaBuscarFactura ventanabuscarfactura;
     /**
      * Creates new form VentanaListarfactura
      */
@@ -103,16 +105,21 @@ private ControladorFactura controladorfactura;
     }//GEN-LAST:event_tblListarFacturaKeyPressed
 
     private void tblListarFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListarFacturaMouseClicked
-   
+   int tabla=tblListarFactura.getSelectedRow();
+        TableModel modelo=tblListarFactura.getModel();
+        int codigo = Integer.parseInt(modelo.getValueAt(tabla,0).toString());
+        VentanaBuscarFactura ven=new VentanaBuscarFactura(controladorfactura);
+         
     }
+    
 public void listarFactura(){
-    //tblListarFactura.setDefaultRenderer(Object.class, new ImagenTabla());
+    
     DefaultTableModel modelo= (DefaultTableModel) tblListarFactura.getModel();
     Set<Factura> lista=controladorfactura.getLista();
     for (Factura factura : lista) {
         Object[] datos={
             factura.getCodigo(),
-            factura.getCliente(),
+            factura.getCliente().getNombre(),
             factura.getFecha()
         };
         modelo.addRow(datos);

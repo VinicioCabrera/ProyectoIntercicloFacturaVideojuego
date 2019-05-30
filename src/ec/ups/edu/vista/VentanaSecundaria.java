@@ -41,7 +41,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private VentanaCrearFactura crearFactura;
  private VentanaBuscarFactura buscarFactura;
  private VentanaListarfactura listarFactura;
- private VentanaStock stock;
+
  
 
  
@@ -350,7 +350,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuProducto.add(eliminarMenuProducto);
 
-        listarMenuProducto.setText("Listar");
+        listarMenuProducto.setText("Stock");
         listarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listarMenuProductoActionPerformed(evt);
