@@ -50,10 +50,6 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         tbnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        lblContraseña = new javax.swing.JLabel();
-        txtContraseña = new javax.swing.JTextField();
-        lblUsuario = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
 
         lblSueldo.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblSueldo.setText("sueldo:");
@@ -94,18 +90,12 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("Eliminar Empleado");
 
-        lblContraseña.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        lblContraseña.setText("Contraseña:");
-
-        lblUsuario.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        lblUsuario.setText("Usuario:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(128, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(tbnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,18 +103,6 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(102, 102, 102))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(33, 33, 33)
@@ -153,15 +131,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 343, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tbnBuscar)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -196,7 +166,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lblSueldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(264, Short.MAX_VALUE)))
+                    .addContainerGap(147, Short.MAX_VALUE)))
         );
 
         pack();
@@ -211,8 +181,6 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
        txtNombre.setText(empleado.getNombre());
        txtSueldo.setText(String.valueOf(empleado.getSueldo()));
        txtTelefono.setText(empleado.getTelefono());
-       txtContraseña.setText(empleado.getContaseña());
-       txtUsuario.setText(empleado.getUsuario());
        btnEliminar.setEnabled(true);
     }//GEN-LAST:event_tbnBuscarActionPerformed
 
@@ -235,22 +203,18 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
-    private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSueldo;
     private javax.swing.JLabel lblTelefono;
-    private javax.swing.JLabel lblUsuario;
     private javax.swing.JButton tbnBuscar;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSueldo;
     private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

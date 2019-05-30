@@ -6,6 +6,8 @@
 package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorEmpleado;
+import ec.ups.edu.modelo.Empleado;
+import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,8 +22,14 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     private ControladorEmpleado controladorEmpleado;
     private VentanaSecundaria v2;
     private boolean acceso=true;
-    public VentanaPrincipalLogin() {
+    public VentanaPrincipalLogin(ControladorEmpleado controladorEmpleado) {
+        
+        this.controladorEmpleado=controladorEmpleado;
+    }
+
+    private VentanaPrincipalLogin() {
         initComponents();
+        
     }
 
     /**
@@ -111,8 +119,11 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void txtContraseñaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyPressed
+        
+       
         if(evt.getKeyCode()==10){
-
+             
+         
             if(txtUsuario.getText().equals("admi")&&txtContraseña.getText().equals("123")){
                 JOptionPane.showMessageDialog(this, "bienvenido Administrador");
                 v2=new VentanaSecundaria(acceso);
@@ -130,8 +141,8 @@ public class VentanaPrincipalLogin extends javax.swing.JFrame {
                 txtContraseña.setText("");
                 txtUsuario.setText("");
             }
-        }
         
+        }
     }//GEN-LAST:event_txtContraseñaKeyPressed
 
     /**

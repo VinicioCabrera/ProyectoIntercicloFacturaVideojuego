@@ -11,8 +11,6 @@ package ec.ups.edu.modelo;
  */
 public class Empleado extends Persona{
     private double sueldo;
-    private String usuario;
-    private String contaseña;
 
     public Empleado(double sueldo, int codigo, String nombre, String cedula, String direccion, String telefono, String email) {
         super(codigo, nombre, cedula, direccion, telefono, email);
@@ -31,21 +29,7 @@ public class Empleado extends Persona{
         this.sueldo = sueldo;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public String getContaseña() {
-        return contaseña;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setContaseña(String contaseña) {
-        this.contaseña = contaseña;
-    }
+  
 
     @Override
     public String toString() {

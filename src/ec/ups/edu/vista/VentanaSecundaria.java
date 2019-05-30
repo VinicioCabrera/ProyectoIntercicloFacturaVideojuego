@@ -48,6 +48,8 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private ControladorCliente controladorClase;
  private ControladorFactura controladorFactura;
  
+ private VentanaPrincipalLogin principalLogin;
+ 
     /**
      * Creates new form VentanaSecundaria
      */
@@ -79,6 +81,9 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
@@ -105,6 +110,12 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenuItem4.setText("jMenuItem4");
+
+        jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -289,7 +300,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,8 +492,11 @@ public class VentanaSecundaria extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemCrear;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem listarMenuCliente;
     private javax.swing.JMenuItem listarMenuEmpleado;
     private javax.swing.JMenuItem listarMenuProducto;

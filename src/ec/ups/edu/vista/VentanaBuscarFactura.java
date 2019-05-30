@@ -71,7 +71,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         jLabel15 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         txtCodigo = new javax.swing.JTextField();
 
@@ -272,14 +272,14 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(350, 560, 100, 90);
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(40, 560, 90, 90);
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(40, 560, 90, 90);
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -349,15 +349,15 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Factura factura = new Factura();
         factura = controladorFactura.read(Integer.parseInt(txtCodigo.getText()));
         if (factura != null) {
             model = (DefaultTableModel) tblFactura.getModel();
-            model.setColumnCount(5);
+            model.setColumnCount(6);
             model.setRowCount(0);
             txtCedula.setText(factura.getCliente().getCedula());
-            txtNonbre.setText(factura.getCliente().getCedula());
+            txtNonbre.setText(factura.getCliente().getNombre());
             txtDireccion.setText(factura.getCliente().getDireccion());
             txtTelefono.setText(factura.getCliente().getTelefono());
             txtSubTotal.setText(String.valueOf(factura.getSubtotal()));
@@ -373,13 +373,13 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(this, "No exite la Factura", "Buscar Facrura", JOptionPane.OK_OPTION);
         }
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

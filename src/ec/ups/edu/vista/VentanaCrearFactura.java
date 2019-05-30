@@ -46,7 +46,9 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private Date fecha;
     private SimpleDateFormat formato;
     private Empleado empleado;
-   
+    private int menorar;
+    int fila;
+    int codigo=0;
    
 
     public VentanaCrearFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente, ControladorEmpleado controladorEmpleado, ControladorCliente controladorClase,ControladorProducto controladorProducto) {
@@ -373,6 +375,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         factura.setTotal(totalv);
         factura.setSubtotal(subtotalv);
         factura.setFecha(fecha);
+        
         for(int i =0;i<tblFactura.getRowCount()-3;i++){
             System.out.println(i);
             detalleFactura= new DetalleFactura();
@@ -385,6 +388,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
             detalleFactura.setSubTotal(Double.parseDouble(tblFactura.getValueAt(i, 4).toString()));
             factura.addDetalleFactura(detalleFactura);
         }
+        System.out.println("bsxchusb");
         controladorFactura.create(factura);
         JOptionPane.showMessageDialog(this, "factura creada");
         lblCodigo.setText(Integer.toString(controladorFactura.getCodigo()));
@@ -426,29 +430,35 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private void tblFacturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblFacturaKeyReleased
         int key = evt.getKeyCode();
         if(key == KeyEvent.VK_ENTER){
-            int fila= tblFactura.getSelectedRow();
+            fila= tblFactura.getSelectedRow();
             int columna =tblFactura.getSelectedColumn();
-            int codigo=0;
+            
             Object[] datos2 ={"", "", "","0","",""};
             
             if(columna==0){
                 codigo=Integer.parseInt(tblFactura.getValueAt(fila,columna).toString());
                 producto = controladorProducto.read(codigo);
                 double precio =producto.getCosto();
-                double cant = Double.parseDouble(tblFactura.getValueAt(fila, 3).toString());
+                int cant = Integer.parseInt(tblFactura.getValueAt(fila, 3).toString());
                 model=(DefaultTableModel) tblFactura.getModel();
                 model.removeRow(fila);
                 total1v= precio* cant;
+                
                 Object[] datos ={ codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
                 model.addRow(datos);
                 model.addRow(datos2);   
             }else if(columna==3){
                 codigo= Integer.parseInt(tblFactura.getValueAt(fila, columna-3).toString());
-                double cant= Double.parseDouble(tblFactura.getValueAt(fila, columna).toString());
+                int cant= Integer.parseInt(tblFactura.getValueAt(fila, columna).toString());
                 model.removeRow(fila);
                 model.removeRow(tblFactura.getRowCount()-1);
+                
                 total1v= producto.getCosto()*cant;
+                
+                menorar=cant;
+                //menor();
                 Object[] datos ={codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
+                
                 model.addRow(datos);
                 model.addRow(datos2);
             }
@@ -462,6 +472,13 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_tblFacturaKeyReleased
 
+   /* public void menor(){
+        Producto producto=controladorProducto.read(codigo);
+       if(producto.setCantidad(producto.getCantidad()-menorar)=0){
+        
+    } 
+        controladorProducto.update(producto);
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

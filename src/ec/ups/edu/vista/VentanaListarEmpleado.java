@@ -44,11 +44,11 @@ public class VentanaListarEmpleado extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "Nombre", "Cedula", "Direccion", "Telefono", "E-mail", "Sueldo", "Usuario", "Contraseña"
+                "Codigo", "Nombre", "Cedula", "Direccion", "Telefono", "E-mail", "Sueldo"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -97,9 +97,7 @@ public class VentanaListarEmpleado extends javax.swing.JInternalFrame {
                 empleado.getDireccion(),
                 empleado.getTelefono(),
                 empleado.getEmail(),
-                empleado.getSueldo(),
-                empleado.getUsuario(),
-                empleado.getContaseña()
+                empleado.getSueldo()
             };
             modelo.addRow(datos);
         }
