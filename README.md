@@ -49,7 +49,6 @@ Se tienen 8 clases que ha sido creadas en el package modelo y a continuación se
 ![p2](https://user-images.githubusercontent.com/49033427/58683110-df57ef00-8338-11e9-8572-2d80ee73c082.png)
 ![p3](https://user-images.githubusercontent.com/49033427/58683111-df57ef00-8338-11e9-8ba5-8ead3ab846d1.png)
 ![p4](https://user-images.githubusercontent.com/49033427/58683112-df57ef00-8338-11e9-9f58-79a9c00d687d.png)
-![principal](https://user-images.githubusercontent.com/49033427/58683114-dff08580-8338-11e9-8cdf-cf7371113031.png)
 ![p5](https://user-images.githubusercontent.com/49033427/58683115-dff08580-8338-11e9-85bb-470e3a084c75.png)
 
 •	La clase que viene después es la clase Producto, esta clase es una clase que hereda de la clase Stock pero esta misma clase tiene su propio atributo que es path el cual nos sirve para guarda la ubicación de la imagen de dicho producto.
