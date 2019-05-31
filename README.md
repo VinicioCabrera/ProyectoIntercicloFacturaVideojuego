@@ -6,6 +6,7 @@ Se crea varios packages para cada una de las clases que habrán puesto que exist
 2.	Creación de un repositorio en GitHub.
 El link del repositorio es: https://github.com/VinicioCabrera/ProyectoIntercicloFacturaVideojuego
 Se crea un repositorio de GitHub en el cual se subirá cada modificación que se hará en el respectivo código que cada integrante haga pues que cada integrante es un contribuidor y podemos cada uno las modificaciones que se desee para de esta manera poder trabajar de una manera conjunto y grupal.
+
 ![punto 2](https://user-images.githubusercontent.com/49033427/58682645-10cfbb00-8337-11e9-8293-14315f09d0df.jpg)
 
 3.	Descripción de la utilización de cada clase.
@@ -23,3 +24,4 @@ Se tienen 8 clases que ha sido creadas en el package modelo y a continuación se
 ![punto 3 3](https://user-images.githubusercontent.com/49033427/58682930-17aafd80-8338-11e9-845c-85fb44a0e23e.jpg)
 ![punto 3 34](https://user-images.githubusercontent.com/49033427/58682931-1974c100-8338-11e9-8492-b42d41176e50.jpg)
 •	La clase Factura es la que la sigue, en esta factura podemos encontrar los detalles, que son llamados atributos, que tiene una factura los cuales son los siguientes el código, empleado, cliente, fecha, subtotal, IVA y el total pero también se aplican atributos que lo comparten las clases Cliente, Empleado y DetalleFactura.
+
