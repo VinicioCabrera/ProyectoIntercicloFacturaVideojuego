@@ -1,6 +1,7 @@
 # ProyectoIntercicloFacturaVideojuego
 1.	Creación de varios package para cada una de las clases.
 Se crea varios packages para cada una de las clases que habrán puesto que existirá un package con el nombre Idiomas para la internacionalización, existe el package controlador donde existen los controladores de cada clase principal siendo estas: cliente, empleado, factura, producto, en el siguiente package imágenes es donde se almacenan las diferentes imágenes utilizadas tanto para botones como para logos, el package modelo es donde se guardan las clases de clase, cliente, detalle factura, empleado, factura, imagentabla, persona, producto y stock mientras que en el package vista están las clases que son mostradas hacia el usuario tanto como para su login como la factura.
+
 ![package](https://user-images.githubusercontent.com/49033427/58682638-06152600-8337-11e9-87f4-36e5d27d932f.jpg)
 
 2.	Creación de un repositorio en GitHub.
