@@ -8,9 +8,12 @@ package ec.ups.edu.vista;
 import ec.ups.edu.controlador.ControladorFactura;
 import ec.ups.edu.modelo.DetalleFactura;
 import ec.ups.edu.modelo.Factura;
+import ec.ups.edu.modelo.ImagenTabla;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import java.util.Set;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -304,32 +307,32 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         getContentPane().add(txtTotal);
         txtTotal.setBounds(600, 620, 83, 22);
 
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
+        btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(350, 560, 100, 90);
+        btnCancelar.setBounds(350, 610, 100, 40);
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
+        btnBuscar.setText("BUSCAR");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
         getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(40, 560, 90, 90);
+        btnBuscar.setBounds(40, 610, 90, 40);
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(190, 560, 80, 90);
+        btnEliminar.setBounds(190, 610, 100, 40);
 
         txtCodigo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         txtCodigo.setForeground(new java.awt.Color(204, 0, 51));
@@ -392,6 +395,8 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Factura factura = new Factura();
+        
+        tblFactura.setDefaultRenderer(Object.class, new ImagenTabla());
         factura = controladorFactura.read(Integer.parseInt(txtCodigo.getText()));
         if (factura != null) {
             model = (DefaultTableModel) tblFactura.getModel();
@@ -404,10 +409,12 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             txtSubTotal.setText(String.valueOf(factura.getSubtotal()));
             txtIva.setText(String.valueOf(factura.getIva()));
             txtTotal.setText(String.valueOf(factura.getTotal()));
+            txtEmpleado.setText(factura.getEmpleado().getNombre());
+            txtEmail.setText(factura.getCliente().getEmail());
             lblFecha.setText(formato.format(factura.getFecha()));
             Set<DetalleFactura> lista = factura.getDetalleFactura();
             for (DetalleFactura facturaDetalle : lista) {
-                Object[] datos = {facturaDetalle.getCodigo(), facturaDetalle.getSubTotal(), facturaDetalle.getProducto().getNombre(), facturaDetalle.getPrecio(), facturaDetalle.getSubTotal()};
+                Object[] datos = {facturaDetalle.getCodigo(), new JLabel(new ImageIcon(facturaDetalle.getProducto().getPath())), facturaDetalle.getProducto().getNombre(),facturaDetalle.getCosto(), facturaDetalle.getPrecio(), facturaDetalle.getSubTotal()};
                 model.addRow(datos);
             }
             btnCancelar.setEnabled(true);

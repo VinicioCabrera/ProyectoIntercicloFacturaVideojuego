@@ -115,23 +115,23 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         jPanel1.add(lblTelefono);
         lblTelefono.setBounds(60, 420, 110, 40);
 
-        btnGuardarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
+        btnGuardarCliente.setText("GUARDAR");
         btnGuardarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarClienteActionPerformed(evt);
             }
         });
         jPanel1.add(btnGuardarCliente);
-        btnGuardarCliente.setBounds(140, 460, 90, 99);
+        btnGuardarCliente.setBounds(140, 470, 90, 40);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/cancelar.png"))); // NOI18N
+        jButton3.setText("CANCELAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(310, 460, 100, 90);
+        jButton3.setBounds(310, 470, 100, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

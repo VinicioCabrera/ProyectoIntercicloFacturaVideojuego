@@ -6,7 +6,6 @@
 package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
-import ec.ups.edu.modelo.Clase;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -30,7 +29,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     public VentanaActualizarProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
-        this.setSize(1000, 500);
+        this.setSize(1000, 800);
     }
     public void cambiaridioma(ResourceBundle mensajes){
         lblActualizarProducto.setText(mensajes.getString("ActualizarProducto"));
@@ -79,24 +78,23 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblActualizarProducto);
         lblActualizarProducto.setBounds(358, 0, 217, 51);
 
-        btnActualizarActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizar.png"))); // NOI18N
-        btnActualizarActualizarProducto.setEnabled(false);
+        btnActualizarActualizarProducto.setText("ACTUALIZAR");
         btnActualizarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActualizarProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnActualizarActualizarProducto);
-        btnActualizarActualizarProducto.setBounds(810, 190, 110, 100);
+        btnActualizarActualizarProducto.setBounds(810, 250, 110, 40);
 
-        btnBuscarActualizarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
+        btnBuscarActualizarProducto.setText("BUSCAR");
         btnBuscarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActualizarProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnBuscarActualizarProducto);
-        btnBuscarActualizarProducto.setBounds(810, 60, 100, 100);
+        btnBuscarActualizarProducto.setBounds(810, 120, 100, 40);
         getContentPane().add(txtCantidadActualizarProducto);
         txtCantidadActualizarProducto.setBounds(529, 181, 220, 38);
 
@@ -135,15 +133,14 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblImagen);
         lblImagen.setBounds(30, 70, 350, 430);
 
-        btnExaminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/LUPA.png"))); // NOI18N
-        btnExaminar.setEnabled(false);
+        btnExaminar.setText("BUSCAR IMAGEN");
         btnExaminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExaminarActionPerformed(evt);
             }
         });
         getContentPane().add(btnExaminar);
-        btnExaminar.setBounds(440, 460, 110, 100);
+        btnExaminar.setBounds(440, 470, 130, 40);
         getContentPane().add(txtTipoActualizarProducto);
         txtTipoActualizarProducto.setBounds(530, 330, 220, 40);
 
@@ -168,8 +165,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         
         txtCantidadActualizarProducto.setText(String.valueOf(producto.getCantidad()));
         txtCostoActualizarEmpleado.setText(String.valueOf(producto.getCosto()));
-        txtTipoActualizarProducto.setText(producto.getClase().getTipo());
-        txtDescripcionActualizarProducto.setText(producto.getClase().getDescripcion());
+        txtTipoActualizarProducto.setText(producto.getTipo());
+        txtDescripcionActualizarProducto.setText(producto.getDescripcion());
         SimpleDateFormat formato=new SimpleDateFormat();
         String fecha=formato.format(producto.getFechaExpedicion());
         txtFechaActualizarProducto.setText(fecha);
@@ -177,8 +174,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         ImageIcon im=new ImageIcon(producto.getPath());
         ImageIcon imagen=new ImageIcon(im.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
         lblImagen.setIcon(imagen);
-        btnActualizarActualizarProducto.setEnabled(true);
-        btnExaminar.setEnabled(true);
+       btnActualizarActualizarProducto.setEnabled(true);
+       btnExaminar.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActualizarProductoActionPerformed
 
     private void btnExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExaminarActionPerformed
@@ -195,7 +192,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
 
     private void btnActualizarActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActualizarProductoActionPerformed
         Producto producto= new Producto();
-        Clase clase=new Clase();
+        
         try {
         Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(txtFechaActualizarProducto.getText());
         producto.setFechaExpedicion(fecha);
@@ -207,8 +204,8 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         producto.setCosto(Double.parseDouble(txtCostoActualizarEmpleado.getText()));
         producto.setCantidad(Integer.parseInt(txtCantidadActualizarProducto.getText()));
         producto.setNombre(txtNombreActualizarProducto.getText());
-        clase.setTipo(txtTipoActualizarProducto.getText());
-        clase.setDescripcion(txtDescripcionActualizarProducto.getText());
+        producto.setTipo(txtTipoActualizarProducto.getText());
+        producto.setDescripcion(txtDescripcionActualizarProducto.getText());
         producto.setPath(ruta);
         controladorProducto.update(producto);
         JOptionPane.showMessageDialog(this, "Producto actualizado correctamente");

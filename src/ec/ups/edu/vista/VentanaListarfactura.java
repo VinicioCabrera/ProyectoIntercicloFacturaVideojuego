@@ -92,9 +92,9 @@ private VentanaBuscarFactura ventanabuscarfactura;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(202, 202, 202))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
 
         pack();
@@ -108,7 +108,9 @@ private VentanaBuscarFactura ventanabuscarfactura;
    int tabla=tblListarFactura.getSelectedRow();
         TableModel modelo=tblListarFactura.getModel();
         int codigo = Integer.parseInt(modelo.getValueAt(tabla,0).toString());
-        VentanaBuscarFactura ven=new VentanaBuscarFactura(controladorfactura);
+        VentanaBuscarFactura ven=new VentanaBuscarFactura(codigo);
+        ven.setVisible(true);
+        
          
     }
     

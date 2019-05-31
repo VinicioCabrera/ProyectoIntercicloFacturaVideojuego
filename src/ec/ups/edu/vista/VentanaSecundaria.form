@@ -25,12 +25,18 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menuCliente">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/ec/ups/edu/imagenes/cliente.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="102"/>
             <Property name="text" type="java.lang.String" value="Cliente"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="crearMenuCliente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/crearitem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="111"/>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
@@ -40,6 +46,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarMenuCliente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/buscaritem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="115"/>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
@@ -49,6 +58,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="actualizarMenuCliente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/actualizaritem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="97"/>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
@@ -58,6 +70,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="eliminarMenuCliente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/eliminaritem.jpg"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="120"/>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
@@ -67,6 +82,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="listarMenuCliente">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/listaitem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar"/>
               </Properties>
               <Events>
@@ -77,12 +95,18 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuEmpleado">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/ec/ups/edu/imagenes/empleado.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="101"/>
             <Property name="text" type="java.lang.String" value="Empleado"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="crearMenuEmpleado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/crearitem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="116"/>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
@@ -92,6 +116,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarMenuEmpleado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/buscaritem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="121"/>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
@@ -101,6 +128,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="actualizarMenuEmpleado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/actualizaritem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="112"/>
                 <Property name="text" type="java.lang.String" value="Actuallizar"/>
               </Properties>
@@ -110,6 +140,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="eliminarMenuEmpleado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/eliminaritem.jpg"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="100"/>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
@@ -119,6 +152,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="listarMenuEmpleado">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/listaitem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Listar"/>
               </Properties>
               <Events>
@@ -129,12 +165,18 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuProducto">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/ec/ups/edu/imagenes/producto.png"/>
+            </Property>
             <Property name="mnemonic" type="int" value="104"/>
             <Property name="text" type="java.lang.String" value="Producto"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="crearMenuProducto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/crearitem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="99"/>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
@@ -144,6 +186,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="buscarMenuProducto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/buscaritem.png"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="97"/>
                 <Property name="text" type="java.lang.String" value="Buscar"/>
               </Properties>
@@ -153,6 +198,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="actulizarMenuProducto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/actualizaritem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
               <Events>
@@ -161,6 +209,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="eliminarMenuProducto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/eliminaritem.jpg"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
@@ -169,6 +220,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="listarMenuProducto">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/listaitem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Stock"/>
               </Properties>
               <Events>
@@ -179,11 +233,17 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuFactura">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/ec/ups/edu/imagenes/factura.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Factura"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemCrear">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/crearitem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Crear"/>
               </Properties>
               <Events>
@@ -192,6 +252,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemBuscarEliminar">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/buscaritem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar/Eliminar"/>
               </Properties>
               <Events>
@@ -200,6 +263,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/listaitem.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="listar"/>
               </Properties>
               <Events>
@@ -210,11 +276,17 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuIdioma">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/ec/ups/edu/imagenes/idioma.jpg"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Idiomas   "/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="itemEspa&#xf1;ol">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/espa&#xf1;ol.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Espa&#xf1;ol"/>
               </Properties>
               <Events>
@@ -223,6 +295,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemIngles">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/ec/ups/edu/imagenes/ingles.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ingl&#xe9;s"/>
               </Properties>
               <Events>
@@ -257,12 +332,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="452" max="32767" attributes="0"/>
+          <Component id="desktopPane" alignment="1" pref="744" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="279" max="32767" attributes="0"/>
+          <Component id="desktopPane" alignment="0" pref="436" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>

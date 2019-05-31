@@ -6,7 +6,6 @@
 package ec.ups.edu.vista;
 
 import ec.ups.edu.controlador.ControladorProducto;
-import ec.ups.edu.modelo.Clase;
 import ec.ups.edu.modelo.Producto;
 import java.awt.Image;
 import java.text.SimpleDateFormat;
@@ -91,14 +90,14 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblCrearProducto);
         lblCrearProducto.setBounds(468, 0, 196, 50);
 
-        btnGuardarCrearProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
+        btnGuardarCrearProducto.setText("GUARDAR");
         btnGuardarCrearProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCrearProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnGuardarCrearProducto);
-        btnGuardarCrearProducto.setBounds(710, 90, 90, 99);
+        btnGuardarCrearProducto.setBounds(710, 90, 90, 40);
 
         lblNombreCrearProducto.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblNombreCrearProducto.setText("Nombre:");
@@ -107,14 +106,14 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(txtNombreCrearProducto);
         txtNombreCrearProducto.setBounds(468, 136, 220, 40);
 
-        btnCancelarCrearProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/cancelar.png"))); // NOI18N
+        btnCancelarCrearProducto.setText("CANCELAR");
         btnCancelarCrearProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarCrearProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnCancelarCrearProducto);
-        btnCancelarCrearProducto.setBounds(650, 440, 110, 90);
+        btnCancelarCrearProducto.setBounds(640, 470, 120, 50);
         getContentPane().add(txtCantidadCrearProducto);
         txtCantidadCrearProducto.setBounds(468, 183, 220, 38);
 
@@ -145,14 +144,14 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblImagen);
         lblImagen.setBounds(10, 80, 310, 365);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/LUPA.png"))); // NOI18N
+        jButton1.setText("BUSCAR IMAGEN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(380, 440, 108, 100);
+        jButton1.setBounds(370, 460, 140, 50);
         getContentPane().add(txtTipoCrearProducto);
         txtTipoCrearProducto.setBounds(470, 320, 220, 40);
 
@@ -173,7 +172,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
 
     private void btnGuardarCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCrearProductoActionPerformed
        Producto producto= new Producto();
-       Clase clase=new Clase();
+    
         try {
         Date fecha=new SimpleDateFormat("dd/MM/yyyy").parse(txtFechaCrearProducto.getText());
         producto.setFechaExpedicion(fecha);
@@ -185,9 +184,11 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         producto.setCosto(Double.parseDouble(txtCostoCrearProducto.getText()));
         producto.setCantidad(Integer.parseInt(txtCantidadCrearProducto.getText()));
         producto.setNombre(txtNombreCrearProducto.getText());
-        clase.setTipo(txtTipoCrearProducto.getText());
-        clase.setDescripcion(txtDescripcionCrearProducto.getText());
+        producto.setTipo(txtTipoCrearProducto.getText());
+        producto.setDescripcion(txtDescripcionCrearProducto.getText());
         producto.setPath(ruta);
+       
+        
         controladorProducto.create(producto);
         JOptionPane.showMessageDialog(this, "Producto creado Exitosamente");
         txtCodigoCrearProducto.setText(Integer.toString(this.controladorProducto.getCodigo()));

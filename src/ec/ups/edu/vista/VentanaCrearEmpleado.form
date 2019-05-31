@@ -85,7 +85,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblCrearEmpleado" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="txtCodigo" max="32767" attributes="0"/>
                   <Component id="lblCodigo" min="-2" pref="33" max="-2" attributes="0"/>
@@ -120,11 +120,15 @@
                   <Component id="lblSueldo" alignment="0" max="32767" attributes="0"/>
                   <Component id="txtSueldo" alignment="1" min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnGuardarEmpleado" max="32767" attributes="0"/>
-                  <Component id="btnCancelarCrearEmpleado" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnCancelarCrearEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGuardarEmpleado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -170,9 +174,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardarEmpleado">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/ups/edu/imagenes/guardar.jpg"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="GUARDAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarEmpleadoActionPerformed"/>
@@ -180,9 +182,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCancelarCrearEmpleado">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ec/ups/edu/imagenes/cancelar.png"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="CANCELAR"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarCrearEmpleadoActionPerformed"/>

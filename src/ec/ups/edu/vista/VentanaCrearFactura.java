@@ -14,6 +14,7 @@ import ec.ups.edu.modelo.Cliente;
 import ec.ups.edu.modelo.DetalleFactura;
 import ec.ups.edu.modelo.Empleado;
 import ec.ups.edu.modelo.Factura;
+import ec.ups.edu.modelo.ImagenTabla;
 import ec.ups.edu.modelo.Producto;
 import java.beans.PropertyVetoException;
 import java.text.SimpleDateFormat;
@@ -202,6 +203,11 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
                 txtEmpleadoActionPerformed(evt);
             }
         });
+        txtEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEmpleadoKeyPressed(evt);
+            }
+        });
 
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,23 +352,23 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         getContentPane().add(txtTotal);
         txtTotal.setBounds(650, 620, 83, 22);
 
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/Cancelar.png"))); // NOI18N
+        btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(300, 560, 100, 90);
+        btnCancelar.setBounds(300, 600, 100, 50);
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/guardar.jpg"))); // NOI18N
+        btnGuardar.setText("GUARDAR");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
         getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(140, 560, 80, 80);
+        btnGuardar.setBounds(140, 600, 100, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -407,6 +413,8 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         factura.setTotal(totalv);
         factura.setSubtotal(subtotalv);
         factura.setFecha(fecha);
+        factura.setEmpleado(empleado);
+        
         
         for(int i=0;i<tblFactura.getRowCount()-1;i++){
             System.out.println(i);
@@ -431,6 +439,8 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         txtSubTotal.setText("");
         txtTotal.setText("");
         txtTelefono.setText("");
+         txtEmail.setText("");
+         txtEmpleado.setText("");
         model.setColumnCount(6);
         model.setRowCount(0);
         Object[] datos2= {"", "", "","0","",""};
@@ -460,6 +470,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtCedulaKeyPressed
 
     private void tblFacturaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblFacturaKeyReleased
+        tblFactura.setDefaultRenderer(Object.class, new ImagenTabla());
         int key = evt.getKeyCode();
         if(key == KeyEvent.VK_ENTER){
             fila= tblFactura.getSelectedRow();
@@ -478,22 +489,30 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
                 
                 Object[] datos ={ codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
                 model.addRow(datos);
-                model.addRow(datos2);   
+                //model.addRow(datos2);   
             }else if(columna==3){
                 codigo= Integer.parseInt(tblFactura.getValueAt(fila, columna-3).toString());
                 int cant= Integer.parseInt(tblFactura.getValueAt(fila, columna).toString());
                 model.removeRow(fila);
                 model.removeRow(tblFactura.getRowCount()-1);
-                
-                total1v= producto.getCosto()*cant;
-                
                 menorar=cant;
-                //menor();
+                if(menor()==true){
+                    model.removeRow(fila);
+                   
+                    model.addRow(datos2);
+                    
+                }else{
+                   total1v= producto.getCosto()*cant;
                 Object[] datos ={codigo,new JLabel(new ImageIcon(producto.getPath())),producto.getNombre(),cant,producto.getCosto(),total1v};
                 
                 model.addRow(datos);
-                model.addRow(datos2);
+                
+               
+                }
+                 
             }
+            model.addRow(datos2);
+
             subtotalv = total1v+subtotalv;
             ivav= subtotalv*0.12;
             totalv = subtotalv+ivav;
@@ -504,13 +523,29 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_tblFacturaKeyReleased
 
-   /* public void menor(){
+    private void txtEmpleadoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmpleadoKeyPressed
+        String id=txtEmpleado.getText();
+        Set<Empleado> lista = controladorEmpleado.getLista();
+        for(Empleado empleado1 : lista){
+            if(empleado1.getCedula().equals(id)){
+                empleado = empleado1;
+                txtEmpleado.setText(empleado1.getNombre());
+            }
+        }
+    }//GEN-LAST:event_txtEmpleadoKeyPressed
+
+    public boolean menor(){
         Producto producto=controladorProducto.read(codigo);
-       if(producto.setCantidad(producto.getCantidad()-menorar)=0){
+       if(producto.getCantidad()-menorar<-1){
+           JOptionPane.showMessageDialog(this, "producto insuficiente");
+           return true;
+    } else{
+           producto.setCantidad(producto.getCantidad()-menorar);
+          controladorProducto.update(producto); 
+          return false;
+       }
         
-    } 
-        controladorProducto.update(producto);
-    }*/
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;

@@ -132,7 +132,9 @@ public void listarProducto(){
             producto.getCantidad(),
             producto.getFechaExpedicion(),
             producto.getCosto(),
-            new JLabel(new ImageIcon(producto.getPath()))
+            new JLabel(new ImageIcon(producto.getPath())),
+            producto.getTipo(),
+            producto.getDescripcion()
         };
         modelo.addRow(datos);
     }

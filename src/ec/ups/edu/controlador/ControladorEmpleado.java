@@ -46,6 +46,14 @@ public class ControladorEmpleado {
         }
         return null;
     }
+    public Empleado readC(String cedula){
+        for (Empleado empleado : lista) {
+            if(empleado.getCedula().equals(cedula)){
+                return empleado;
+            }
+        }
+        return null;
+    }
 
     public void update(Empleado empleado){
     

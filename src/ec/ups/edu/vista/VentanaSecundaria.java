@@ -215,9 +215,11 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        menuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/cliente.png"))); // NOI18N
         menuCliente.setMnemonic('f');
         menuCliente.setText("Cliente");
 
+        crearMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/crearitem.png"))); // NOI18N
         crearMenuCliente.setMnemonic('o');
         crearMenuCliente.setText("Crear");
         crearMenuCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +229,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuCliente.add(crearMenuCliente);
 
+        buscarMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscaritem.png"))); // NOI18N
         buscarMenuCliente.setMnemonic('s');
         buscarMenuCliente.setText("Buscar");
         buscarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +239,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuCliente.add(buscarMenuCliente);
 
+        actualizarMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizaritem.png"))); // NOI18N
         actualizarMenuCliente.setMnemonic('a');
         actualizarMenuCliente.setText("Actualizar");
         actualizarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +249,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuCliente.add(actualizarMenuCliente);
 
+        eliminarMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminaritem.jpg"))); // NOI18N
         eliminarMenuCliente.setMnemonic('x');
         eliminarMenuCliente.setText("Eliminar");
         eliminarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +259,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuCliente.add(eliminarMenuCliente);
 
+        listarMenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/listaitem.png"))); // NOI18N
         listarMenuCliente.setText("Listar");
         listarMenuCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -264,9 +270,11 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuCliente);
 
+        menuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/empleado.png"))); // NOI18N
         menuEmpleado.setMnemonic('e');
         menuEmpleado.setText("Empleado");
 
+        crearMenuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/crearitem.png"))); // NOI18N
         crearMenuEmpleado.setMnemonic('t');
         crearMenuEmpleado.setText("Crear");
         crearMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -276,6 +284,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuEmpleado.add(crearMenuEmpleado);
 
+        buscarMenuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscaritem.png"))); // NOI18N
         buscarMenuEmpleado.setMnemonic('y');
         buscarMenuEmpleado.setText("Buscar");
         buscarMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -285,6 +294,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuEmpleado.add(buscarMenuEmpleado);
 
+        actualizarMenuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizaritem.png"))); // NOI18N
         actualizarMenuEmpleado.setMnemonic('p');
         actualizarMenuEmpleado.setText("Actuallizar");
         actualizarMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +304,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuEmpleado.add(actualizarMenuEmpleado);
 
+        eliminarMenuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminaritem.jpg"))); // NOI18N
         eliminarMenuEmpleado.setMnemonic('d');
         eliminarMenuEmpleado.setText("Eliminar");
         eliminarMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
@@ -303,6 +314,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuEmpleado.add(eliminarMenuEmpleado);
 
+        listarMenuEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/listaitem.png"))); // NOI18N
         listarMenuEmpleado.setText("Listar");
         listarMenuEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,9 +325,11 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuEmpleado);
 
+        menuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/producto.png"))); // NOI18N
         menuProducto.setMnemonic('h');
         menuProducto.setText("Producto");
 
+        crearMenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/crearitem.png"))); // NOI18N
         crearMenuProducto.setMnemonic('c');
         crearMenuProducto.setText("Crear");
         crearMenuProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -325,6 +339,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuProducto.add(crearMenuProducto);
 
+        buscarMenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscaritem.png"))); // NOI18N
         buscarMenuProducto.setMnemonic('a');
         buscarMenuProducto.setText("Buscar");
         buscarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -334,6 +349,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuProducto.add(buscarMenuProducto);
 
+        actulizarMenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/actualizaritem.png"))); // NOI18N
         actulizarMenuProducto.setText("Actualizar");
         actulizarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,6 +358,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuProducto.add(actulizarMenuProducto);
 
+        eliminarMenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminaritem.jpg"))); // NOI18N
         eliminarMenuProducto.setText("Eliminar");
         eliminarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -350,6 +367,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuProducto.add(eliminarMenuProducto);
 
+        listarMenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/listaitem.png"))); // NOI18N
         listarMenuProducto.setText("Stock");
         listarMenuProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -360,8 +378,10 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuProducto);
 
+        menuFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/factura.png"))); // NOI18N
         menuFactura.setText("Factura");
 
+        itemCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/crearitem.png"))); // NOI18N
         itemCrear.setText("Crear");
         itemCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,6 +390,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuFactura.add(itemCrear);
 
+        itemBuscarEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscaritem.png"))); // NOI18N
         itemBuscarEliminar.setText("Buscar/Eliminar");
         itemBuscarEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -378,6 +399,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuFactura.add(itemBuscarEliminar);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/listaitem.png"))); // NOI18N
         jMenuItem1.setText("listar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -388,8 +410,10 @@ public class VentanaSecundaria extends javax.swing.JFrame {
 
         menuBar.add(menuFactura);
 
+        menuIdioma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/idioma.jpg"))); // NOI18N
         menuIdioma.setText("Idiomas   ");
 
+        itemEspañol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/español.png"))); // NOI18N
         itemEspañol.setText("Español");
         itemEspañol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -398,6 +422,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         });
         menuIdioma.add(itemEspañol);
 
+        itemIngles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/ingles.png"))); // NOI18N
         itemIngles.setText("Inglés");
         itemIngles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,11 +439,11 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
         );
 
         pack();

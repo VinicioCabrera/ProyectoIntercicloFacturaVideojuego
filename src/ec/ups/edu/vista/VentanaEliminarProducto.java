@@ -113,7 +113,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(txtNombreEliminarProducto);
         txtNombreEliminarProducto.setBounds(202, 108, 220, 40);
 
-        btnEliminarEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/eliminar.jpg"))); // NOI18N
+        btnEliminarEliminarProducto.setText("ELIMINAR");
         btnEliminarEliminarProducto.setEnabled(false);
         btnEliminarEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,16 +121,16 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btnEliminarEliminarProducto);
-        btnEliminarEliminarProducto.setBounds(490, 220, 100, 90);
+        btnEliminarEliminarProducto.setBounds(490, 260, 100, 50);
 
-        btnBuscarEliminarProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/ups/edu/imagenes/buscar.png"))); // NOI18N
+        btnBuscarEliminarProducto.setText("BUSCAR");
         btnBuscarEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarEliminarProductoActionPerformed(evt);
             }
         });
         getContentPane().add(btnBuscarEliminarProducto);
-        btnBuscarEliminarProducto.setBounds(490, 70, 100, 100);
+        btnBuscarEliminarProducto.setBounds(490, 130, 100, 40);
 
         lblEliminarProducto.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEliminarProducto.setText("Eliminar Producto");
@@ -174,8 +174,8 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         Producto producto=controladorProducto.read(codigo);
         txtCantidadEliminarProducto.setText(String.valueOf(producto.getCantidad()));
         txtCostoEliminarProducto.setText(String.valueOf(producto.getCosto()));
-        txtTipoEliminarProducto.setText(producto.getClase().getTipo());
-        txtDescripcionEliminarProducto.setText(producto.getClase().getDescripcion());
+        txtTipoEliminarProducto.setText(producto.getTipo());
+        txtDescripcionEliminarProducto.setText(producto.getDescripcion());
         SimpleDateFormat formato=new SimpleDateFormat();
         String fecha=formato.format(producto.getFechaExpedicion());
         txtFechaEliminarProducto.setText(fecha);
