@@ -20,6 +20,7 @@ public class VentanaCrearEmpleado extends javax.swing.JInternalFrame {
      * Creates new form VentanaCrearEmpleado
      */
     ControladorEmpleado controladorEmpleado;
+    private String palabra;
     public VentanaCrearEmpleado(ControladorEmpleado controladorEmpleado) {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
@@ -34,6 +35,9 @@ public class VentanaCrearEmpleado extends javax.swing.JInternalFrame {
         lblNombre.setText(mensajes.getString("NombreCrearCliente"));
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
         lblSueldo.setText(mensajes.getString("LblSueldo"));
+        btnGuardarEmpleado.setText(mensajes.getString("btnGuardar"));
+        btnCancelarCrearEmpleado.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("crearEmpleado");
     }
 
     /**
@@ -204,7 +208,7 @@ public class VentanaCrearEmpleado extends javax.swing.JInternalFrame {
         empleado.setSueldo(Double.parseDouble(txtSueldo.getText()));
         empleado.setTelefono(txtTelefono.getText());
         controladorEmpleado.create(empleado);
-        JOptionPane.showMessageDialog(this, "Empleado creado correctamente");
+        JOptionPane.showMessageDialog(this,palabra);
         txtCodigo.setText(Integer.toString(controladorEmpleado.getCodigo()));
         txtCedula.setText("");
         txtDireccion.setText("");

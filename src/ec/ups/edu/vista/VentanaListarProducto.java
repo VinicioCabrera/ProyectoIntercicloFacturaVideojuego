@@ -72,6 +72,8 @@ public class VentanaListarProducto extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListarProducto = new javax.swing.JTable();
 
+        setClosable(true);
+
         lblListar.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblListar.setText("Listar Producto");
 

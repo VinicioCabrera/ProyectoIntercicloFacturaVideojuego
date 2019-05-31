@@ -31,6 +31,10 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
         lblEmail.setText(mensajes.getString("EmailCrearCliente"));
         lblDireccion.setText(mensajes.getString("DireccionCrearCliente"));
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        btnBuscar.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        
+        
     }
 
     /**
@@ -56,7 +60,7 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
         lblDireccion = new javax.swing.JLabel();
         txtDireccionBuscarCliente = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -88,10 +92,10 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("CANCELAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
 
@@ -107,7 +111,7 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(90, 90, 90)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -171,7 +175,7 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
                     .addComponent(txtTelefonoBuscarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
@@ -191,14 +195,14 @@ public class VentanaBuscarCliente extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JLabel lblBuscarCliente;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;

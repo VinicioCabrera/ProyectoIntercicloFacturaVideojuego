@@ -43,6 +43,8 @@ private VentanaBuscarFactura ventanabuscarfactura;
         tblListarFactura = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+
         tblListarFactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

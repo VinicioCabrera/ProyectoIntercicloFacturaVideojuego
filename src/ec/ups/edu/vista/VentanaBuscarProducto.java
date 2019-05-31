@@ -35,6 +35,8 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         jlbTipoBuscarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
         lblCostoBuscarProducto.setText(mensajes.getString("CostoCrearProducto"));
         jlbTipoBuscarProducto.setText(mensajes.getString("lblTipo"));
+        btnBuscarBuscarProducto.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
     }
 
     /**
@@ -64,6 +66,7 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         jlbTipoBuscarProducto = new javax.swing.JLabel();
         jlbTipoBuscarProducto1 = new javax.swing.JLabel();
         txtDescripcionBuscarProducto = new javax.swing.JTextField();
+        btnCancelar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -98,6 +101,13 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         jlbTipoBuscarProducto1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         jlbTipoBuscarProducto1.setText("Descripcion:");
 
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,6 +126,9 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                                 .addComponent(txtNombreBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(14, 14, 14))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(lblFechaBuscarProducto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -187,8 +200,10 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
                             .addComponent(txtDescripcionBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbTipoBuscarProducto1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49)
-                        .addComponent(btnBuscarBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(52, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnBuscarBuscarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(56, Short.MAX_VALUE))))
         );
 
         pack();
@@ -210,9 +225,14 @@ public class VentanaBuscarProducto extends javax.swing.JInternalFrame {
         txtDescripcionBuscarProducto.setText(producto.getDescripcion());
     }//GEN-LAST:event_btnBuscarBuscarProductoActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarBuscarProducto;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jlbTipoBuscarProducto;
     private javax.swing.JLabel jlbTipoBuscarProducto1;

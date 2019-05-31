@@ -26,6 +26,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
      */
     private ControladorProducto controladorProducto;
     private String ruta;
+    private String palabra;
     public VentanaActualizarProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
@@ -40,6 +41,11 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         jlbTipoActualizarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
         lblCostoActualizarProducto.setText(mensajes.getString("CostoCrearProducto"));
         jlbTipoActualizarProducto.setText(mensajes.getString("lblTipo"));
+        btnBuscarActualizarProducto.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnActualizarActualizarProducto1.setText(mensajes.getString("ActualizarMenuCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        btnExaminar.setText(mensajes.getString("btnImagenBucar"));
+        palabra=mensajes.getString("actualizarProducto");
     }
 
     /**
@@ -52,7 +58,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         lblActualizarProducto = new javax.swing.JLabel();
-        btnActualizarActualizarProducto = new javax.swing.JToggleButton();
+        btnActualizarActualizarProducto1 = new javax.swing.JToggleButton();
         btnBuscarActualizarProducto = new javax.swing.JButton();
         txtCantidadActualizarProducto = new javax.swing.JTextField();
         lblCantidadActualizarProducto = new javax.swing.JLabel();
@@ -70,6 +76,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         jlbTipoActualizarProducto = new javax.swing.JLabel();
         txtDescripcionActualizarProducto = new javax.swing.JTextField();
         jlbTipoActualizarProducto1 = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JToggleButton();
 
         getContentPane().setLayout(null);
 
@@ -78,14 +85,14 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblActualizarProducto);
         lblActualizarProducto.setBounds(358, 0, 217, 51);
 
-        btnActualizarActualizarProducto.setText("ACTUALIZAR");
-        btnActualizarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizarActualizarProducto1.setText("ACTUALIZAR");
+        btnActualizarActualizarProducto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActualizarProductoActionPerformed(evt);
+                btnActualizarActualizarProducto1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnActualizarActualizarProducto);
-        btnActualizarActualizarProducto.setBounds(810, 250, 110, 40);
+        getContentPane().add(btnActualizarActualizarProducto1);
+        btnActualizarActualizarProducto1.setBounds(810, 320, 110, 40);
 
         btnBuscarActualizarProducto.setText("BUSCAR");
         btnBuscarActualizarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +163,15 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(jlbTipoActualizarProducto1);
         jlbTipoActualizarProducto1.setBounds(390, 380, 130, 30);
 
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(810, 230, 110, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -174,7 +190,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         ImageIcon im=new ImageIcon(producto.getPath());
         ImageIcon imagen=new ImageIcon(im.getImage().getScaledInstance(lblImagen.getWidth(), lblImagen.getHeight(), Image.SCALE_DEFAULT));
         lblImagen.setIcon(imagen);
-       btnActualizarActualizarProducto.setEnabled(true);
+       btnActualizarActualizarProducto1.setEnabled(true);
        btnExaminar.setEnabled(true);
     }//GEN-LAST:event_btnBuscarActualizarProductoActionPerformed
 
@@ -190,7 +206,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnExaminarActionPerformed
 
-    private void btnActualizarActualizarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActualizarProductoActionPerformed
+    private void btnActualizarActualizarProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActualizarProducto1ActionPerformed
         Producto producto= new Producto();
         
         try {
@@ -208,7 +224,7 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         producto.setDescripcion(txtDescripcionActualizarProducto.getText());
         producto.setPath(ruta);
         controladorProducto.update(producto);
-        JOptionPane.showMessageDialog(this, "Producto actualizado correctamente");
+        JOptionPane.showMessageDialog(this, palabra );
         txtCantidadActualizarProducto.setText("");
         txtCostoActualizarEmpleado.setText("");
         txtFechaActualizarProducto.setText("");
@@ -216,12 +232,17 @@ public class VentanaActualizarProducto extends javax.swing.JInternalFrame {
         txtTipoActualizarProducto.setText("");
         txtDescripcionActualizarProducto.setText("");
         lblImagen.setIcon(null);
-    }//GEN-LAST:event_btnActualizarActualizarProductoActionPerformed
+    }//GEN-LAST:event_btnActualizarActualizarProducto1ActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnActualizarActualizarProducto;
+    private javax.swing.JToggleButton btnActualizarActualizarProducto1;
     private javax.swing.JButton btnBuscarActualizarProducto;
+    private javax.swing.JToggleButton btnCancelar;
     private javax.swing.JButton btnExaminar;
     private javax.swing.JLabel jlbTipoActualizarProducto;
     private javax.swing.JLabel jlbTipoActualizarProducto1;

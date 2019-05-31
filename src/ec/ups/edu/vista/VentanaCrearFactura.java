@@ -54,6 +54,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
     private int menorar;
     int fila;
     int codigo=0;
+    private String palabra;
    
 
     public VentanaCrearFactura(ControladorFactura controladorFactura,ControladorCliente controladorCliente, ControladorEmpleado controladorEmpleado, ControladorCliente controladorClase,ControladorProducto controladorProducto) {
@@ -86,6 +87,9 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
         lblFechas.setText(mensajes.getString("FechaCrearProducto"));
         lblEmpleado.setText(mensajes.getString("MenuEmpleado"));
+        btnGuardar.setText(mensajes.getString("btnGuardar"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("facturacreada");
         
         JTableHeader th = tblFactura.getTableHeader();
         TableColumnModel tm = th.getColumnModel();
@@ -430,7 +434,7 @@ public class VentanaCrearFactura extends javax.swing.JInternalFrame {
         }
         System.out.println("bsxchusb");
         controladorFactura.create(factura);
-        JOptionPane.showMessageDialog(this, "factura creada");
+        JOptionPane.showMessageDialog(this, palabra);
         lblCodigo.setText(Integer.toString(controladorFactura.getCodigo()));
         txtCedula.setText("");
         txtDireccion.setText("");

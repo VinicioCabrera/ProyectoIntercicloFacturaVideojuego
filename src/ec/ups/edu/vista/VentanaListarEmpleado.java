@@ -63,9 +63,14 @@ public class VentanaListarEmpleado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblListarEmpledo = new javax.swing.JTable();
         lblListar = new javax.swing.JLabel();
+
+        jRadioButton1.setText("jRadioButton1");
+
+        setClosable(true);
 
         tblListarEmpledo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -132,6 +137,7 @@ public class VentanaListarEmpleado extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblListar;
     private javax.swing.JTable tblListarEmpledo;

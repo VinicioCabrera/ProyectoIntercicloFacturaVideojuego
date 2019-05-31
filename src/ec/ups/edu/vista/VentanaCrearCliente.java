@@ -20,6 +20,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
      * Creates new form VentanaCrearCliente
      */
     private ControladorCliente controladorCliente;
+    private String palabra;
     public VentanaCrearCliente(ControladorCliente controladorCliente) {
         initComponents();
         this.controladorCliente=controladorCliente;
@@ -33,6 +34,10 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         lblEmail.setText(mensajes.getString("EmailCrearCliente"));
         lblDireccion.setText(mensajes.getString("DireccionCrearCliente"));
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
+        btnGuardarCliente.setText(mensajes.getString("btnGuardar"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("ClienteMensaje");
+    
     }
 
     /**
@@ -59,7 +64,7 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         txtTelefonoCliente = new javax.swing.JTextField();
         lblTelefono = new javax.swing.JLabel();
         btnGuardarCliente = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -124,14 +129,14 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         jPanel1.add(btnGuardarCliente);
         btnGuardarCliente.setBounds(140, 470, 90, 40);
 
-        jButton3.setText("CANCELAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(310, 470, 100, 40);
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(310, 470, 100, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,15 +160,15 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarClienteActionPerformed
+        ResourceBundle mensajes;
         Cliente cliente=new Cliente();
-   
         cliente.setCedula(txtCedulaCliente.getText());
         cliente.setDireccion(txtDireccionCliente.getText());
         cliente.setEmail(txtEmailCliente.getText());
         cliente.setNombre(txtNombreCliente.getText());
         cliente.setTelefono(txtTelefonoCliente.getText());
         controladorCliente.create(cliente);
-        JOptionPane.showMessageDialog(this, "cliente creado exitosamente");
+        JOptionPane.showMessageDialog(this,palabra);
         txtCodigoCliente.setText(Integer.toString(this.controladorCliente.getCodigo()));
         txtCedulaCliente.setText("");
         txtDireccionCliente.setText("");
@@ -174,14 +179,14 @@ public class VentanaCrearCliente extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnGuardarCliente;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCedula;

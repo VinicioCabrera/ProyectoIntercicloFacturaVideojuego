@@ -20,6 +20,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
      * Creates new form VentanaEliminarEmpleado
      */
     ControladorEmpleado controladorEmpleado;
+    private String palabra;
     public VentanaEliminarEmpleado(ControladorEmpleado controladorEmpleado) {
         initComponents();
         this.controladorEmpleado=controladorEmpleado;
@@ -33,6 +34,10 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         lblNombre.setText(mensajes.getString("NombreCrearCliente"));
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
         lblSueldo.setText(mensajes.getString("LblSueldo"));
+        btnBuscar.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnEliminar.setText(mensajes.getString("EliminarEliminarCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("empleadoeliminado");
     }
 
     /**
@@ -58,9 +63,10 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         lblEmail = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
-        tbnBuscar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         lblEliminarEmpleado = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
 
         lblSueldo.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblSueldo.setText("sueldo:");
@@ -83,10 +89,10 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         lblCedula.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
         lblCedula.setText("cedula:");
 
-        tbnBuscar.setText("BUSCAR");
-        tbnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setText("BUSCAR");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbnBuscarActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -101,6 +107,13 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         lblEliminarEmpleado.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblEliminarEmpleado.setText("Eliminar Empleado");
 
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,8 +122,10 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
                 .addContainerGap(128, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tbnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblEliminarEmpleado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(102, 102, 102))
@@ -142,10 +157,11 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(lblEliminarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 409, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(tbnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -183,7 +199,7 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tbnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnBuscarActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         int codigo =Integer.parseInt(txtCodigo.getText());
        Empleado empleado=controladorEmpleado.read(codigo);
        txtCedula.setText(empleado.getCedula());
@@ -193,12 +209,12 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
        txtSueldo.setText(String.valueOf(empleado.getSueldo()));
        txtTelefono.setText(empleado.getTelefono());
        btnEliminar.setEnabled(true);
-    }//GEN-LAST:event_tbnBuscarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
        int codigo=Integer.parseInt(txtCodigo.getText());
        controladorEmpleado.remove(codigo);
-        JOptionPane.showMessageDialog(this, "empleado eliminado correctamente");
+        JOptionPane.showMessageDialog(this, palabra);
         txtCedula.setText("");
         txtCodigo.setText("");
         txtDireccion.setText("");
@@ -208,8 +224,14 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
         txtTelefono.setText("");
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodigo;
@@ -219,7 +241,6 @@ public class VentanaEliminarEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSueldo;
     private javax.swing.JLabel lblTelefono;
-    private javax.swing.JButton tbnBuscar;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDireccion;

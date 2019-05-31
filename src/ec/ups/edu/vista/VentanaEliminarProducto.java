@@ -23,6 +23,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
      * Creates new form VentanaEliminarProducto
      */
     ControladorProducto controladorProducto;
+    private String palabra;
     public VentanaEliminarProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
@@ -37,6 +38,10 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         lblDescripcionEliminarProducto1.setText(mensajes.getString("DescripcionCrearClase"));
         lblCostoEliminarProducto.setText(mensajes.getString("CostoCrearProducto"));
         lblTipoEliminarProducto.setText(mensajes.getString("lblTipo"));
+        btnBuscarEliminarProducto.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnEliminarEliminarProducto.setText(mensajes.getString("EliminarEliminarCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("productoeliminado");
     }
 
     /**
@@ -68,6 +73,7 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         lblTipoEliminarProducto = new javax.swing.JLabel();
         txtDescripcionEliminarProducto = new javax.swing.JTextField();
         lblDescripcionEliminarProducto1 = new javax.swing.JLabel();
+        btnCancelar = new javax.swing.JButton();
 
         getContentPane().setLayout(null);
         getContentPane().add(txtCantidadEliminarProducto);
@@ -153,13 +159,22 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblDescripcionEliminarProducto1);
         lblDescripcionEliminarProducto1.setBounds(32, 390, 140, 30);
 
+        btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(490, 340, 100, 50);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEliminarProductoActionPerformed
         int codigo=Integer.parseInt(txtCodigoEliminarProducto.getText());
         controladorProducto.read(codigo);
-        JOptionPane.showMessageDialog(this, "producto eliminado correctamente");
+        JOptionPane.showMessageDialog(this, palabra);
         txtCantidadEliminarProducto.setText("");
         txtCostoEliminarProducto.setText("");
         txtFechaEliminarProducto.setText("");
@@ -187,9 +202,14 @@ public class VentanaEliminarProducto extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btnBuscarEliminarProductoActionPerformed
 
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarEliminarProducto;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminarEliminarProducto;
     private javax.swing.JLabel lblCantidadEliminarProducto;
     private javax.swing.JLabel lblCodigoEliminarProducto;

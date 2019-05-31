@@ -32,6 +32,8 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
     int c;
     private int codigoe;
     private SimpleDateFormat formato;
+    private String palabra;
+    private String palabras;
     /**
      * Creates new form CrearFactura
      */
@@ -52,6 +54,11 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
         lblTelefono.setText(mensajes.getString("TelefonoCrearCliente"));
         lblFechas.setText(mensajes.getString("FechaCrearProducto"));
         lblEmpleado.setText(mensajes.getString("MenuEmpleado"));
+        btnBuscar.setText(mensajes.getString("BuscarActualizarCliente"));
+        btnEliminar.setText(mensajes.getString("EliminarEliminarCliente"));
+        btnCancelar.setText(mensajes.getString("CancelarCrearCliente"));
+        palabra=mensajes.getString("facturaEliminada");
+        palabras=mensajes.getString("nofactura");
         
         JTableHeader th = tblFactura.getTableHeader();
         TableColumnModel tm = th.getColumnModel();
@@ -376,7 +383,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         controladorFactura.remove(Integer.parseInt(txtCodigo.getText()));
-        JOptionPane.showMessageDialog(this, "Factura Eliminada", "Eliminar Factura", JOptionPane.OK_OPTION);
+        JOptionPane.showMessageDialog(this, palabra);
         txtCodigo.setText("");
         txtCedula.setText("");
         txtDireccion.setText("");
@@ -419,7 +426,7 @@ public class VentanaBuscarFactura extends javax.swing.JInternalFrame {
             }
             btnCancelar.setEnabled(true);
         } else {
-            JOptionPane.showMessageDialog(this, "No exite la Factura", "Buscar Facrura", JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this, palabras);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 

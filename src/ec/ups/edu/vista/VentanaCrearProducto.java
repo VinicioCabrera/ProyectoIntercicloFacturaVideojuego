@@ -21,10 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class VentanaCrearProducto extends javax.swing.JInternalFrame {
  private ControladorProducto controladorProducto;
- private String ruta;   
+ private String ruta;
+ private String palabra;
  /**
      * Creates new form VentanaCrearEmpleado
      */
+ 
     public VentanaCrearProducto(ControladorProducto controladorProducto) {
         initComponents();
         this.controladorProducto=controladorProducto;
@@ -40,6 +42,10 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         lblDescripcionCrearProducto.setText(mensajes.getString("DescripcionCrearClase"));
         lblCostoCrearProducto.setText(mensajes.getString("CostoCrearProducto"));
         lblTipoCrearProducto.setText(mensajes.getString("lblTipo"));
+        btnGuardarCrearProducto.setText(mensajes.getString("btnGuardar"));
+        btnCancelarCrearProducto.setText(mensajes.getString("CancelarCrearCliente"));
+        btnExaminar.setText(mensajes.getString("btnImagenBucar"));
+        palabra=mensajes.getString("productocreado");
     }
 
     
@@ -67,7 +73,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         txtFechaCrearProducto = new javax.swing.JTextField();
         txtCostoCrearProducto = new javax.swing.JTextField();
         lblImagen = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnExaminar = new javax.swing.JButton();
         txtTipoCrearProducto = new javax.swing.JTextField();
         lblTipoCrearProducto = new javax.swing.JLabel();
         txtDescripcionCrearProducto = new javax.swing.JTextField();
@@ -144,14 +150,14 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         getContentPane().add(lblImagen);
         lblImagen.setBounds(10, 80, 310, 365);
 
-        jButton1.setText("BUSCAR IMAGEN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnExaminar.setText("BUSCAR IMAGEN");
+        btnExaminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnExaminarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(370, 460, 140, 50);
+        getContentPane().add(btnExaminar);
+        btnExaminar.setBounds(370, 460, 140, 50);
         getContentPane().add(txtTipoCrearProducto);
         txtTipoCrearProducto.setBounds(470, 320, 220, 40);
 
@@ -190,7 +196,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
        
         
         controladorProducto.create(producto);
-        JOptionPane.showMessageDialog(this, "Producto creado Exitosamente");
+        JOptionPane.showMessageDialog(this, palabra);
         txtCodigoCrearProducto.setText(Integer.toString(this.controladorProducto.getCodigo()));
         txtCantidadCrearProducto.setText("");
         txtCostoCrearProducto.setText("");
@@ -207,7 +213,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
        this.dispose();
     }//GEN-LAST:event_btnCancelarCrearProductoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnExaminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExaminarActionPerformed
         JFileChooser Explorador = new JFileChooser();
         int option=Explorador.showOpenDialog(this);
         if(option==Explorador.APPROVE_OPTION){
@@ -218,7 +224,7 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
         lblImagen.setIcon(imagen);
 
         }      
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnExaminarActionPerformed
 
     private void txtFechaCrearProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaCrearProductoActionPerformed
 //SimpleDateFormat fecha = new SimpleDateFormat();
@@ -228,8 +234,8 @@ public class VentanaCrearProducto extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarCrearProducto;
+    private javax.swing.JButton btnExaminar;
     private javax.swing.JButton btnGuardarCrearProducto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblCantidadCrearProducto;
     private javax.swing.JLabel lblCodigoCrearProducto;
     private javax.swing.JLabel lblCostoCrearProducto;
