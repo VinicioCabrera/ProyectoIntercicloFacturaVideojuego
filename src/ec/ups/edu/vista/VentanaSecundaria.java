@@ -12,6 +12,7 @@ import ec.ups.edu.controlador.ControladorFactura;
 import ec.ups.edu.controlador.ControladorProducto;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.awt.Dimension;
 
 /**
  *
@@ -54,7 +55,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
  private VentanaPrincipalLogin principalLogin;
  private Locale localizacion;
  private ResourceBundle mensajes;
-
+ private Dimension d;
  
     /**
      * Creates new form VentanaSecundaria
@@ -75,6 +76,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         mensajes = ResourceBundle.getBundle("ec.ups.edu.Idiomas.mensajes", Locale.getDefault());
         System.out.println("Mensajes");
         this.setExtendedState(6);
+        d=this.getSize(d);
        
     }
     public void cambiarIdioma() {
@@ -586,7 +588,7 @@ public class VentanaSecundaria extends javax.swing.JFrame {
         eliminarProducto.cambiaridioma(mensajes);
         eliminarProducto.setVisible(true);
         desktopPane.add(eliminarProducto);
-        setSize(eliminarProducto.getWidth()+15,eliminarProducto.getHeight()+60);
+        //setSize(eliminarProducto.getWidth()+15,eliminarProducto.getHeight()+60);
     }//GEN-LAST:event_eliminarMenuProductoActionPerformed
 
     private void listarMenuProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarMenuProductoActionPerformed
